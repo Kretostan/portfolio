@@ -1,0 +1,78 @@
+@import 'tailwindcss';
+
+@config "../tailwind.config.ts";
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('/fonts/FiraCode-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+:root {
+  --background-1: #ffffff;
+  --background-2: #f5f5f5;
+  --background-content: #fafafa;
+  --foreground-1: #121212;
+  --foreground-2: #424242;
+  --accent-color-1: #9c27b0;
+  --accent-color-2: #ba68c8;
+  --opposite-background-1: #121212;
+  --opposite-background-2: #1e1e1e;
+  --opposite-foreground-1: #ffffff;
+  --opposite-foreground-2: #e0e0e0;
+}
+
+html.dark {
+  --background-1: #121212;
+  --background-2: #1e1e1e;
+  --background-content: #171717;
+  --foreground-1: #ffffff;
+  --foreground-2: #e0e0e0;
+  --accent-color-1: #00ced1;
+  --accent-color-2: #00BFFF;
+  --opposite-background-1: #ffffff;
+  --opposite-background-2: #f5f5f5;
+  --opposite-foreground-1: #121212;
+  --opposite-foreground-2: #424242;
+}
+
+body {
+  background: var(--background-2);
+  color: var(--foreground-1);
+}
+
+.spinner {
+  border: 5px solid var(--background-2); /* Kolor tła obramowania */
+  border-top: 5px solid var(--accent-color-1); /* Kolor aktywnego fragmentu */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.project-image {
+  clip-path: inset(0 10% 0 10%);
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 100px var(--opposite-foreground-2) inset !important; /* Zielonkawe tło */
+  -webkit-text-fill-color: var(--foreground-1) !important; /* Kolor tekstu */
+}
