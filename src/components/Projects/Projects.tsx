@@ -12,7 +12,7 @@ const Projects = ({projects}: ProjectsProps) => {
 
   return <div className="flex flex-col gap-6 sm:gap-8 px-6 py-6 sm:py-8 mx-2 bg-bg-theme-2 rounded-xl">
     <div className="flex flex-wrap justify-center items-center gap-6">
-      {projects.map(project =>
+      {projects.length > 0 ? projects.map(project =>
       <div
         className="flex flex-col justify-between items-center h-[280px] w-[275px] border-1 border-accent-theme-1 rounded overflow-hidden"
         key={project.title}
@@ -38,7 +38,7 @@ const Projects = ({projects}: ProjectsProps) => {
             />
           </div>
         </div>
-      </div>)}
+      </div>): <p>No projects available at the moment.</p>}
     </div>
   </div>;
 }
