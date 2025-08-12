@@ -4,7 +4,7 @@ import {useSelector} from "react-redux";
 
 import Title from '../../components/ui/Title';
 import Projects from "../../components/Projects/Projects";
-import Spinner from "../../components/ui/Loader.tsx";
+import Spinner from "../../components/ui/Spinner";
 
 import type {RootState} from "../../store/store.ts";
 

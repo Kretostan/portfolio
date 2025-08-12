@@ -4,7 +4,7 @@ import axios from "axios";
 
 import Title from "../../components/ui/Title";
 import ProjectContent from "../../components/Projects/Project";
-import Spinner from "../../components/ui/Loader.tsx";
+import Spinner from "../../components/ui/Spinner";
 
 const ProjectPage = () => {
   const {project} = useLoaderData();
