@@ -33,7 +33,7 @@ const LoginPage = () => {
     <>
       <Title>Login Page</Title>
       <div className="flex flex-col justify-center items-center p-6 bg-bg-theme-2 rounded-lg ring-1">
-        <form onSubmit={handleLogin} className="flex flex-col gap-4">
+        <form onSubmit={handleLogin} className="flex flex-col gap-4 w-[250px]">
           <div className="flex flex-col">
             <label htmlFor="email">E-mail:</label>
             <input type="email" name="email" placeholder="E-mail" />
