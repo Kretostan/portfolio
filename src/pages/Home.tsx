@@ -24,11 +24,12 @@ const App = () => {
         </span>
         I&apos;m Jakub Kret!
       </Title>
-      <div className="flex flex-col justify-center items-center gap-8 md:gap-10">
+      <div className="flex flex-col justify-center items-center gap-6">
         <p className="flex flex-col md:flex-row gap-2 px-2 md:text-lg text-center">
-          Press &ldquo;Begin&ldquo; to start <span>an adventure.</span>
+          Learn more about me
         </p>
         <motion.button
+          aria-label="Go to About page"
           className="px-5 md:px-6 py-2 lg:text-lg bg-gradient-button text-white rounded-lg cursor-pointer"
           onClick={() => {
             navigate("/about");
