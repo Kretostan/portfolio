@@ -83,6 +83,6 @@ body {
 }
 
 input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 100px var(--opposite-foreground-2) inset !important; /* Zielonkawe tło */
-  -webkit-text-fill-color: var(--foreground-1) !important; /* Kolor tekstu */
+  -webkit-box-shadow: 0 0 0 100px var(--opposite-foreground-2) inset !important;
+  -webkit-text-fill-color: var(--foreground-1) !important;
 }
