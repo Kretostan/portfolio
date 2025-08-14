@@ -22,6 +22,7 @@ const Icon = ({ icon, alt, height, width, themed = false }: IconProps) => {
           maxHeight: "32px",
           width: "auto",
         }}
+        draggable={false}
       />
     );
   }
@@ -32,6 +33,7 @@ const Icon = ({ icon, alt, height, width, themed = false }: IconProps) => {
       alt={alt}
       height={height}
       width={height}
+      draggable={false}
     />
   );
 };

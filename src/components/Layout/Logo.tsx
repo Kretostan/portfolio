@@ -18,7 +18,12 @@ const Logo = () => {
       className="flex items-center cursor-pointer"
       onClick={handleClickLogo}
     >
-      <img src="/kretostan-logo.png" alt="Kretostan logo" width={170} />
+      <img
+        src="/kretostan-logo.png"
+        alt="Kretostan logo"
+        width={170}
+        draggable={false}
+      />
     </button>
   );
 };
