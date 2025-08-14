@@ -1,6 +1,16 @@
 @import 'tailwindcss';
-
 @config "../tailwind.config.ts";
+
+@layer components {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+  textarea {
+    @apply mt-1 p-2 w-full rounded-lg border focus:border-[var(--accent-color-2)] focus:ring-[var(--accent-color-2)] text-[var(--background-content)] bg-[var(--foreground-2)];
+  }
+  input::placeholder,
+  textarea::placeholder {
+    @apply text-[var(--opposite-foreground-2)]
+  }
+}
 
 @font-face {
   font-family: 'Fira Code';
