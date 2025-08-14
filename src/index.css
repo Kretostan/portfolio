@@ -4,7 +4,7 @@
 @layer components {
   input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
   textarea {
-    @apply mt-1 p-2 w-full rounded-lg border focus:border-[var(--accent-color-2)] focus:ring-[var(--accent-color-2)] text-[var(--background-content)] bg-[var(--foreground-2)];
+    @apply mt-1 p-2 w-full rounded-lg border focus:border-[var(--accent-color-2)] focus:ring-[var(--accent-color-2)] text-[var(--foreground-1)] bg-[var(--opposite-foreground-2)];
   }
   input::placeholder,
   textarea::placeholder {
