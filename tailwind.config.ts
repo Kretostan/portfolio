@@ -17,9 +17,9 @@ export default {
         "bg-content": "var(--background-content)",
         "text-theme-1": "var(--foreground-1)",
         "text-theme-2": "var(--foreground-2)",
-        "error-input-backgroundColor": "#f8d7da",
-        "error-input-borderColor": "#E74c3c",
-        "error-label-color": "#dc3545",
+        "error-color": "var(--error-color)",
+        "error-bg-color": "var(--error-background)",
+        "error-label-color": "var(--error-label)",
       },
       backgroundImage: ({ theme }) => ({
         "gradient-logo": `linear-gradient(90deg, ${theme("colors.accent-1")}, ${theme("colors.accent-2")}, ${theme("colors.accent-3")})`,
