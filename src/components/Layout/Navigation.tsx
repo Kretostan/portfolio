@@ -38,7 +38,7 @@ const Navigation = () => {
         </motion.button>
       )}
       <motion.button
-        className="flex justify-center items-center px-3 py-2 text-lg md:text-xl rounded-lg cursor-pointer"
+        className="flex justify-center items-center py-2 sm:text-lg rounded-lg cursor-pointer w-[70px] sm:w-[80px]"
         onClick={() => dispatch(setShowMenu(!showMenu))}
         whileHover={{
           color: "var(--opposite-foreground-1)",
