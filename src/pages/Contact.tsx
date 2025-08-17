@@ -51,7 +51,6 @@ const ContactPage = () => {
         <p>Have a question or a project in mind?</p>
         <p>Fill out the form and hit “Send”.</p>
       </div>
-
       <Form
         ref={formRef}
         method="post"
