@@ -46,11 +46,12 @@ const ContactPage = () => {
 
   return (
     <>
-      <Title>Hit Me Up</Title>
-      <p className="flex items-center justify-center mx-14 md:mx-10 max-w-[400px] md:text-lg text-center">
-        Need to get in touch? Fill out the form below and
-        press&ldquo;Send&ldquo; button
-      </p>
+      <Title>Get In Touch</Title>
+      <div className="flex flex-col items-center">
+        <p>Have a question or a project in mind?</p>
+        <p>Fill out the form and hit “Send”.</p>
+      </div>
+
       <Form
         ref={formRef}
         method="post"
@@ -85,6 +86,7 @@ const ContactPage = () => {
             name="message"
             className="min-h-[35px] max-h-[150px]"
             required
+            placeholder="Put your message"
           />
         </div>
         <div className="flex justify-end pt-6 w-full">
