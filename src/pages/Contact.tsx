@@ -84,8 +84,8 @@ const ContactPage = () => {
           <textarea
             name="message"
             className="min-h-[35px] max-h-[150px]"
-            required
             placeholder="Put your message"
+            required
           />
         </div>
         <div className="flex justify-end pt-6 w-full">
