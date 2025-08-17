@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Navigate, useNavigate } from "react-router";
 
-import Title from "../components/ui/Title.tsx";
+import Title from "../components/UI/Title.tsx";
 
 import type { RootState } from "../store/store.ts";
 

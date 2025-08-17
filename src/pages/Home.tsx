@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { motion } from "framer-motion";
 
-import Title from "../components/ui/Title";
+import Title from "../components/UI/Title";
 import { setCurrentPage, setShowMenu } from "../store/menuSlice.ts";
 
 const App = () => {

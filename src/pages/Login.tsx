@@ -3,8 +3,8 @@ import { useDispatch } from "react-redux";
 import axios, { type AxiosResponse } from "axios";
 
 import { login } from "../store/authSlice.ts";
-import Button from "../components/ui/Button.tsx";
-import Title from "../components/ui/Title.tsx";
+import Button from "../components/UI/Button.tsx";
+import Title from "../components/UI/Title.tsx";
 
 type loginResponse = {
   token: string;

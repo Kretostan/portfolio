@@ -1,14 +1,14 @@
+import { useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Form, useActionData, useNavigate, useNavigation } from "react-router";
 import axios from "axios";
 
-import Title from "../components/ui/Title";
-import Button from "../components/ui/Button";
+import Title from "../components/UI/Title";
+import Button from "../components/UI/Button";
+import Modal from "../components/UI/Modal.tsx";
 
-import Modal from "../UI/Modal.tsx";
-import { Form, useActionData, useNavigate, useNavigation } from "react-router";
-import { useDispatch, useSelector } from "react-redux";
 import type { RootState } from "../store/store.ts";
 import { closeModal, showModal } from "../store/modalSlice.ts";
-import { useEffect, useRef } from "react";
 
 export const action = async ({ request }: { request: Request }) => {
   const formData = await request.formData();
