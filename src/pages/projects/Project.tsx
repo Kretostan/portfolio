@@ -5,9 +5,9 @@ import { useSelector } from "react-redux";
 
 import type { RootState } from "../../store/store.ts";
 
-import Title from "../../components/ui/Title";
 import ProjectContent from "../../components/Projects/Project";
-import Spinner from "../../components/ui/Spinner";
+import Title from "../../components/UI/Title";
+import Spinner from "../../components/UI/Spinner";
 
 const ProjectPage = () => {
   const { project } = useLoaderData();

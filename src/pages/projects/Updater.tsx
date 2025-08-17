@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 import { Await, Navigate, useLoaderData, useNavigate } from "react-router";
 import axios from "axios";
 
-import Title from "../../components/ui/Title.tsx";
-import Spinner from "../../components/ui/Spinner.tsx";
 import Updater from "../../components/Projects/Updater.tsx";
+import Title from "../../components/UI/Title.tsx";
+import Spinner from "../../components/UI/Spinner.tsx";
 
 import type { Project } from "../../types";
 import type { RootState } from "../../store/store.ts";

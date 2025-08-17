@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 
 import type { RootState } from "../../store/store.ts";
 import type { FormEvent } from "react";
-import Title from "../../components/ui/Title.tsx";
-import Button from "../../components/ui/Button.tsx";
+import Title from "../../components/UI/Title.tsx";
+import Button from "../../components/UI/Button.tsx";
 
 const CreatorPage = () => {
   const navigate = useNavigate();
