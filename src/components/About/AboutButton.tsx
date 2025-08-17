@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import Icon from "../ui/Icon";
+import Icon from "../UI/Icon";
 
 interface ButtonProps {
   next?: boolean;

@@ -2,7 +2,7 @@ import axios from "axios";
 
 import type { Project } from "../../types";
 import { type ChangeEvent, type FormEvent, useState } from "react";
-import Button from "../ui/Button.tsx";
+import Button from "../UI/Button.tsx";
 import { useNavigate } from "react-router";
 
 const Updater = ({ project }: { project: Project }) => {

@@ -1,4 +1,4 @@
-import Icon from "../ui/Icon";
+import Icon from "../UI/Icon";
 
 type IconType = {
   iconName: string;
