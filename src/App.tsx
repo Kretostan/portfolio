@@ -12,7 +12,7 @@ import CreatorPage from "./pages/projects/Creator.tsx";
 import ProjectPage, {
   loader as projectLoader,
 } from "./pages/projects/Project.tsx";
-import ContactPage from "./pages/Contact.tsx";
+import ContactPage, { action as contactAction } from "./pages/Contact.tsx";
 import LoginPage from "./pages/Login.tsx";
 import UpdaterPage, {
   loader as updaterLoader,
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
         // TODO
         loader: ({ params }) => updaterLoader({ params }),
       },
-      { path: "contact", element: <ContactPage /> },
+      { path: "contact", element: <ContactPage />, action: contactAction },
       { path: "auth/login", element: <LoginPage /> },
       { path: "auth/admin", element: <AdminPage /> },
     ],

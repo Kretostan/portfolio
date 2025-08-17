@@ -3,23 +3,46 @@ import axios from "axios";
 import Title from "../components/ui/Title";
 import Button from "../components/ui/Button";
 
-import type { FormEvent } from "react";
+import Modal from "../UI/Modal.tsx";
+import { Form, useActionData, useNavigate, useNavigation } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import type { RootState } from "../store/store.ts";
+import { closeModal, showModal } from "../store/modalSlice.ts";
+import { useEffect, useRef } from "react";
+
+export const action = async ({ request }: { request: Request }) => {
+  const formData = await request.formData();
+  const jsonData = Object.fromEntries(formData.entries());
+  try {
+    await axios.post(
+      import.meta.env.VITE_API_URL + "/send-mail",
+      JSON.stringify(jsonData),
+      {
+        headers: { "Content-Type": "application/json" },
+      },
+    );
+
+    return { success: true };
+  } catch (error) {
+    console.error("Error sending mail: ", error);
+    return null;
+  }
+};
 
 const ContactPage = () => {
-  const handleSendMail = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const form = event.target as HTMLFormElement;
-    const formData = new FormData(form);
-    const jsonData = Object.fromEntries(formData.entries());
-    try {
-      await axios.post(import.meta.env.VITE_API_URL + "/send-mail", jsonData);
-      form.reset();
-    } catch (error) {
-      // TODO
-      console.error("Error sending mail: ", error);
-      alert("Failed to send mail. Please try again later.");
+  const navigation = useNavigation();
+  const navigate = useNavigate();
+  const data = useActionData() as { success?: boolean };
+  const isModal = useSelector((state: RootState) => state.modal.isModal);
+  const dispatch = useDispatch();
+  const formRef = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (data?.success === true) {
+      dispatch(showModal());
+      formRef.current?.reset();
     }
-  };
+  }, [data, dispatch]);
 
   return (
     <>
@@ -28,9 +51,11 @@ const ContactPage = () => {
         Need to get in touch? Fill out the form below and
         press&ldquo;Send&ldquo; button
       </p>
-      <form
-        onSubmit={handleSendMail}
+      <Form
+        ref={formRef}
+        method="post"
         className="mx-3 sm:mx-0 p-8 sm:max-w-[500px] sm:w-full bg-bg-theme-2 rounded-xl ring"
+        replace
       >
         <div className="flex sm:flex-row flex-col items-center justify-between sm:gap-4">
           <div className="flex flex-col py-2 w-full text-sm">
@@ -63,9 +88,33 @@ const ContactPage = () => {
           />
         </div>
         <div className="flex justify-end pt-6 w-full">
-          <Button>Send</Button>
+          <Button>
+            {navigation.state === "submitting" ? "Sending" : "Send"}
+          </Button>
         </div>
-      </form>
+      </Form>
+      <Modal
+        open={isModal}
+        onClose={() => {
+          dispatch(closeModal());
+          navigate(".", { replace: true });
+        }}
+      >
+        {data?.success === true && <p>Message sent successfully!</p>}
+        {data?.success === false && <p>Error while sending mail.</p>}
+        <div className="opacity-60">
+          <p>Wiadomość kontaktowa została wysłana pomyślnie.</p>
+          <p>Spróbuję sie skontaktować z Tobą jak najszybciej!</p>
+        </div>
+        <Button
+          onClick={() => {
+            dispatch(closeModal());
+            navigate(".", { replace: true });
+          }}
+        >
+          Okay
+        </Button>
+      </Modal>
     </>
   );
 };
