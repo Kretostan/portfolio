@@ -1,6 +1,6 @@
 import Navigation from "./Navigation";
 import Logo from "./Logo.tsx";
-import ThemeSwitch from "../ui/ThemeSwitch";
+import ThemeSwitch from "../UI/ThemeSwitch";
 
 const Header = () => {
   return (
