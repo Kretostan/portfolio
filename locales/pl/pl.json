@@ -1,0 +1,35 @@
+{
+  "home": {
+    "title-1": "Cześć",
+    "title-2": "Nazywam się Jakub Kret",
+    "subtitle": "Pełnostackowy developer tworzący aplikacje ułatwiające życie.",
+    "aboutButton": "Dowiedz się więcej o mnie"
+  },
+  "about": {
+    "title": "O mnie",
+    "subtitle": "Poznaj mnie bliżej – kim jestem, co robię i co mnie napędza.",
+    "paragraphs": [
+      "Nazywam się Jakub Kret i jestem początkującym full stack web developerem z pasją do tworzenia nowoczesnych aplikacji internetowych.",
+      "Pracuję z technologiami takimi jak JavaScript, TypeScript, React, Next.js, Node.js i MongoDB.",
+      "Tworzę responsywne i szybkie strony oraz aplikacje webowe, dbając o wydajność, bezpieczeństwo i solidną architekturę.",
+      "Rozwijam projekty typu SPA, integruję REST API i pracuję z bazami NoSQL.",
+      "Chcę rozwijać się jako full stack developer – zarówno w roli freelancera, jak i w zespole tworzącym produkty cyfrowe rozwiązujące realne problemy.",
+      "Nieustannie uczę się nowych narzędzi, frameworków i dobrych praktyk, aby tworzyć profesjonalne i skalowalne rozwiązania.",
+      "Jeśli szukasz ambitnego developera JavaScript i TypeScript do współpracy – zapraszam do kontaktu!"
+    ]
+  },
+  "skills": {
+    "title": "Moje umiejętności",
+    "subtitle":
+    "Technologie i narzędzi, które wykorzystuję do realizacji projektów."
+  },
+  "projects": {
+    "title": "Moje projekty",
+    "subtitle": "Zobacz moje realizacje – kliknij projekt, aby poznać szczegóły.",
+    "noProjects": "Brak projektów do wyświetlenia w tej chwili."
+  },
+  "contact": {
+    "title": "Skontaktuj się ze mną",
+    "subtitle": "Masz pytanie lub pomysł na projekt? Wypełnij formularz i wyślij wiadomość."
+  }
+}
