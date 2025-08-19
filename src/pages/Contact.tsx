@@ -107,6 +107,7 @@ const ContactPage = () => {
               ? "/icons/check-mark.svg"
               : "/icons/error-mark.svg"
           }
+          alt={data?.success ? "Success" : "Fail"}
           width={38}
         />
         <div className="text-center text-sm opacity-60">
