@@ -7,7 +7,7 @@ import Updater from "../../components/Projects/Updater.tsx";
 import Title from "../../components/UI/Title.tsx";
 import Spinner from "../../components/UI/Spinner.tsx";
 
-import type { Project } from "../../types";
+import type { Project } from "../../@types";
 import type { RootState } from "../../store/store.ts";
 
 const ProjectUpdaterPage = () => {
