@@ -1,7 +1,8 @@
 export const translations = {
   en: {
     home: {
-      title: "Hello 👋 I’m Jakub Kret",
+      "title-1": "Hello",
+      "title-2": "I’m Jakub Kret",
       subtitle:
         "Full-stack developer passionate about building apps that make life easier.",
       aboutButton: "Learn more about me",
@@ -37,7 +38,8 @@ export const translations = {
 
   pl: {
     home: {
-      title: "Cześć 👋 Nazywam się Jakub Kret",
+      "title-1": "Cześć",
+      "title-2": "Nazywam się Jakub Kret",
       subtitle: "Pełnostackowy developer tworzący aplikacje ułatwiające życie.",
       aboutButton: "Dowiedz się więcej o mnie",
     },
