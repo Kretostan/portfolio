@@ -1,4 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router";
+import "./i18n.ts";
 
 import RootLayout from "./pages/Root.tsx";
 import ErrorPage from "./pages/Error.tsx";
