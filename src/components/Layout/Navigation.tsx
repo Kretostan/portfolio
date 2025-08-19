@@ -5,12 +5,14 @@ import axios from "axios";
 
 import type { RootState, AppDispatch } from "../../store/store";
 import { setShowMenu } from "../../store/menuSlice";
+import { useTranslation } from "react-i18next";
 
 const Navigation = () => {
   const dispatch: AppDispatch = useDispatch();
   const { resolvedTheme } = useTheme();
   const showMenu = useSelector((state: RootState) => state.menu.showMenu);
   const auth = useSelector((state: RootState) => state.auth);
+  const { t, i18n } = useTranslation();
 
   const handleLogout = async () => {
     await axios.post(
@@ -23,6 +25,8 @@ const Navigation = () => {
 
   return (
     <motion.nav className="flex gap-4">
+      <button onClick={() => i18n.changeLanguage("pl")}>PL</button>
+      <button onClick={() => i18n.changeLanguage("en")}>EN</button>
       {auth.token && (
         <motion.button
           className="flex justify-center items-center px-3 py-2 text-lg md:text-xl rounded-lg cursor-pointer"
