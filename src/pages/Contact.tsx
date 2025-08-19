@@ -101,10 +101,16 @@ const ContactPage = () => {
           navigate(".", { replace: true });
         }}
       >
-        {data?.success === true && <p>Message sent successfully!</p>}
-        {data?.success === false && <p>Error while sending mail.</p>}
-        <div className="opacity-60">
-          <p>Wiadomość kontaktowa została wysłana pomyślnie.</p>
+        <img
+          src={
+            data?.success === true
+              ? "/icons/check-mark.svg"
+              : "/icons/error-mark.svg"
+          }
+          width={38}
+        />
+        <div className="text-center text-sm opacity-60">
+          <p>Wiadomość została wysłana pomyślnie.</p>
           <p>Spróbuję sie skontaktować z Tobą jak najszybciej!</p>
         </div>
         <Button
