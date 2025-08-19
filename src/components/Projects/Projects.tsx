@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-import type { Project } from "../../types";
+import type { Project } from "../../@types";
 
 type ProjectsProps = {
   data: { projects: Project[] } | { message: string };

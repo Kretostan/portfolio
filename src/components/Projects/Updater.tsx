@@ -1,9 +1,9 @@
-import axios from "axios";
-
-import type { Project } from "../../types";
 import { type ChangeEvent, type FormEvent, useState } from "react";
-import Button from "../UI/Button.tsx";
+import axios from "axios";
 import { useNavigate } from "react-router";
+
+import type { Project } from "../../@types";
+import Button from "../UI/Button.tsx";
 
 const Updater = ({ project }: { project: Project }) => {
   const [formData, setFormData] = useState<Project>(project);
