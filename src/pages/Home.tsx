@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import Title from "../components/UI/Title";
 import { setCurrentPage, setShowMenu } from "../store/menuSlice.ts";
@@ -8,21 +9,24 @@ import { setCurrentPage, setShowMenu } from "../store/menuSlice.ts";
 const App = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   return (
     <div className="flex flex-col justify-around items-center gap-28 my-auto py-6 sm:py-16 h-full text-center">
       <Title>
-        <span className="flex gap-2">
-          Hello
-          <motion.span
-            initial={{ rotate: 0 }}
-            animate={{ rotate: [0, -12, 12, 0] }}
-            style={{ transformOrigin: "bottom" }}
-          >
-            👋
-          </motion.span>
-        </span>
-        I&apos;m Jakub Kret!
+        <div className="flex gap-1">
+          {t("home.title-1")}
+          <span className="flex gap-2">
+            <motion.span
+              initial={{ rotate: 0 }}
+              animate={{ rotate: [0, -12, 12, 0] }}
+              style={{ transformOrigin: "bottom" }}
+            >
+              👋
+            </motion.span>
+          </span>
+        </div>
+        {t("home.title-2")}
       </Title>
       <div className="flex flex-col justify-center items-center gap-6">
         <p className="flex flex-col md:flex-row gap-2 px-2 md:text-lg text-center">
