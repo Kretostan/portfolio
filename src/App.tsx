@@ -17,7 +17,6 @@ import LoginPage from "./pages/Login.tsx";
 import UpdaterPage, {
   loader as updaterLoader,
 } from "./pages/projects/Updater.tsx";
-import AdminPage from "./pages/Admin.tsx";
 
 const router = createBrowserRouter([
   {
@@ -44,7 +43,6 @@ const router = createBrowserRouter([
       },
       { path: "contact", element: <ContactPage />, action: contactAction },
       { path: "auth/login", element: <LoginPage /> },
-      { path: "auth/admin", element: <AdminPage /> },
     ],
   },
 ]);
