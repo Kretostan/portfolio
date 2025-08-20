@@ -4,7 +4,8 @@
     "title-2": "I’m Jakub Kret",
     "subtitle":
     "Full-stack developer passionate about building apps that make life easier.",
-    "aboutButton": "Learn more about me"
+    "buttonDesc": "Learn more about me",
+    "homeButton": "Begin"
   },
   "about": {
     "title": "About Me",
