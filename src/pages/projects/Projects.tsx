@@ -1,21 +1,14 @@
 import { Suspense } from "react";
-import { Await, Navigate, useLoaderData, useNavigate } from "react-router";
+import { Await, useLoaderData, useNavigate } from "react-router";
 
 import Projects from "../../components/Projects/Projects";
 import Title from "../../components/UI/Title";
 import Spinner from "../../components/UI/Spinner";
-import { useSelector } from "react-redux";
-import type { RootState } from "../../store/store.ts";
 import Button from "../../components/UI/Button.tsx";
 
 const ProjectsPage = () => {
   const { projects } = useLoaderData();
-  const auth = useSelector((state: RootState) => state.auth);
   const navigate = useNavigate();
-
-  if (!auth.token && auth.role !== "admin") {
-    return <Navigate to="/" replace />;
-  }
 
   return (
     <>
