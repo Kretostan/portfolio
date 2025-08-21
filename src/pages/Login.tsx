@@ -1,6 +1,7 @@
 import { type FormEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import axios, { type AxiosResponse } from "axios";
+import { useTranslation } from "react-i18next";
 
 import { login } from "../store/authSlice.ts";
 import Button from "../components/UI/Button.tsx";
@@ -15,6 +16,7 @@ type loginResponse = {
 const LoginPage = () => {
   const [error, setError] = useState<boolean>(false);
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   const handleLogin = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -39,27 +41,37 @@ const LoginPage = () => {
 
   return (
     <>
-      <Title>Login Page</Title>
-      <div className="flex flex-col justify-center items-center p-6 bg-bg-theme-2 rounded-lg ring-1">
-        <form onSubmit={handleLogin} className="flex flex-col gap-3 w-[250px]">
-          <div className="flex flex-col gap-4">
+      <Title>{t("login.title")}</Title>
+      <div className="flex flex-col items-center gap-10">
+        <p>{t("login.subtitle")}</p>
+        <form
+          onSubmit={handleLogin}
+          className="flex flex-col justify-center items-center gap-3 w-[300px] ring-1 bg-bg-theme-2 rounded-lg p-6"
+        >
+          <div className="flex flex-col gap-4 w-full">
             <div className="flex flex-col">
-              <label htmlFor="email">E-mail:</label>
-              <input type="email" name="email" placeholder="E-mail" />
+              <label htmlFor="email">{t("login.labelEmail")}:</label>
+              <input
+                type="email"
+                name="email"
+                placeholder={t("login.labelEmail")}
+              />
             </div>
             <div className="flex flex-col">
-              <label htmlFor="password">Password:</label>
-              <input type="password" name="password" placeholder="Password" />
+              <label htmlFor="password">{t("login.labelPassword")}:</label>
+              <input
+                type="password"
+                name="password"
+                placeholder={t("login.labelPassword")}
+              />
             </div>
           </div>
           <p
             className={`${error ? "visible" : "invisible"} text-[var(--error-color)] text-sm`}
           >
-            Email or password incorrect
+            {t("login.errorInvalid")}
           </p>
-          <div className="flex items-center justify-center pt-4">
-            <Button>Login</Button>
-          </div>
+          <Button className="flex w-full">{t("login.buttonLogin")}</Button>
         </form>
       </div>
     </>

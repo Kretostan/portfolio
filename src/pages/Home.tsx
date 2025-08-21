@@ -28,9 +28,10 @@ const App = () => {
         </div>
         {t("home.title-2")}
       </Title>
+      <p>{t("home.subtitle")}</p>
       <div className="flex flex-col justify-center items-center gap-6">
         <p className="flex flex-col md:flex-row gap-2 px-2 md:text-lg text-center">
-          Learn more about me
+          {t("home.buttonDesc")}
         </p>
         <motion.button
           aria-label="Go to About page"
@@ -42,7 +43,7 @@ const App = () => {
           }}
           whileHover={{ opacity: 0.75 }}
         >
-          Begin
+          {t("home.homeButton")}
         </motion.button>
       </div>
     </div>

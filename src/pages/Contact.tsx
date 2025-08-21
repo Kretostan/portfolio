@@ -9,6 +9,7 @@ import Modal from "../components/UI/Modal.tsx";
 
 import type { RootState } from "../store/store.ts";
 import { closeModal, showModal } from "../store/modalSlice.ts";
+import { useTranslation } from "react-i18next";
 
 export const action = async ({ request }: { request: Request }) => {
   const formData = await request.formData();
@@ -36,6 +37,7 @@ const ContactPage = () => {
   const isModal = useSelector((state: RootState) => state.modal.isModal);
   const dispatch = useDispatch();
   const formRef = useRef<HTMLFormElement>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (data?.success === true) {
@@ -46,10 +48,10 @@ const ContactPage = () => {
 
   return (
     <>
-      <Title>Get In Touch</Title>
+      <Title>{t("contact.title")}</Title>
       <div className="flex flex-col items-center">
-        <p>Have a question or a project in mind?</p>
-        <p>Fill out the form and hit “Send”.</p>
+        <p>{t("contact.subtitle-1")}</p>
+        <p>{t("contact.subtitle-2")}</p>
       </div>
       <Form
         ref={formRef}
@@ -60,9 +62,14 @@ const ContactPage = () => {
         <div className="flex sm:flex-row flex-col items-center justify-between sm:gap-4">
           <div className="flex flex-col py-2 w-full text-sm">
             <label id="name" htmlFor="name">
-              Full Name:
+              {t("contact.labelName")}:
             </label>
-            <input type="text" name="name" placeholder="Full Name" required />
+            <input
+              type="text"
+              name="name"
+              placeholder={t("contact.labelName")}
+              required
+            />
           </div>
           <div className="flex flex-col py-2 w-full text-sm">
             <label id="email" htmlFor="email">
@@ -73,24 +80,31 @@ const ContactPage = () => {
         </div>
         <div className="flex flex-col py-2 text-sm">
           <label id="subject" htmlFor="subject">
-            Subject:
+            {t("contact.labelSubject")}:
           </label>
-          <input type="text" name="subject" placeholder="Subject" required />
+          <input
+            type="text"
+            name="subject"
+            placeholder={t("contact.labelSubject")}
+            required
+          />
         </div>
         <div className="flex flex-col py-2 text-sm">
           <label id="message" htmlFor="message">
-            Message:
+            {t("contact.labelMessage")}:
           </label>
           <textarea
             name="message"
             className="min-h-[35px] max-h-[150px]"
-            placeholder="Put your message"
+            placeholder={t("contact.messagePlaceholder")}
             required
           />
         </div>
         <div className="flex justify-end pt-6 w-full">
           <Button>
-            {navigation.state === "submitting" ? "Sending" : "Send"}
+            {navigation.state === "submitting"
+              ? "Sending"
+              : t("contact.button")}
           </Button>
         </div>
       </Form>
@@ -111,8 +125,8 @@ const ContactPage = () => {
           width={38}
         />
         <div className="text-center text-sm opacity-60">
-          <p>Wiadomość została wysłana pomyślnie.</p>
-          <p>Spróbuję sie skontaktować z Tobą jak najszybciej!</p>
+          <p>{t("contact.modalMessage-1")}</p>
+          <p>{t("contact.modalMessage-2")}</p>
         </div>
         <Button
           onClick={() => {

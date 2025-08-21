@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 import type { Project } from "../../@types";
+import { useTranslation } from "react-i18next";
 
 type ProjectsProps = {
   data: { projects: Project[] } | { message: string };
@@ -9,6 +10,7 @@ type ProjectsProps = {
 
 const Projects = ({ data }: ProjectsProps) => {
   const [isHovered, setIsHovered] = useState<string | null>(null);
+  const { t } = useTranslation();
 
   return (
     <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 px-6 py-6 sm:py-8 mx-2 bg-bg-theme-2 rounded-xl">
@@ -21,7 +23,7 @@ const Projects = ({ data }: ProjectsProps) => {
             <img
               src={project.image}
               alt={`${project.title} home page`}
-              className="flex items-center h-full"
+              className="flex h-full"
             />
             <div className="flex flex-col justify-center items-center gap-8 py-8 h-1/2">
               <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold">
@@ -50,7 +52,7 @@ const Projects = ({ data }: ProjectsProps) => {
             </div>
           </div>
         ))}
-      {"message" in data && <p>{data.message}</p>}
+      {"message" in data && t("projects.noProjects")}
     </div>
   );
 };

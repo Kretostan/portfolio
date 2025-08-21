@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import type { JSX } from "react";
 
@@ -9,7 +10,9 @@ import AboutButton from "./AboutButton";
 
 const AboutText = () => {
   const isMobile: boolean = useIsMobile();
+  // TODO: Current text based on paragraphs in translation text
   const [currentText, setCurrentText] = useState<number>(0);
+  const { t } = useTranslation();
 
   const changeTextHandler = (next: boolean): void => {
     setCurrentText((prevState): number =>
@@ -49,7 +52,7 @@ const AboutText = () => {
             }
           }}
         >
-          {aboutTextsPolish[currentText]}
+          {t(`about.paragraphs.${currentText}`)}
         </motion.p>
         {isMobile
           ? null

@@ -2,10 +2,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 
 import type { RootState, AppDispatch } from "../../store/store";
 import { setShowMenu } from "../../store/menuSlice";
-import { useTranslation } from "react-i18next";
 
 const Navigation = () => {
   const dispatch: AppDispatch = useDispatch();
@@ -25,8 +25,15 @@ const Navigation = () => {
 
   return (
     <motion.nav className="flex gap-4">
-      <button onClick={() => i18n.changeLanguage("pl")}>PL</button>
-      <button onClick={() => i18n.changeLanguage("en")}>EN</button>
+      {i18n.languages.map((lng) => {
+        if (lng !== i18n.resolvedLanguage) {
+          return (
+            <button onClick={() => i18n.changeLanguage(lng)} key={lng}>
+              {lng.toUpperCase()}
+            </button>
+          );
+        }
+      })}
       {auth.token && (
         <motion.button
           className="flex justify-center items-center px-3 py-2 text-lg md:text-xl rounded-lg cursor-pointer"
@@ -51,7 +58,7 @@ const Navigation = () => {
         transition={{ type: "tween", duration: 0.4 }}
         key={resolvedTheme}
       >
-        {!showMenu ? "Menu" : "Close"}
+        {!showMenu ? "Menu" : t("menu.button")}
       </motion.button>
     </motion.nav>
   );
