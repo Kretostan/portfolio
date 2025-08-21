@@ -48,5 +48,19 @@
     "messagePlaceholder": "Put your message",
     "modalMessage-1": "The message was sent successfully.",
     "modalMessage-2": "I will try to contact you as soon as possible!"
+  },
+  "login": {
+    "title": "Login",
+    "subtitle": "Access your account to continue.",
+    "labelEmail": "E-mail",
+    "labelPassword": "Password",
+    "buttonLogin": "Sign In",
+    "buttonLogout": "Log Out",
+    "errorInvalid": "Invalid email or password.",
+    "successLogin": "You have successfully logged in.",
+    "successLogout": "You have successfully logged out.",
+    "forgotPassword": "Forgot your password?",
+    "noAccount": "Don’t have an account?",
+    "registerLink": "Create one"
   }
 }

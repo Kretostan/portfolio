@@ -48,5 +48,19 @@
     "messagePlaceholder": "Wpisz swoją wiadomość",
     "modalMessage-1": "Wiadomość została wysłana pomyślnie.",
     "modalMessage-2": "Spróbuję sie skontaktować z Tobą jak najszybciej!"
+  },
+  "login": {
+    "title": "Logowanie",
+    "subtitle": "Zaloguj się, aby kontynuować.",
+    "labelEmail": "E-mail",
+    "labelPassword": "Hasło",
+    "buttonLogin": "Zaloguj się",
+    "buttonLogout": "Wyloguj się",
+    "errorInvalid": "Nieprawidłowy e-mail lub hasło.",
+    "successLogin": "Zalogowano pomyślnie.",
+    "successLogout": "Wylogowano pomyślnie.",
+    "forgotPassword": "Zapomniałeś hasła?",
+    "noAccount": "Nie masz konta?",
+    "registerLink": "Utwórz konto"
   }
 }
