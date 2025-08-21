@@ -2,10 +2,17 @@
   "home": {
     "title-1": "Hello",
     "title-2": "I’m Jakub Kret",
-    "subtitle":
-    "Full-stack developer passionate about building apps that make life easier.",
+    "subtitle": "Full-stack developer passionate about building apps that make life easier.",
     "buttonDesc": "Learn more about me",
     "homeButton": "Begin"
+  },
+  "menu": {
+    "first": "Home",
+    "second": "About",
+    "third": "Skills",
+    "fourth": "Projects",
+    "fifth": "Contact",
+    "button": "Close"
   },
   "about": {
     "title": "About Me",
@@ -18,7 +25,8 @@
       "My goal is to grow as a full-stack developer — both as a freelancer and as part of a team creating digital products that solve real-world problems.",
       "I constantly learn new tools, frameworks, and best practices to deliver professional and scalable solutions.",
       "If you’re looking for an ambitious JavaScript and TypeScript developer to collaborate with — feel free to get in touch!"
-    ]
+    ],
+    "mobileSwipeHint": "Swipe sideways to see more"
   },
   "skills": {
     "title": "My Skills",
@@ -31,7 +39,14 @@
   },
   "contact": {
     "title": "Get In Touch",
-    "subtitle":
-    "Have a question or a project in mind? Fill out the form and hit “Send”."
+    "subtitle-1": "Have a question or a project in mind?",
+    "subtitle-2": "Fill out the form and send message.",
+    "button": "Send",
+    "labelName": "Full Name",
+    "labelSubject": "Subject",
+    "labelMessage": "Message",
+    "messagePlaceholder": "Put your message",
+    "modalMessage-1": "The message was sent successfully.",
+    "modalMessage-2": "I will try to contact you as soon as possible!"
   }
 }

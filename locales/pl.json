@@ -2,8 +2,17 @@
   "home": {
     "title-1": "Cześć",
     "title-2": "Nazywam się Jakub Kret",
-    "subtitle": "Pełnostackowy developer tworzący aplikacje ułatwiające życie.",
-    "aboutButton": "Dowiedz się więcej o mnie"
+    "subtitle": "Full-stack developer tworzący aplikacje ułatwiające życie.",
+    "buttonDesc": "Dowiedz się więcej o mnie",
+    "homeButton": "Start"
+  },
+  "menu": {
+    "first": "Start",
+    "second": "O mnie",
+    "third": "Technologie",
+    "fourth": "Projekty",
+    "fifth": "Kontakt",
+    "button": "Zamknij"
   },
   "about": {
     "title": "O mnie",
@@ -16,12 +25,12 @@
       "Chcę rozwijać się jako full stack developer – zarówno w roli freelancera, jak i w zespole tworzącym produkty cyfrowe rozwiązujące realne problemy.",
       "Nieustannie uczę się nowych narzędzi, frameworków i dobrych praktyk, aby tworzyć profesjonalne i skalowalne rozwiązania.",
       "Jeśli szukasz ambitnego developera JavaScript i TypeScript do współpracy – zapraszam do kontaktu!"
-    ]
+    ],
+    "mobileSwipeHint": "Przesuń w bok, aby zobaczyć więcej"
   },
   "skills": {
     "title": "Moje umiejętności",
-    "subtitle":
-    "Technologie i narzędzi, które wykorzystuję do realizacji projektów."
+    "subtitle": "Technologie i narzędzia, które wykorzystuję do realizacji projektów."
   },
   "projects": {
     "title": "Moje projekty",
@@ -30,6 +39,14 @@
   },
   "contact": {
     "title": "Skontaktuj się ze mną",
-    "subtitle": "Masz pytanie lub pomysł na projekt? Wypełnij formularz i wyślij wiadomość."
+    "subtitle-1": "Masz pytanie lub pomysł na projekt?",
+    "subtitle-2": "Wypełnij formularz i wyślij wiadomość.",
+    "button": "Wyślij",
+    "labelName": "Imię i nazwisko",
+    "labelSubject": "Temat",
+    "labelMessage": "Wiadomość",
+    "messagePlaceholder": "Wpisz swoją wiadomość",
+    "modalMessage-1": "Wiadomość została wysłana pomyślnie.",
+    "modalMessage-2": "Spróbuję sie skontaktować z Tobą jak najszybciej!"
   }
 }
