@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 
 import Title from "../components/UI/Title";
 import AboutText from "../components/About/AboutText";
+import AboutImage from "../components/About/AboutImage.tsx";
 
 const AboutPage = () => {
   const { t } = useTranslation();
@@ -9,17 +10,11 @@ const AboutPage = () => {
   return (
     <>
       <Title>{t("about.title")}</Title>
-      <div className="flex flex-col justify-center items-center">
-        <p>{t("about.subtitle")}</p>
-        <div className="flex flex-col lg:flex-row justify-center items-center h-full rounded-xl">
+      <div className="flex flex-col justify-center items-center gap-6 sm:gap-4 py-8 sm:py-16">
+        <p className="w-[250px] text-center">{t("about.subtitle")}</p>
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-14 sm:gap-20 py-10 w-full rounded-xl">
           <AboutText />
-          <div className="relative h-full w-1/4">
-            <img
-              src="https://kretostan-portfolio.s3.eu-north-1.amazonaws.com/about.png"
-              alt="Kretostan's photo"
-              className="object-cover"
-            />
-          </div>
+          <AboutImage />
         </div>
       </div>
     </>

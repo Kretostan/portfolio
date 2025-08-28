@@ -1,70 +1,67 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, type PanInfo } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
-import type { JSX } from "react";
-
-import { aboutTextsPolish } from "../../data/about";
 import useIsMobile from "../../hooks/useIsMobile";
 import AboutButton from "./AboutButton";
 
 const AboutText = () => {
-  const isMobile: boolean = useIsMobile();
-  // TODO: Current text based on paragraphs in translation text
+  const isMobile = useIsMobile();
   const [currentText, setCurrentText] = useState<number>(0);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
-  const changeTextHandler = (next: boolean): void => {
-    setCurrentText((prevState): number =>
-      next ? prevState + 1 : prevState - 1,
-    );
+  const aboutLength: number = i18n.getResource(
+    "en",
+    "ns1",
+    "about.paragraphs.length",
+  );
+  const isNext = currentText >= 0 && currentText < aboutLength - 1;
+  const isPrev = currentText > 0 && currentText <= aboutLength - 1;
+
+  const changeTextHandler = (next: boolean) => {
+    setCurrentText((prevState) => (next ? prevState + 1 : prevState - 1));
   };
 
-  const isNext: boolean =
-    currentText >= 0 && currentText < aboutTextsPolish.length - 1;
-  const isPrevious: boolean =
-    currentText > 0 && currentText <= aboutTextsPolish.length - 1;
+  const changeTextMobileHandler = (info: PanInfo) => {
+    if (!isMobile) return;
+    if (info.offset.x < -75 && isNext) {
+      changeTextHandler(true);
+    }
+    if (info.offset.x > 75 && isPrev) {
+      changeTextHandler(false);
+    }
+  };
 
   return (
-    <div className="flex flex-col justify-between items-center mx-4 sm:mx-0 py-3 w-1/2 text-center">
-      {/* TODO: Zrobić animacje pojawiania się kolejnych tekstów */}
-      <div className="flex items-center">
-        {isMobile
-          ? null
-          : ((
-              <AboutButton
-                previous
-                onPress={() => changeTextHandler(false)}
-                next={isPrevious}
-              />
-            ) as JSX.Element)}
-        <motion.p
-          className="flex items-center px-4 py-8 w-2/3 bg-bg-theme-2 rounded-[10px]"
+    <div className="flex flex-col justify-between items-center max-w-[700px] text-center">
+      <div className="flex items-center justify-center gap-2">
+        {!isMobile && (
+          <AboutButton
+            previous
+            onPress={() => changeTextHandler(false)}
+            next={isPrev}
+          />
+        )}
+        <motion.div
           drag={isMobile ? "x" : false}
           dragConstraints={isMobile ? { left: 0, right: 0 } : undefined}
-          onDragEnd={(_event, info): void => {
-            if (!isMobile) return;
-            if (info.offset.x < 0 && isNext) {
-              changeTextHandler(true);
-            }
-            if (info.offset.x > 0 && isPrevious) {
-              changeTextHandler(false);
-            }
-          }}
+          onDragEnd={(_event, info) => changeTextMobileHandler(info)}
+          className="flex items-center px-6 py-10 mx-10 sm:mx-0 h-[220px] sm:h-[180px] w-full max-w-[350px] bg-bg-theme-2 rounded-2xl border-1"
         >
-          {t(`about.paragraphs.${currentText}`)}
-        </motion.p>
-        {isMobile
-          ? null
-          : ((
-              <AboutButton
-                onPress={() => changeTextHandler(true)}
-                next={isNext}
-              />
-            ) as JSX.Element)}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            key={currentText}
+          >
+            {t(`about.paragraphs.${currentText}`)}
+          </motion.p>
+        </motion.div>
+        {!isMobile && (
+          <AboutButton onPress={() => changeTextHandler(true)} next={isNext} />
+        )}
       </div>
       <motion.p
-        className={`${!isMobile && "hidden"} text-xs text-accent-theme-1`}
+        className={`${!isMobile && "hidden"} py-3 text-xs text-accent-theme-1`}
         initial={{
           color: "var(--accent-color-1)",
           visibility: "visible",
@@ -82,7 +79,7 @@ const AboutText = () => {
         }}
         key={currentText}
       >
-        Przesuń w bok, aby zobaczyć więcej
+        {t("about.mobileSwipeHint")}
       </motion.p>
     </div>
   );
