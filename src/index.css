@@ -88,6 +88,10 @@ body {
   clip-path: inset(0 10% 0 10%);
 }
 
+.about-image {
+  filter: drop-shadow(0 0 5px var(--accent-color-2));
+}
+
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 100px var(--opposite-foreground-2) inset !important;
   -webkit-text-fill-color: var(--foreground-1) !important;
