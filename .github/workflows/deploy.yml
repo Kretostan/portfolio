@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DEPLOY_PATH: ${{ github.ref == 'refs/heads/main' && 'var/www/production-kretostan-portfolio' || 'var/www/staging-kretostan-portfolio' }}
+      DEPLOY_PATH: ${{ github.ref == 'refs/heads/main' && '/var/www/production-kretostan-portfolio' || '/var/www/staging-kretostan-portfolio' }}
 
     steps:
       - name: Checkout repository
@@ -49,11 +49,11 @@ jobs:
             if [ "${GITHUB_REF##*/}" = "main" ]; then
               echo "Deploying to production..."
               cd /var/www/production-kretostan-portfolio
-              tar -xcf frontend.tar.gz
+              tar -xzf frontend.tar.gz
               rm frontend.tar.gz
             else 
               echo "Deploying to staging..."
               cd /var/www/staging-kretostan-portfolio
-              tar -xcf frontend.tar.gz
+              tar -xzf frontend.tar.gz
               rm frontend.tar.gz
             fi
