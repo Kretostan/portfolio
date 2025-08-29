@@ -33,14 +33,16 @@ const router = createBrowserRouter([
         path: "projects/:projectSlug",
         element: <ProjectPage />,
         // TODO
-        loader: ({ params }) => projectLoader({ params }),
+        loader: ({ params }) =>
+          projectLoader({ params: params as { projectSlug: string } }),
       },
       { path: "projects/add", element: <CreatorPage /> },
       {
         path: "projects/update/:projectSlug",
         element: <UpdaterPage />,
         // TODO
-        loader: ({ params }) => updaterLoader({ params }),
+        loader: ({ params }) =>
+          updaterLoader({ params: params as { projectSlug: string } }),
       },
       { path: "contact", element: <ContactPage />, action: contactAction },
       { path: "auth/login", element: <LoginPage /> },
