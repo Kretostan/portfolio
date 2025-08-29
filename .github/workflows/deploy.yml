@@ -1,0 +1,56 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        run: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Prepare folder for deploy
+        run: cp -r dist frontend
+
+      - name: Archive dist
+        run: tar -czf frontend.tar.gz frontend
+
+      - name: Copy files to VPS
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.PORT }}
+          source: "frontend.tar.gz"
+          target: ${{ github.ref == 'refs/heads/main' && 'var/www/production-kretostan-portfolio' || 'var/www/staging-kretostan-portfolio'  }}
+
+      - name: Deploy on VPS
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            if [ "${GITHUB_REF=##*/}" = "main" ]; then
+              echo "Deploying to production..."
+              cd /var/www/production-kretostan-portfolio
+              tar -xcf frontend.tar.gz
+              rm frontend.tar.gz
+            else 
+              echo "Deploying to staging..."
+              cd /var/www/staging-kretostan-portfolio
+              tar -xcf frontend.tar.gz
+              rm frontend.tar.gz
+            fi
