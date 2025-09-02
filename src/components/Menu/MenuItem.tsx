@@ -6,7 +6,13 @@ import { motion } from "framer-motion";
 import type { RootState } from "../../store/store";
 import { setCurrentPage, setShowMenu } from "../../store/menuSlice";
 
-export const MenuItem = ({ children }: { children: string }) => {
+export const MenuItem = ({
+  children,
+  path,
+}: {
+  children: string;
+  path: string;
+}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const currentPage = useSelector((state: RootState) => state.menu.currentPage);
@@ -37,7 +43,7 @@ export const MenuItem = ({ children }: { children: string }) => {
       transition={{ type: "tween" }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={() => setCurrentPageHandler(children)}
+      onClick={() => setCurrentPageHandler(path)}
       className={`relative flex justify-center items-center py-3 sm:py-5 text-lg md:text-xl`}
     >
       {children}
