@@ -26,7 +26,8 @@ const Navigation = () => {
   return (
     <motion.nav className="flex gap-4">
       {i18n.languages.map((lng) => {
-        if (lng !== i18n.resolvedLanguage) {
+        const shortLng = lng.split("-")[0];
+        if (shortLng !== i18n.resolvedLanguage) {
           return (
             <button onClick={() => i18n.changeLanguage(lng)} key={lng}>
               {lng.toUpperCase()}
