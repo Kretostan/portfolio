@@ -11,7 +11,7 @@ const CreatorPage = () => {
   const navigate = useNavigate();
   const auth = useSelector((state: RootState) => state.auth);
 
-  if (!auth.token && auth.role !== "admin") {
+  if (!auth.isLoggedIn && auth.role !== "admin") {
     return <Navigate to="/" replace />;
   }
 

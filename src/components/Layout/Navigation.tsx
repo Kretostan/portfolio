@@ -35,7 +35,7 @@ const Navigation = () => {
           );
         }
       })}
-      {auth.token && (
+      {auth.isLoggedIn && (
         <motion.button
           className="flex justify-center items-center px-3 py-2 text-lg md:text-xl rounded-lg cursor-pointer"
           onClick={handleLogout}

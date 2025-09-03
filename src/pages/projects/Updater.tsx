@@ -15,7 +15,7 @@ const ProjectUpdaterPage = () => {
   const navigate = useNavigate();
   const { project } = useLoaderData<{ project: Project }>();
 
-  if (!auth.token && auth.role !== "admin") {
+  if (!auth.isLoggedIn && auth.role !== "admin") {
     return <Navigate to="/" replace />;
   }
 
