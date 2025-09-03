@@ -17,7 +17,7 @@ const Projects = ({ data }: ProjectsProps) => {
       {"projects" in data &&
         data.projects.map((project) => (
           <div
-            className="flex flex-col justify-between items-center h-[280px] w-[275px] border-1 border-accent-theme-1 rounded overflow-hidden"
+            className="flex flex-col justify-between items-center h-[280px] w-[275px] border-2 border-accent-theme-1 rounded-lg overflow-hidden"
             key={project.title}
           >
             <img
@@ -29,10 +29,12 @@ const Projects = ({ data }: ProjectsProps) => {
               <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold">
                 {project.title}
               </h2>
-              <div
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring" }}
                 onMouseEnter={() => setIsHovered(project.slug)}
                 onMouseLeave={() => setIsHovered(null)}
-                className="flex flex-col justify-center items-center cursor-pointer"
+                className="flex flex-col justify-center items-center gap-0.5 cursor-pointer"
               >
                 <a
                   className="flex items-center"
@@ -45,10 +47,10 @@ const Projects = ({ data }: ProjectsProps) => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: isHovered === project.slug ? 1 : 0 }}
                   transition={{ type: "tween", duration: 0.3 }}
-                  className="h-0.5 w-full bg-accent-theme-1 opacity-0"
+                  className="h-0.5 w-full bg-accent-theme-1 opacity-0 rounded-xl"
                   key={project.slug}
                 />
-              </div>
+              </motion.div>
             </div>
           </div>
         ))}
