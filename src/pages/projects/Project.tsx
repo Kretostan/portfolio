@@ -17,7 +17,7 @@ const ProjectPage = () => {
   return (
     <div className="flex flex-col gap-12">
       <Title>Project Page</Title>
-      <div className="flex flex-col gap-3 px-4 w-full">
+      <div className="flex flex-col gap-3 px-4">
         <div className="flex justify-between px-4">
           <button
             onClick={() => navigate("/projects")}
