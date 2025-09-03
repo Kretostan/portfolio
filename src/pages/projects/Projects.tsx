@@ -21,8 +21,10 @@ const ProjectsPage = () => {
       <Title>{t("projects.title")}</Title>
       <p className="text-center">{t("projects.subtitle")}</p>
       <div className="flex flex-col justify-center items-center gap-6">
-        {auth.token && auth.role === "admin" && (
-          <Button onClick={() => navigate("/projects/add")}>Add</Button>
+        {auth.isLoggedIn && auth.role === "admin" && (
+          <Button onClick={() => navigate("/projects/add")} key={auth.role}>
+            Add
+          </Button>
         )}
         <Suspense fallback={<Spinner />}>
           <Await resolve={projects}>

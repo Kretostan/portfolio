@@ -2,6 +2,7 @@ import { type FormEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import axios, { type AxiosResponse } from "axios";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 
 import { login } from "../store/authSlice.ts";
 import Button from "../components/UI/Button.tsx";
@@ -16,6 +17,7 @@ type loginResponse = {
 const LoginPage = () => {
   const [error, setError] = useState<boolean>(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   const handleLogin = async (event: FormEvent<HTMLFormElement>) => {
@@ -33,8 +35,8 @@ const LoginPage = () => {
     );
 
     if (response.data.success) {
-      dispatch(login({ token: response.data.token, role: response.data.role }));
-      return (window.location.href = "/");
+      dispatch(login({ isLoggedIn: true, role: response.data.role }));
+      return navigate("/");
     }
     setError(true);
   };
