@@ -17,7 +17,7 @@ const Projects = ({ data }: ProjectsProps) => {
       {"projects" in data &&
         data.projects.map((project) => (
           <div
-            className="flex flex-col justify-between items-center h-[280px] w-[275px] border-2 border-accent-theme-1 rounded-lg overflow-hidden"
+            className="flex flex-col justify-between items-center h-[280px] max-w-[275px] border-2 border-accent-theme-1 rounded-lg overflow-hidden"
             key={project.title}
           >
             <img
@@ -26,7 +26,7 @@ const Projects = ({ data }: ProjectsProps) => {
               className="flex h-full"
             />
             <div className="flex flex-col justify-center items-center gap-8 py-8 h-1/2">
-              <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold">
+              <h2 className="text-xl lg:text-2xl font-semibold">
                 {project.title}
               </h2>
               <motion.div
