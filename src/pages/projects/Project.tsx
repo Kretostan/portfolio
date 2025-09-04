@@ -16,9 +16,9 @@ const ProjectPage = () => {
   const auth = useSelector((state: RootState) => state.auth);
 
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col gap-6">
       <Title>{project.title}</Title>
-      <div className="flex flex-col gap-3 px-4">
+      <div className="flex flex-col gap-2">
         <div className="flex justify-between px-4 py-2">
           <BackButton />
           {auth.isLoggedIn && auth.role === "admin" && (
