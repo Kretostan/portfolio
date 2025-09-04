@@ -1,22 +1,24 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import type { Project } from "../../@types";
+import CardSlider from "./CardSlider.tsx";
 
 const ProjectContent = ({ project }: { project: Project }) => {
   const [isHovered, setIsHovered] = useState<string | null>(null);
 
   return (
-    <div className="flex flex-col bg-bg-theme-2 rounded-xl">
+    <div className="flex flex-col bg-bg-theme-2 rounded-3xl border-2 border-accent-theme-2">
+      <h2 className="flex justify-center py-6 text-xl sm:text-2xl lg:text-3xl font-semibold">
+        {project.title}
+      </h2>
       <img
         src={project.image}
         alt={`${project.title} home page`}
-        className="rounded-lg m-4 project-image max-w-[750px]"
+        className="max-w-[750px]"
       />
       <div className="flex flex-col justify-center items-center gap-10 py-8">
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold">
-          {project.title}
-        </h2>
-        <p>{project.description}</p>
+        {/*TODO: To card slider pass project.description*/}
+        <CardSlider />
         <div className="flex w-full justify-around">
           <motion.div
             whileHover={{ scale: 1.1 }}
@@ -26,8 +28,8 @@ const ProjectContent = ({ project }: { project: Project }) => {
             className="flex flex-col justify-center items-center gap-0.5 cursor-pointer"
           >
             <a
-              className="flex items-center"
-              href={`/projects/${project.url}`}
+              className="flex items-center font-semibold text-lg"
+              href={project.url}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -49,8 +51,8 @@ const ProjectContent = ({ project }: { project: Project }) => {
             className="flex flex-col justify-center items-center gap-0.5 cursor-pointer"
           >
             <a
-              className="flex items-center"
-              href={`/projects/${project.github}`}
+              className="flex items-center font-semibold text-lg"
+              href={project.github}
               target="_blank"
               rel="noopener noreferrer"
             >
