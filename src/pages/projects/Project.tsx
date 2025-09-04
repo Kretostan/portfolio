@@ -18,14 +18,14 @@ const ProjectPage = () => {
     <div className="flex flex-col gap-12">
       <Title>Project Page</Title>
       <div className="flex flex-col gap-3 px-4">
-        <div className="flex justify-between px-4">
+        <div className="flex justify-between px-4 py-2">
           <button
             onClick={() => navigate("/projects")}
-            className="cursor-pointer px-2 py-1 border-1 rounded"
+            className="cursor-pointer px-3 py-1 border-1 rounded"
           >
-            ⬅ Back
+            Go Back
           </button>
-          {auth.role === "admin" && (
+          {auth.isLoggedIn && auth.role === "admin" && (
             <div className="flex gap-6">
               <button
                 className="bg-accent-theme-1 text-bg-theme-2 px-4 py-2 rounded cursor-pointer"
