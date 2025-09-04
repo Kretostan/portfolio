@@ -17,7 +17,7 @@ const ProjectPage = () => {
 
   return (
     <div className="flex flex-col gap-12">
-      <Title>Project Page</Title>
+      <Title>{project.title}</Title>
       <div className="flex flex-col gap-3 px-4">
         <div className="flex justify-between px-4 py-2">
           <BackButton />

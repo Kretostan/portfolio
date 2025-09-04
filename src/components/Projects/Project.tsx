@@ -7,10 +7,7 @@ const ProjectContent = ({ project }: { project: Project }) => {
   const [isHovered, setIsHovered] = useState<string | null>(null);
 
   return (
-    <div className="flex flex-col bg-bg-theme-2 rounded-3xl border-2 border-accent-theme-2">
-      <h2 className="flex justify-center py-6 text-xl sm:text-2xl lg:text-3xl font-semibold">
-        {project.title}
-      </h2>
+    <div className="flex flex-col bg-bg-theme-2 rounded-3xl border-2 border-accent-theme-2 overflow-hidden">
       <img
         src={project.image}
         alt={`${project.title} home page`}
