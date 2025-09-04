@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import type { RootState } from "../../store/store.ts";
 
 import ProjectContent from "../../components/Projects/Project";
+import BackButton from "../../components/Projects/BackButton.tsx";
 import Title from "../../components/UI/Title";
 import Spinner from "../../components/UI/Spinner";
 
@@ -19,12 +20,7 @@ const ProjectPage = () => {
       <Title>Project Page</Title>
       <div className="flex flex-col gap-3 px-4">
         <div className="flex justify-between px-4 py-2">
-          <button
-            onClick={() => navigate("/projects")}
-            className="cursor-pointer px-3 py-1 border-1 rounded"
-          >
-            Go Back
-          </button>
+          <BackButton />
           {auth.isLoggedIn && auth.role === "admin" && (
             <div className="flex gap-6">
               <button
