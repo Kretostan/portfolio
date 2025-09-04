@@ -86,7 +86,7 @@ const CardSlider = () => {
               className={`absolute top-0 left-0 flex flex-col gap-6 px-4 py-4 min-h-[375px] w-80 rounded-2xl border-1 shadow-2xl bg-bg-content`}
               style={{ zIndex: cards.length - index }}
             >
-              <h3 className="pb-3 text-lg sm:text-1xl lg:text-2xl text-center font-semibold border-b-1 border-accent-theme-2">
+              <h3 className="pb-3 text-lg sm:text-1xl lg:text-2xl text-center font-semibold border-b-2 border-accent-theme-2">
                 {card.title}
               </h3>
               {card.id === 1 ? (
@@ -102,12 +102,13 @@ const CardSlider = () => {
           ))}
         </AnimatePresence>
       </div>
-      <button
+      <motion.button
         onClick={nextCard}
-        className="px-8 py-2 bg-accent-theme-2 rounded-xl shadow hover:bg-accent-theme-1 transition cursor-pointer"
+        whileHover={{ backgroundColor: "var(--accent-color-1)" }}
+        className="px-8 py-2 bg-accent-theme-2 rounded-xl shadow text-white cursor-pointer"
       >
         Next
-      </button>
+      </motion.button>
     </div>
   );
 };
