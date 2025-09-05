@@ -14,8 +14,7 @@ const ProjectContent = ({ project }: { project: Project }) => {
         className="max-w-[750px]"
       />
       <div className="flex flex-col justify-center items-center gap-10 py-8">
-        {/*TODO: To card slider pass project.description*/}
-        <CardSlider />
+        <CardSlider description={project.description} />
         <div className="flex w-full justify-around">
           <motion.div
             whileHover={{ scale: 1.1 }}
