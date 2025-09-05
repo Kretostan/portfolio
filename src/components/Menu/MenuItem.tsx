@@ -44,7 +44,7 @@ export const MenuItem = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => setCurrentPageHandler(path)}
-      className={`relative flex justify-center items-center py-3 sm:py-5 text-lg md:text-xl`}
+      className={`relative flex justify-center items-center py-3 sm:py-5 text-lg md:text-xl cursor-pointer`}
     >
       {children}
       <motion.span
@@ -57,7 +57,7 @@ export const MenuItem = ({
           left: isHovered || activePageStyle ? "0" : "50%",
         }}
         transition={{ type: "tween", duration: 0.3 }}
-        className={`absolute bottom-0 h-0.5 bg-accent-theme-2 cursor-pointer ${activePageStyle}`}
+        className={`absolute bottom-0 h-0.5 bg-accent-theme-2 ${activePageStyle}`}
       />
     </motion.li>
   );
