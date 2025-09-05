@@ -73,7 +73,9 @@ const LoginPage = () => {
           >
             {t("login.errorInvalid")}
           </p>
-          <Button className="flex w-full">{t("login.buttonLogin")}</Button>
+          <Button className="flex w-full justify-center">
+            {t("login.buttonLogin")}
+          </Button>
         </form>
       </div>
     </>
