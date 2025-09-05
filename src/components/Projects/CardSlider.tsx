@@ -80,7 +80,11 @@ const CardSlider = () => {
             <motion.div
               key={card.id}
               initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: index * 175, scale: 1 - index * 0.1 }}
+              animate={{
+                opacity: index === 0 ? 1 : 0.65,
+                x: index * 175,
+                scale: 1 - index * 0.1,
+              }}
               exit={{ opacity: 0, x: -100, scale: 0.9 }}
               transition={{ duration: 0.3 }}
               className={`absolute top-0 left-0 flex flex-col gap-6 px-4 py-4 min-h-[375px] w-80 rounded-2xl border-1 shadow-2xl bg-bg-content`}
