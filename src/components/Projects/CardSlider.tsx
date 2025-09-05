@@ -1,6 +1,25 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Button from "../UI/Button.tsx";
+import { useTranslation } from "react-i18next";
+
+type CardSliderType = {
+  description: [
+    {
+      id: number;
+      title: {
+        pl: string;
+        en: string;
+      };
+      text: {
+        pl: string[];
+        en: string[];
+      };
+    },
+  ];
+};
+
+type Lang = "pl" | "en";
 
 const cards = [
   {
@@ -61,16 +80,19 @@ const cards = [
   },
 ];
 
-const CardSlider = () => {
+const CardSlider = ({ description }: CardSliderType) => {
   const [card, setCard] = useState<number>(0);
+  const { i18n } = useTranslation();
+
+  const lang: "pl" | "en" = i18n.language as Lang;
 
   const nextCard = () => {
-    setCard((prev) => (prev + 1) % cards.length);
+    setCard((prev) => (prev + 1) % description.length);
   };
 
   const visibleCards = [
-    cards[card % cards.length],
-    cards[(card + 1) % cards.length],
+    description[card % description.length],
+    description[(card + 1) % description.length],
   ];
 
   return (
@@ -92,15 +114,15 @@ const CardSlider = () => {
               style={{ zIndex: cards.length - index }}
             >
               <h3 className="pb-3 text-lg sm:text-1xl lg:text-2xl text-center font-semibold border-b-2 border-accent-theme-2">
-                {card.title}
+                {card.title[lang]}
               </h3>
               {card.id === 1 ? (
-                <p className="max-w-[500px]">{card.text[0]}</p>
+                <p className="max-w-[500px]">{card.text[lang][0]}</p>
               ) : (
                 <ul
                   className={`flex flex-col gap-2 ${(card.id === 3 || card.id === 4) && "px-4"}`}
                 >
-                  {card.text.map((text) => (
+                  {card.text[lang].map((text) => (
                     <li>- {text}</li>
                   ))}
                 </ul>
