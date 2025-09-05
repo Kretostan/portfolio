@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router";
+import { useTranslation } from "react-i18next";
 
 import type { Project } from "../../@types";
-import { useTranslation } from "react-i18next";
 
 type ProjectsProps = {
   data: { projects: Project[] } | { message: string };
@@ -10,6 +11,7 @@ type ProjectsProps = {
 
 const Projects = ({ data }: ProjectsProps) => {
   const [isHovered, setIsHovered] = useState<string | null>(null);
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   return (
@@ -36,13 +38,9 @@ const Projects = ({ data }: ProjectsProps) => {
                 onMouseLeave={() => setIsHovered(null)}
                 className="flex flex-col justify-center items-center gap-0.5 cursor-pointer"
               >
-                <a
-                  className="flex items-center"
-                  href={`/projects/${project.slug}`}
-                  rel="noopener noreferrer"
-                >
+                <button onClick={() => navigate("/projects/" + project.slug)}>
                   Explore
-                </a>
+                </button>
                 <motion.span
                   initial={{ opacity: 0 }}
                   animate={{ opacity: isHovered === project.slug ? 1 : 0 }}
