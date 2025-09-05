@@ -12,10 +12,7 @@ const Button = ({ children, onClick, className }: ButtonType) => {
 
   return (
     <motion.button
-      className={
-        "px-6 py-2 bg-accent-theme-2 text-white rounded-lg cursor-pointer" +
-        className
-      }
+      className={`px-6 py-2 bg-accent-theme-2 text-white rounded-lg cursor-pointer ${className ? className : ""}`}
       whileHover={{ opacity: 0.85, backgroundColor: "var(--accent-color-1)" }}
       onClick={onClick}
       key={resolvedTheme}
