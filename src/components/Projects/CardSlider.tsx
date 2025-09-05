@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Button from "../UI/Button.tsx";
 
 const cards = [
   {
@@ -79,15 +80,15 @@ const CardSlider = () => {
           {visibleCards.map((card, index) => (
             <motion.div
               key={card.id}
-              initial={{ opacity: 0, x: 100 }}
+              initial={{ opacity: 0, x: 0 }}
               animate={{
                 opacity: index === 0 ? 1 : 0.65,
-                x: index * 175,
+                x: index * 150,
                 scale: 1 - index * 0.1,
               }}
               exit={{ opacity: 0, x: -100, scale: 0.9 }}
               transition={{ duration: 0.3 }}
-              className={`absolute top-0 left-0 flex flex-col gap-6 px-4 py-4 min-h-[375px] w-80 rounded-2xl border-1 shadow-2xl bg-bg-content`}
+              className="absolute top-0 left-0 flex flex-col gap-6 px-6 py-4 min-h-[375px] w-80 rounded-2xl border-1 shadow-2xl bg-bg-content"
               style={{ zIndex: cards.length - index }}
             >
               <h3 className="pb-3 text-lg sm:text-1xl lg:text-2xl text-center font-semibold border-b-2 border-accent-theme-2">
@@ -96,7 +97,9 @@ const CardSlider = () => {
               {card.id === 1 ? (
                 <p className="max-w-[500px]">{card.text[0]}</p>
               ) : (
-                <ul className="flex flex-col gap-2">
+                <ul
+                  className={`flex flex-col gap-2 ${(card.id === 3 || card.id === 4) && "px-4"}`}
+                >
                   {card.text.map((text) => (
                     <li>- {text}</li>
                   ))}
@@ -106,13 +109,7 @@ const CardSlider = () => {
           ))}
         </AnimatePresence>
       </div>
-      <motion.button
-        onClick={nextCard}
-        whileHover={{ backgroundColor: "var(--accent-color-1)" }}
-        className="px-8 py-2 bg-accent-theme-2 rounded-xl shadow text-white cursor-pointer"
-      >
-        Next
-      </motion.button>
+      <Button onClick={nextCard}>Next</Button>
     </div>
   );
 };
