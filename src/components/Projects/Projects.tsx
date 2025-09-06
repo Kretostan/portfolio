@@ -39,7 +39,7 @@ const Projects = ({ data }: ProjectsProps) => {
                 className="flex flex-col justify-center items-center gap-0.5 cursor-pointer"
               >
                 <button onClick={() => navigate("/projects/" + project.slug)}>
-                  Explore
+                  {t("projects.projectBtn")}
                 </button>
                 <motion.span
                   initial={{ opacity: 0 }}

@@ -35,7 +35,12 @@
   "projects": {
     "title": "My Projects",
     "subtitle": "Explore my work – click a project to see more details.",
-    "noProjects": "No projects to display at the moment."
+    "noProjects": "No projects to display at the moment.",
+    "projectBtn": "Explore",
+    "backBtn": "Back",
+    "sliderBtn": "Next",
+    "visitBtn": "Page",
+    "repoBtn": "GitHub"
   },
   "contact": {
     "title": "Get In Touch",

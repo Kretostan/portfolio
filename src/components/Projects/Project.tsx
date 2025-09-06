@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import type { Project } from "../../@types";
+import { useTranslation } from "react-i18next";
+
 import CardSlider from "./CardSlider.tsx";
 
 const ProjectContent = ({ project }: { project: Project }) => {
   const [isHovered, setIsHovered] = useState<string | null>(null);
+  const { t } = useTranslation();
 
   return (
     <div className="flex flex-col bg-bg-theme-2 rounded-3xl border-2 border-accent-theme-2 overflow-hidden">
@@ -29,7 +32,7 @@ const ProjectContent = ({ project }: { project: Project }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Visit Page
+              {t("projects.visitBtn")}
             </a>
             <motion.span
               initial={{ opacity: 0 }}
@@ -52,7 +55,7 @@ const ProjectContent = ({ project }: { project: Project }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Explore Repo
+              {t("projects.repoBtn")}
             </a>
             <motion.span
               initial={{ opacity: 0 }}

@@ -35,7 +35,12 @@
   "projects": {
     "title": "Moje projekty",
     "subtitle": "Zobacz moje realizacje – kliknij projekt, aby poznać szczegóły.",
-    "noProjects": "Brak projektów do wyświetlenia w tej chwili."
+    "noProjects": "Brak projektów do wyświetlenia w tej chwili.",
+    "projectBtn": "Odkryj",
+    "backBtn": "Wstecz",
+    "sliderBtn": "Dalej",
+    "visitBtn": "Strona",
+    "repoBtn": "GitHub"
   },
   "contact": {
     "title": "Skontaktuj się ze mną",
