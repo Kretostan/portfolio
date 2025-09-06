@@ -63,8 +63,8 @@ const CardSlider = ({ description }: CardSliderType) => {
                 <ul
                   className={`flex flex-col gap-2 ${(card.id === 3 || card.id === 4) && "px-4"}`}
                 >
-                  {card.text[lang].map((text) => (
-                    <li>- {text}</li>
+                  {card.text[lang].map((text, index) => (
+                    <li key={index}>- {text}</li>
                   ))}
                 </ul>
               )}
