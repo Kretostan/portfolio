@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import type { Project } from "../../@types";
 import { useTranslation } from "react-i18next";
+
+import type { Project } from "../../@types";
 
 import CardSlider from "./CardSlider.tsx";
 
@@ -16,15 +17,15 @@ const ProjectContent = ({ project }: { project: Project }) => {
         alt={`${project.title} home page`}
         className="max-w-[750px]"
       />
-      <div className="flex flex-col justify-center items-center gap-10 py-8">
+      <div className="flex flex-col justify-center items-center gap-10 pt-4">
         <CardSlider description={project.description} />
-        <div className="flex w-full justify-around">
+        <div className="flex w-full justify-around py-3 bg-bg-content">
           <motion.div
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring" }}
             onMouseEnter={() => setIsHovered(project.url)}
             onMouseLeave={() => setIsHovered(null)}
-            className="flex flex-col justify-center items-center gap-0.5 cursor-pointer"
+            className="flex flex-col justify-center items-center gap-0.5 px-3 py-2 cursor-pointer"
           >
             <a
               className="flex items-center font-semibold text-lg"
@@ -47,7 +48,7 @@ const ProjectContent = ({ project }: { project: Project }) => {
             transition={{ type: "spring" }}
             onMouseEnter={() => setIsHovered(project.github)}
             onMouseLeave={() => setIsHovered(null)}
-            className="flex flex-col justify-center items-center gap-0.5 cursor-pointer"
+            className="flex flex-col justify-center items-center gap-0.5 px-3 py-2 cursor-pointer"
           >
             <a
               className="flex items-center font-semibold text-lg"
