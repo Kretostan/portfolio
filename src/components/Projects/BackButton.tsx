@@ -15,7 +15,7 @@ const BackButton = () => {
         color: "var(--background-1)",
       }}
       onClick={() => navigate("/projects")}
-      className="cursor-pointer px-4 py-1 border-1 rounded-lg text-lg"
+      className="cursor-pointer py-1.25 w-[80px] border-2 rounded-lg text-lg"
       key={resolvedTheme}
     >
       {t("projects.backBtn")}
