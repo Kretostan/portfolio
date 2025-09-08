@@ -33,7 +33,7 @@ const CardSlider = ({ description }: CardSliderType) => {
           {visibleCards.map((card, index) => (
             <motion.div
               key={card.id}
-              initial={{ opacity: 0, x: 0 }}
+              initial={{ opacity: 0, x: index * 150 }}
               animate={{
                 opacity: index === 0 ? 1 : 0.65,
                 x: index * 150,
