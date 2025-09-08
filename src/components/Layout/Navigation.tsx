@@ -29,7 +29,11 @@ const Navigation = () => {
         const shortLng = lng.split("-")[0];
         if (shortLng !== i18n.resolvedLanguage) {
           return (
-            <button onClick={() => i18n.changeLanguage(lng)} key={lng}>
+            <button
+              className="cursor-pointer"
+              onClick={() => i18n.changeLanguage(lng)}
+              key={lng}
+            >
               {lng.toUpperCase()}
             </button>
           );
