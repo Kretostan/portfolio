@@ -1,4 +1,4 @@
-type Description = {
+export type Description = {
   id: number;
   title: {
     pl: string;

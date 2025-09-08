@@ -1,22 +1,12 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import Button from "../UI/Button.tsx";
 import { useTranslation } from "react-i18next";
+import type { Description } from "../../@types";
+
+import Button from "../UI/Button.tsx";
 
 type CardSliderType = {
-  description: [
-    {
-      id: number;
-      title: {
-        pl: string;
-        en: string;
-      };
-      text: {
-        pl: string[];
-        en: string[];
-      };
-    },
-  ];
+  description: [Description, Description, Description, Description];
 };
 
 type Lang = "pl" | "en";
@@ -51,7 +41,7 @@ const CardSlider = ({ description }: CardSliderType) => {
               }}
               exit={{ opacity: 0, x: -100, scale: 0.9 }}
               transition={{ duration: 0.3 }}
-              className="absolute top-0 left-0 flex flex-col gap-6 px-6 py-4 min-h-[375px] w-80 rounded-2xl border-1 shadow-2xl bg-bg-content"
+              className="absolute top-0 left-0 flex flex-col gap-6 px-6 py-4 min-h-[375px] w-80 rounded-2xl border-2 border-accent-theme-2 shadow-2xl bg-bg-content"
               style={{ zIndex: description.length - index }}
             >
               <h3 className="pb-3 text-lg sm:text-1xl lg:text-2xl text-center font-semibold border-b-2 border-accent-theme-2">
