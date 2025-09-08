@@ -62,7 +62,9 @@ const CardSlider = ({ description }: CardSliderType) => {
           ))}
         </AnimatePresence>
       </div>
-      <Button onClick={nextCard}>Next</Button>
+      <Button className="text-lg" onClick={nextCard}>
+        Next
+      </Button>
     </div>
   );
 };
