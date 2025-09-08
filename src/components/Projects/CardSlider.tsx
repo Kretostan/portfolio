@@ -27,7 +27,7 @@ const CardSlider = ({ description }: CardSliderType) => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center gap-10 pt-8">
+    <div className="flex flex-col items-center justify-center gap-6 pt-8">
       <div className="relative min-h-[375px] w-80">
         <AnimatePresence>
           {visibleCards.map((card, index) => (
