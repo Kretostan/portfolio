@@ -17,11 +17,12 @@ const ProjectContent = ({ project }: { project: Project }) => {
         alt={`${project.title} home page`}
         className="max-w-[750px]"
       />
-      <div className="flex flex-col justify-center items-center gap-10 pt-4">
+      <div className="flex flex-col justify-center items-center gap-6 pt-4">
         <CardSlider description={project.description} />
+        <p>{t("projects.buttonsText")}</p>
         <div className="flex w-full justify-around py-3 bg-bg-content">
           <motion.div
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.05 }}
             transition={{ type: "spring" }}
             onMouseEnter={() => setIsHovered(project.url)}
             onMouseLeave={() => setIsHovered(null)}
@@ -44,7 +45,7 @@ const ProjectContent = ({ project }: { project: Project }) => {
             />
           </motion.div>
           <motion.div
-            whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.05 }}
             transition={{ type: "spring" }}
             onMouseEnter={() => setIsHovered(project.github)}
             onMouseLeave={() => setIsHovered(null)}
