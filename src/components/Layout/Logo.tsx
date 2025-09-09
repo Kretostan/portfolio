@@ -15,7 +15,7 @@ const Logo = () => {
 
   return (
     <button
-      className="flex items-center cursor-pointer"
+      className="flex items-center px-3 py-3 sm:py-4 cursor-pointer"
       onClick={handleClickLogo}
     >
       <img
