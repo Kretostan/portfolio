@@ -12,27 +12,27 @@ const App = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col justify-around items-center gap-28 my-auto py-6 sm:py-16 h-full text-center">
+    <div className="flex flex-col justify-around items-center gap-28 my-auto px-4 py-6 sm:py-16 h-full text-center">
       <Title>
         <div className="flex gap-1">
           {t("home.title-1")}
-          <span className="flex gap-2">
-            <motion.span
-              initial={{ rotate: 0 }}
-              animate={{ rotate: [0, -12, 12, 0] }}
-              style={{ transformOrigin: "bottom" }}
-            >
-              👋
-            </motion.span>
-          </span>
+          <motion.span
+            initial={{ rotate: 0 }}
+            animate={{ rotate: [0, -12, 12, 0] }}
+            style={{ transformOrigin: "bottom" }}
+          >
+            👋
+          </motion.span>
         </div>
-        {t("home.title-2")}
+        <span className="leading-12">{t("home.title-2")}</span>
       </Title>
-      <p>{t("home.subtitle")}</p>
-      <div className="flex flex-col justify-center items-center gap-6">
-        <p className="flex flex-col md:flex-row gap-2 px-2 md:text-lg text-center">
-          {t("home.buttonDesc")}
-        </p>
+      <div className="flex flex-col justify-center items-center gap-4">
+        <div className="flex flex-col justify-center items-center gap-4 max-w-[300px] lg:max-w-[400px] text-sm sm:text-base lg:text-lg">
+          <p className="px-4">{t("home.subtitle")}</p>
+          <p className="flex flex-col md:flex-row px-2">
+            {t("home.buttonDesc")}
+          </p>
+        </div>
         <motion.button
           aria-label="Go to About page"
           className="px-5 md:px-6 py-2 lg:text-lg bg-gradient-button text-white rounded-lg cursor-pointer"
