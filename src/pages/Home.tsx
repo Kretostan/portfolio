@@ -27,7 +27,7 @@ const App = () => {
         <span className="leading-12">{t("home.title-2")}</span>
       </Title>
       <div className="flex flex-col justify-center items-center gap-4">
-        <div className="flex flex-col justify-center items-center gap-4 max-w-[300px] lg:max-w-[400px] text-sm sm:text-base lg:text-lg">
+        <div className="flex flex-col justify-center items-center gap-8 text-sm sm:text-base lg:text-lg">
           <p className="px-4">{t("home.subtitle")}</p>
           <p className="flex flex-col md:flex-row px-2">
             {t("home.buttonDesc")}
