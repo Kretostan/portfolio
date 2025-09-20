@@ -21,7 +21,7 @@ const AboutButton = ({ onPress, next, previous }: ButtonProps) => {
       whileHover={{ x: previous ? -10 : 10 }}
       transition={{ type: "tween" }}
     >
-      <Icon icon={icon.name} alt={icon.alt} width={30} height={30} themed />
+      <Icon icon={icon.name} alt={icon.alt} width={34} height={34} themed />
     </motion.button>
   );
 };
