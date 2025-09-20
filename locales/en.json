@@ -31,7 +31,8 @@
   "skills": {
     "title": "My Skills",
     "subtitle": "Technologies and tools I use to bring ideas to life.",
-    "subtitle-2": "Use the menu on the left to choose a category or hover over what interests you to learn more."
+    "subtitle-2": "Use the menu on the left to choose a category or hover over what interests you to learn more.",
+    "category-3": "Other Interests"
   },
   "projects": {
     "title": "My Projects",

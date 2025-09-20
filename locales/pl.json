@@ -31,7 +31,8 @@
   "skills": {
     "title": "Moje umiejętności",
     "subtitle": "Technologie i narzędzia, które wykorzystuję do realizacji projektów.",
-    "subtitle-2": "Skorzystaj z menu po lewej stronie, aby wybrać kategorię lub najedź na to co Cię interesuje, aby dowiedzieć się więcej."
+    "subtitle-2": "Skorzystaj z menu po lewej stronie, aby wybrać kategorię lub najedź na to co Cię interesuje, aby dowiedzieć się więcej.",
+    "category-3": "Inne informacje"
   },
   "projects": {
     "title": "Moje projekty",
