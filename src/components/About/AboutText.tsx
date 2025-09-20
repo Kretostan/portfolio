@@ -46,11 +46,12 @@ const AboutText = () => {
           drag={isMobile ? "x" : false}
           dragConstraints={isMobile ? { left: 0, right: 0 } : undefined}
           onDragEnd={(_event, info) => changeTextMobileHandler(info)}
-          className="flex items-center px-6 py-10 mx-10 sm:mx-0 h-[220px] sm:h-[180px] w-full max-w-[350px] bg-bg-theme-2 rounded-2xl border-1"
+          className="flex items-center px-6 py-10 mx-10 sm:mx-0 h-[180px] md:h-[200px] w-full max-w-[350px] md:max-w-[400px] bg-bg-theme-2 rounded-2xl border-1"
         >
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            className="md:text-lg"
             key={currentText}
           >
             {t(`about.paragraphs.${currentText}`)}
