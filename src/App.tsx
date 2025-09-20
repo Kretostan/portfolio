@@ -5,7 +5,7 @@ import RootLayout from "./pages/Root.tsx";
 import ErrorPage from "./pages/Error.tsx";
 import HomePage from "./pages/Home.tsx";
 import AboutPage from "./pages/About.tsx";
-import SkillsPage from "./pages/Skills.tsx";
+import SkillsPage, { loader as skillsLoader } from "./pages/Skills.tsx";
 import ProjectsPage, {
   loader as projectsLoader,
 } from "./pages/projects/Projects.tsx";
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: "about", element: <AboutPage /> },
-      { path: "skills", element: <SkillsPage /> },
+      { path: "skills", element: <SkillsPage />, loader: skillsLoader },
       { path: "projects", element: <ProjectsPage />, loader: projectsLoader },
       {
         path: "projects/:projectSlug",

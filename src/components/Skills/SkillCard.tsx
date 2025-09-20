@@ -8,15 +8,13 @@ type IconType = {
 
 const SkillCard = ({ icon }: { icon: IconType }) => {
   return (
-    <div>
-      <Icon
-        icon={icon.iconName}
-        alt={icon.alt}
-        height={icon.size}
-        width={icon.size}
-        themed
-      />
-    </div>
+    <Icon
+      icon={icon.iconName}
+      alt={icon.alt}
+      height={icon.size}
+      width={icon.size}
+      themed
+    />
   );
 };
 
