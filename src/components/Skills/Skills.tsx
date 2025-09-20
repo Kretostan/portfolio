@@ -1,4 +1,4 @@
-import {JSX, useState} from "react";
+import {useState} from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTheme } from "next-themes";
 
@@ -82,7 +82,7 @@ const Skills = ({ skills }: SkillsProps) => {
         </motion.div>
       </div>
     </AnimatePresence>
-  )) as JSX.Element;
+  ));
 };
 
 export default Skills;
