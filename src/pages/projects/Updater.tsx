@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { useSelector } from "react-redux";
-import { Await, Navigate, useLoaderData, useNavigate } from "react-router";
+import { Await, useLoaderData, useNavigate } from "react-router";
 import axios from "axios";
 
 import Updater from "../../components/Projects/Updater.tsx";
