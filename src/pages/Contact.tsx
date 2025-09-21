@@ -49,7 +49,7 @@ const ContactPage = () => {
   return (
     <>
       <Title>{t("contact.title")}</Title>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center md:text-lg">
         <p>{t("contact.subtitle-1")}</p>
         <p>{t("contact.subtitle-2")}</p>
       </div>

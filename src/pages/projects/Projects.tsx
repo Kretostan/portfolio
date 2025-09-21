@@ -19,7 +19,7 @@ const ProjectsPage = () => {
   return (
     <>
       <Title>{t("projects.title")}</Title>
-      <p className="text-center">{t("projects.subtitle")}</p>
+      <p className="text-center md:text-lg">{t("projects.subtitle")}</p>
       <div className="flex flex-col justify-center items-center gap-6">
         {auth.isLoggedIn && auth.role === "admin" && (
           <Button onClick={() => navigate("/projects/add")} key={auth.role}>
