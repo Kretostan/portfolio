@@ -1,12 +1,14 @@
 import { useDispatch } from "react-redux";
+import {useNavigate} from "react-router";
 
 import Icon from "../UI/Icon";
 
-import { setCurrentPage, setShowMenu } from "../../store/menuSlice";
+import { setShowMenu } from "../../store/menuSlice";
 
 const Footer = () => {
   const dispatch = useDispatch();
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
 
   return (
     <footer className="flex flex-col-reverse md:flex-row items-center justify-center gap-3 sm:gap-4 py-3 w-full text-xs text-text-theme-2 bg-bg-theme-2">
@@ -39,18 +41,16 @@ const Footer = () => {
           />
           LinkedIn
         </a>
-        <a
+        <button
           className="flex items-center gap-1 hover:underline hover:underline-offset-4"
-          href="/contact"
-          rel="noopener noreferrer"
           onClick={(): void => {
-            dispatch(setCurrentPage("Contact"));
+            navigate("contact")
             dispatch(setShowMenu(false));
           }}
         >
           <Icon icon="mail" alt="Envelope icon" height={14} width={14} themed />
           Contact
-        </a>
+        </button>
       </div>
     </footer>
   );

@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 
-import { setCurrentPage, setShowMenu } from "../../store/menuSlice";
+import { setShowMenu } from "../../store/menuSlice";
 
 const Logo = () => {
   const dispatch = useDispatch();
@@ -9,7 +9,6 @@ const Logo = () => {
 
   const handleClickLogo = () => {
     navigate("/");
-    dispatch(setCurrentPage("Home"));
     dispatch(setShowMenu(false));
   };
 

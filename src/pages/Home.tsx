@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 import Title from "../components/UI/Title";
-import { setCurrentPage, setShowMenu } from "../store/menuSlice.ts";
+import { setShowMenu } from "../store/menuSlice.ts";
 
 const App = () => {
   const navigate = useNavigate();
@@ -38,7 +38,6 @@ const App = () => {
           className="px-5 md:px-6 py-2 lg:text-lg bg-gradient-button text-white rounded-lg cursor-pointer"
           onClick={() => {
             navigate("/about");
-            dispatch(setCurrentPage("About"));
             dispatch(setShowMenu(false));
           }}
           whileHover={{ opacity: 0.75 }}
