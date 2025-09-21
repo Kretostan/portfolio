@@ -24,11 +24,11 @@ const Menu = ({ showMenu }: { showMenu: boolean }) => {
           exit="exit"
           className="flex flex-1 flex-col justify-around gap-10 py-8"
         >
-          <MenuItem path="Home">{t("menu.first")}</MenuItem>
-          <MenuItem path="About">{t("menu.second")}</MenuItem>
-          <MenuItem path="Skills">{t("menu.third")}</MenuItem>
-          <MenuItem path="Projects">{t("menu.fourth")}</MenuItem>
-          <MenuItem path="Contact">{t("menu.fifth")}</MenuItem>
+          <MenuItem path="Home" active={location.pathname === "/"}>{t("menu.first")}</MenuItem>
+          <MenuItem path="About" active={location.pathname === "/about"}>{t("menu.second")}</MenuItem>
+          <MenuItem path="Skills" active={location.pathname === "/skills"}>{t("menu.third")}</MenuItem>
+          <MenuItem path="Projects" active={location.pathname === "/projects"}>{t("menu.fourth")}</MenuItem>
+          <MenuItem path="Contact" active={location.pathname === "/contact"}>{t("menu.fifth")}</MenuItem>
         </motion.ul>
       )}
     </AnimatePresence>
