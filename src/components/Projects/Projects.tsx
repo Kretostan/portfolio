@@ -19,7 +19,7 @@ const Projects = ({ data }: ProjectsProps) => {
       {"projects" in data &&
         data.projects.map((project) => (
           <div
-            className="flex flex-col justify-between items-center h-[280px] max-w-[275px] border-2 border-accent-theme-1 rounded-lg overflow-hidden"
+            className="flex flex-col justify-between items-center h-[300px] md:h-[325px] max-w-[275px] border-3 border-accent-theme-1 rounded-lg overflow-hidden"
             key={project.title}
           >
             <img
@@ -27,18 +27,16 @@ const Projects = ({ data }: ProjectsProps) => {
               alt={`${project.title} home page`}
               className="flex h-full"
             />
-            <div className="flex flex-col justify-center items-center gap-8 py-8 h-1/2">
+            <div className="flex flex-col justify-center items-center gap-10 py-10 h-1/2">
               <h2 className="text-xl lg:text-2xl font-semibold">
                 {project.title}
               </h2>
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: "spring" }}
+              <div
                 onMouseEnter={() => setIsHovered(project.slug)}
                 onMouseLeave={() => setIsHovered(null)}
                 className="flex flex-col justify-center items-center gap-0.5 cursor-pointer"
               >
-                <button onClick={() => navigate("/projects/" + project.slug)}>
+                <button onClick={() => navigate("/projects/" + project.slug)} className="md:text-lg">
                   {t("projects.projectBtn")}
                 </button>
                 <motion.span
@@ -48,7 +46,7 @@ const Projects = ({ data }: ProjectsProps) => {
                   className="h-0.5 w-full bg-accent-theme-1 opacity-0 rounded-xl"
                   key={project.slug}
                 />
-              </motion.div>
+              </div>
             </div>
           </div>
         ))}
