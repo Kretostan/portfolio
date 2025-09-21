@@ -1,32 +1,29 @@
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { motion } from "framer-motion";
 
-import type { RootState } from "../../store/store";
-import { setCurrentPage, setShowMenu } from "../../store/menuSlice";
+import { setShowMenu } from "../../store/menuSlice";
 
 export const MenuItem = ({
   children,
   path,
+  active,
 }: {
   children: string;
   path: string;
+  active: boolean;
 }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const currentPage = useSelector((state: RootState) => state.menu.currentPage);
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const activePageStyle =
-    currentPage === children || (currentPage === "/" && children === "Home");
 
-  const setCurrentPageHandler = (pageRoute: string): void => {
-    if (pageRoute === "Home") {
+  const setCurrentPageHandler = () => {
+    if (path === "Home") {
       navigate("/");
     } else {
-      navigate(pageRoute.toLowerCase());
+      navigate(path.toLowerCase());
     }
-    dispatch(setCurrentPage(pageRoute));
     dispatch(setShowMenu(false));
   };
 
@@ -43,21 +40,15 @@ export const MenuItem = ({
       transition={{ type: "tween" }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      onClick={() => setCurrentPageHandler(path)}
+      onClick={setCurrentPageHandler}
       className={`relative flex justify-center items-center py-3 sm:py-5 text-lg md:text-xl cursor-pointer`}
     >
       {children}
       <motion.span
-        initial={{
-          width: 0,
-          left: "50%",
-        }}
-        animate={{
-          width: isHovered || activePageStyle ? "100%" : "0%",
-          left: isHovered || activePageStyle ? "0" : "50%",
-        }}
+        initial={{ width: 0 }}
+        animate={{ width: isHovered || active ? "80px" : "0" }}
         transition={{ type: "tween", duration: 0.3 }}
-        className={`absolute bottom-0 h-0.5 bg-accent-theme-2 ${activePageStyle}`}
+        className="absolute bottom-0 h-0.5 bg-accent-theme-2"
       />
     </motion.li>
   );
