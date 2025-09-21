@@ -14,7 +14,8 @@ const AboutPage = () => {
         <p className="max-w-[400px] sm:max-w-full text-center md:text-lg">{t("about.subtitle")}</p>
         <div className="flex flex-col lg:flex-row justify-center items-center gap-14 sm:gap-20 py-10 w-full rounded-xl">
           <AboutText />
-          <AboutImage />
+
+          <div className="w-1/2 sm:w-1/3 lg:w-1/4"><AboutImage /></div>
         </div>
       </div>
     </>
