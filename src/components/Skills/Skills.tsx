@@ -24,12 +24,18 @@ const Skills = ({ skills }: SkillsProps) => {
 
   return skillCategory.map((category, index) => (
     <AnimatePresence key={index}>
-      <div className="flex flex-1 flex-col items-center gap-6 max-w-[500px] w-full overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="flex flex-1 flex-col items-center gap-6 max-w-[500px] w-full overflow-hidden"
+      >
         <div className="py-1 w-full bg-bg-theme-2 border-3 border-accent-theme-2 rounded-2xl">
           <motion.h2
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            key={category.fullName}
             className="flex justify-center px-10 py-4 text-xl sm:text-2xl font-semibold"
           >
             {category.name !== "Others" ? category.fullName : t("skills.category-3") }
@@ -48,14 +54,14 @@ const Skills = ({ skills }: SkillsProps) => {
           </div>
         </div>
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
           key={category.fullName}
           className="px-10 py-4 w-full bg-bg-theme-2 border-3 border-accent-theme-2 rounded-3xl"
         >
           {category.skills.map((skill) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
               className="flex flex-col pt-2"
               key={`${category.name}-${skill.skillName}`}
             >
@@ -77,10 +83,10 @@ const Skills = ({ skills }: SkillsProps) => {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
-      </div>
+      </motion.div>
     </AnimatePresence>
   ));
 };
