@@ -52,12 +52,12 @@ jobs:
           script: |
             if [ "${GITHUB_REF##*/}" = "main" ]; then
               echo "Deploying to production..."
-              cd /var/www/production-kretostan-portfolio
+              cd ${{ env.DEPLOY_PATH }}
               tar -xzf frontend.tar.gz
               rm frontend.tar.gz
             else 
               echo "Deploying to staging..."
-              cd /var/www/staging-kretostan-portfolio
+              cd ${{ env.DEPLOY_PATH }}
               tar -xzf frontend.tar.gz
               rm frontend.tar.gz
             fi
