@@ -1,6 +1,6 @@
 # 🌟 Moje Portfolio
 
-Witaj w repozytorium mojej strony portfolio! Ta strona została stworzona, aby prezentować moje umiejętności, projekty i doświadczenie w sposób profesjonalny i estetyczny. Jeśli szukasz inspiracji lub chcesz zobaczyć, jak mogę pomóc w realizacji Twoich projektów, to jest idealne miejsce! :)
+Witaj w repozytorium mojej strony portfolio! Ta strona została stworzona, aby prezentować moje umiejętności, projekty i doświadczenie w sposób profesjonalny i estetyczny. Jeśli szukasz inspiracji lub chcesz zobaczyć, jak mogę pomóc w realizacji Twoich projektów, to jest idealne miejsce!
 
 ## 📋 Spis treści
 
