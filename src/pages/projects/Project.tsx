@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import { Await, useLoaderData, useNavigate } from "react-router";
-import axios from "axios";
 import { useSelector } from "react-redux";
 
 import type { RootState } from "../../store/store.ts";
@@ -43,31 +42,3 @@ const ProjectPage = () => {
 };
 
 export default ProjectPage;
-
-const loadProject = async (slug: string) => {
-  const response = await axios.get(
-    import.meta.env.VITE_API_URL + "/projects/" + slug,
-  );
-
-  if (response.status !== 200) {
-    throw new Response("Failed to load project", {
-      status: response.status,
-      statusText: response.statusText,
-    });
-  }
-
-  const data = response.data;
-  return data.project;
-};
-
-export const loader = async ({
-  params,
-}: {
-  params: { projectSlug: string };
-}) => {
-  const slug = params.projectSlug;
-
-  return {
-    project: await loadProject(slug),
-  };
-};

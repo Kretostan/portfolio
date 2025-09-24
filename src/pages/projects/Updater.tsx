@@ -65,32 +65,3 @@ const ProjectUpdaterPage = () => {
 };
 
 export default ProjectUpdaterPage;
-
-// TODO: Tu i w kreatorze wyeksportować do util pliku load i loader
-const loadProject = async (slug: string) => {
-  const response = await axios.get(
-    import.meta.env.VITE_API_URL + "/projects/" + slug,
-  );
-
-  if (response.status !== 200) {
-    throw new Response("Failed to load project", {
-      status: response.status,
-      statusText: response.statusText,
-    });
-  }
-
-  const data = response.data;
-  return data.project;
-};
-
-export const loader = async ({
-  params,
-}: {
-  params: { projectSlug: string };
-}) => {
-  const slug = params.projectSlug;
-
-  return {
-    project: await loadProject(slug),
-  };
-};

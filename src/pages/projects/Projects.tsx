@@ -39,19 +39,3 @@ const ProjectsPage = () => {
 };
 
 export default ProjectsPage;
-
-const loadProjects = async () => {
-  const response: Response = await fetch(
-    import.meta.env.VITE_API_URL + "/projects",
-  );
-  if (!response.ok) {
-    throw new Response("Failed to load projects");
-  }
-  return await response.json();
-};
-
-export const loader = () => {
-  return {
-    projects: loadProjects(),
-  };
-};

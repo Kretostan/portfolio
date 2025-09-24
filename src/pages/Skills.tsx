@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import { useTranslation } from "react-i18next";
-import axios from "axios";
 import { Await, useLoaderData } from "react-router";
 
 import Title from "../components/UI/Title";
@@ -30,14 +29,3 @@ const SkillsPage = () => {
 };
 
 export default SkillsPage;
-
-const loadSkills = async () => {
-  const res = await axios.get(import.meta.env.VITE_API_URL + "/skills");
-  return res.data;
-};
-
-export const loader = () => {
-  return {
-    skills: loadSkills(),
-  };
-};

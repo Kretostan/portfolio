@@ -5,19 +5,14 @@ import RootLayout from "./pages/Root.tsx";
 import ErrorPage from "./pages/Error.tsx";
 import HomePage from "./pages/Home.tsx";
 import AboutPage from "./pages/About.tsx";
-import SkillsPage, { loader as skillsLoader } from "./pages/Skills.tsx";
-import ProjectsPage, {
-  loader as projectsLoader,
-} from "./pages/projects/Projects.tsx";
+import SkillsPage from "./pages/Skills.tsx";
+import ProjectsPage from "./pages/projects/Projects.tsx";
 import CreatorPage from "./pages/projects/Creator.tsx";
-import ProjectPage, {
-  loader as projectLoader,
-} from "./pages/projects/Project.tsx";
+import ProjectPage from "./pages/projects/Project.tsx";
 import ContactPage, { action as contactAction } from "./pages/Contact.tsx";
 import LoginPage from "./pages/Login.tsx";
-import UpdaterPage, {
-  loader as updaterLoader,
-} from "./pages/projects/Updater.tsx";
+import UpdaterPage from "./pages/projects/Updater.tsx";
+import { skillsLoader, projectLoader, projectsLoader } from "./utils/loaders.ts";
 
 const router = createBrowserRouter([
   {
@@ -42,7 +37,7 @@ const router = createBrowserRouter([
         element: <UpdaterPage />,
         // TODO
         loader: ({ params }) =>
-          updaterLoader({ params: params as { projectSlug: string } }),
+          projectLoader({ params: params as { projectSlug: string } }),
       },
       { path: "contact", element: <ContactPage />, action: contactAction },
       { path: "auth/login", element: <LoginPage /> },
