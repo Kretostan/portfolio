@@ -27,11 +27,11 @@ const loadProject = async (slug: string) => {
   return data.project;
 };
 
-export const projectLoader = async ({ params }: { params: { projectSlug: string }}) => {
+export const projectLoader = ({ params }: { params: { projectSlug: string }}) => {
   const slug = params.projectSlug;
 
   return {
-    project: await loadProject(slug),
+    project: loadProject(slug),
   };
 };
 
