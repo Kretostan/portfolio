@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import type { Project } from "../../@types";
 
-import CardSlider from "./CardSlider.tsx";
+// import CardSlider from "./CardSlider.tsx";
 
 const ProjectContent = ({ project }: { project: Project }) => {
   const [isHovered, setIsHovered] = useState<string | null>(null);
