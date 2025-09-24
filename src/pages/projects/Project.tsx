@@ -3,6 +3,7 @@ import { Await, useLoaderData, useNavigate } from "react-router";
 import { useSelector } from "react-redux";
 
 import type { RootState } from "../../store/store.ts";
+import type {Project} from "../../@types";
 
 import ProjectContent from "../../components/Projects/Project";
 import BackButton from "../../components/Projects/BackButton.tsx";
@@ -10,7 +11,7 @@ import Title from "../../components/UI/Title";
 import Spinner from "../../components/UI/Spinner";
 
 const ProjectPage = () => {
-  const { project } = useLoaderData();
+  const { project } = useLoaderData() as { project: Project  };
   const navigate = useNavigate();
   const auth = useSelector((state: RootState) => state.auth);
 
@@ -33,7 +34,7 @@ const ProjectPage = () => {
         </div>
         <Suspense fallback={<Spinner />}>
           <Await resolve={project}>
-            <ProjectContent project={project} />
+            {(resolvedProject) => <ProjectContent project={resolvedProject} />}
           </Await>
         </Suspense>
       </div>
