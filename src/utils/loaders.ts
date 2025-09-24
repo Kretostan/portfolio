@@ -23,8 +23,7 @@ const loadProject = async (slug: string) => {
     });
   }
 
-  const data = response.data;
-  return data.project;
+  return response.data;
 };
 
 export const projectLoader = ({ params }: { params: { projectSlug: string }}) => {
