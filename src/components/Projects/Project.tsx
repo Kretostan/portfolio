@@ -18,7 +18,7 @@ const ProjectContent = ({ project }: { project: Project }) => {
         className="max-w-[750px]"
       />
       <div className="flex flex-col justify-center items-center gap-6 pt-4">
-        <CardSlider description={project.description} />
+        {/*<CardSlider description={project.description} />*/}
         <p>{t("projects.buttonsText")}</p>
         <div className="flex w-full justify-around py-3 bg-bg-content">
           <motion.div
