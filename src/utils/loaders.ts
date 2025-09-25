@@ -2,6 +2,7 @@ import axios from "axios";
 
 const loadSkills = async () => {
   const res = await axios.get(import.meta.env.VITE_API_URL + "/skills");
+
   return res.data;
 };
 
@@ -26,11 +27,11 @@ const loadProject = async (slug: string) => {
   return response.data;
 };
 
-export const projectLoader = ({ params }: { params: { projectSlug: string }}) => {
+export const projectLoader = async ({ params }: { params: { projectSlug: string }}) => {
   const slug = params.projectSlug;
 
   return {
-    project: loadProject(slug),
+    project: await loadProject(slug),
   };
 };
 
@@ -41,6 +42,7 @@ const loadProjects = async () => {
   if (!response.ok) {
     throw new Response("Failed to load projects");
   }
+
   return await response.json();
 };
 
