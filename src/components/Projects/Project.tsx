@@ -15,7 +15,7 @@ const ProjectContent = ({ project }: { project: Project }) => {
       <img
         src={project.image}
         alt={`${project.title} home page`}
-        className="max-w-[750px]"
+        className="w-[45em]"
       />
       <div className="flex flex-col justify-center items-center gap-6 pt-4">
         <CardSlider description={project.description} />
