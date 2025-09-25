@@ -13,7 +13,7 @@ type Lang = "pl-PL" | "en" | "pl";
 
 const CardSlider = ({ description }: CardSliderType) => {
   const [card, setCard] = useState<number>(0);
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   let lang = i18n.language as Lang;
   if (lang === "pl-PL") {
@@ -66,7 +66,7 @@ const CardSlider = ({ description }: CardSliderType) => {
         </AnimatePresence>
       </div>
       <Button className="text-lg" onClick={nextCard}>
-        Next
+        {t("projects.nextBtn")}
       </Button>
     </div>
   );

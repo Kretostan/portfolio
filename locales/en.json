@@ -43,7 +43,8 @@
     "sliderBtn": "Next",
     "visitBtn": "Page",
     "repoBtn": "GitHub",
-    "buttonsText": "Check below for more."
+    "buttonsText": "Check below for more.",
+    "nextBtn": "Next"
   },
   "contact": {
     "title": "Get In Touch",
