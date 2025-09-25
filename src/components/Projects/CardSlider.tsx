@@ -48,15 +48,15 @@ const CardSlider = ({ description }: CardSliderType) => {
               style={{ zIndex: description.length - index }}
             >
               <h3 className="pb-3 text-lg sm:text-1xl lg:text-2xl text-center font-semibold border-b-2 border-accent-theme-2">
-                {card.title?.[lang] ?? "No title"}
+                {card.title[lang]}
               </h3>
               {card.id === 1 ? (
-                <p className="max-w-[500px]">{card.text?.[lang]?.[0] ?? "No description"}</p>
+                <p className="max-w-[500px]">{card.text[lang][0]}</p>
               ) : (
                 <ul
                   className={`flex flex-col gap-2 ${(card.id === 3 || card.id === 4) && "px-4"}`}
                 >
-                  {(card.text?.[lang] ?? []).map((text, index) => (
+                  {card.text[lang].map((text, index) => (
                     <li key={index}>- {text}</li>
                   ))}
                 </ul>
