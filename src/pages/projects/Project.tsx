@@ -9,11 +9,16 @@ import ProjectContent from "../../components/Projects/Project";
 import BackButton from "../../components/Projects/BackButton.tsx";
 import Title from "../../components/UI/Title";
 import Spinner from "../../components/UI/Spinner";
+import axios from "axios";
 
 const ProjectPage = () => {
   const { project } = useLoaderData() as { project: Project  };
   const navigate = useNavigate();
   const auth = useSelector((state: RootState) => state.auth);
+
+  const deleteProjectHandler = async () => {
+    await axios.delete(import.meta.env.VITE_API_URL +"/projects/" + project.slug);
+  }
 
   return (
     <div className="flex flex-col gap-6">
@@ -24,10 +29,16 @@ const ProjectPage = () => {
           {auth.isLoggedIn && auth.role === "admin" && (
             <div className="flex gap-6">
               <button
-                className="bg-accent-theme-1 text-bg-theme-2 px-4 py-2 rounded cursor-pointer"
+                className="px-4 py-2 bg-accent-theme-1 rounded cursor-pointer"
                 onClick={() => navigate("/projects/update/" + project.slug)}
               >
                 Update
+              </button>
+              <button
+                className="px-4 py-2 bg-accent-theme-1 rounded cursor-pointer"
+                onClick={deleteProjectHandler}
+              >
+                Delete
               </button>
             </div>
           )}
