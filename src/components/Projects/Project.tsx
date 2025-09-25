@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import type { Project } from "../../@types";
 
-// import CardSlider from "./CardSlider.tsx";
+import CardSlider from "./CardSlider.tsx";
 
 const ProjectContent = ({ project }: { project: Project }) => {
   const [isHovered, setIsHovered] = useState<string | null>(null);
@@ -18,7 +18,7 @@ const ProjectContent = ({ project }: { project: Project }) => {
         className="max-w-[750px]"
       />
       <div className="flex flex-col justify-center items-center gap-6 pt-4">
-        {/*<CardSlider description={project.description} />*/}
+        <CardSlider description={project.description} />
         <p>{t("projects.buttonsText")}</p>
         <div className="flex w-full justify-around py-3 bg-bg-content">
           <motion.div

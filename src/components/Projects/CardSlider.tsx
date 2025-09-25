@@ -6,16 +6,19 @@ import type { Description } from "../../@types";
 import Button from "../UI/Button.tsx";
 
 type CardSliderType = {
-  description: [Description, Description, Description, Description];
+  description: Description[];
 };
 
-type Lang = "pl" | "en";
+type Lang = "pl-PL" | "en" | "pl";
 
 const CardSlider = ({ description }: CardSliderType) => {
   const [card, setCard] = useState<number>(0);
   const { i18n } = useTranslation();
 
-  const lang: "pl" | "en" = i18n.language as Lang;
+  let lang = i18n.language as Lang;
+  if (lang === "pl-PL") {
+    lang = "pl";
+  }
 
   const nextCard = () => {
     setCard((prev) => (prev + 1) % description.length);
@@ -45,15 +48,15 @@ const CardSlider = ({ description }: CardSliderType) => {
               style={{ zIndex: description.length - index }}
             >
               <h3 className="pb-3 text-lg sm:text-1xl lg:text-2xl text-center font-semibold border-b-2 border-accent-theme-2">
-                {card.title[lang]}
+                {card.title?.[lang] ?? "No title"}
               </h3>
               {card.id === 1 ? (
-                <p className="max-w-[500px]">{card.text[lang][0]}</p>
+                <p className="max-w-[500px]">{card.text?.[lang]?.[0] ?? "No description"}</p>
               ) : (
                 <ul
                   className={`flex flex-col gap-2 ${(card.id === 3 || card.id === 4) && "px-4"}`}
                 >
-                  {card.text[lang].map((text, index) => (
+                  {(card.text?.[lang] ?? []).map((text, index) => (
                     <li key={index}>- {text}</li>
                   ))}
                 </ul>
