@@ -23,7 +23,7 @@ const ProjectPage = () => {
   return (
     <div className="flex flex-col gap-6">
       <Title>{project.title}</Title>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 mx-2 sm:mx-4 md:mx-0">
         <div className="flex justify-between px-4 py-2">
           <BackButton />
           {auth.isLoggedIn && auth.role === "admin" && (
