@@ -36,7 +36,7 @@ const Skills = ({ skills }: SkillsProps) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             key={category.fullName}
-            className="flex justify-center px-10 py-4 text-xl sm:text-2xl font-semibold"
+            className="flex justify-center px-10 py-4 text-xl sm:text-2xl font-semibold text-center"
           >
             {category.name !== "Others" ? category.fullName : t("skills.category-3") }
           </motion.h2>
