@@ -13,25 +13,21 @@ const SkillsContainer = ({ skills }: SkillsProps) => {
   const { resolvedTheme } = useTheme();
   const { i18n } = useTranslation();
   const resolved = i18n.resolvedLanguage;
-  const language: Language = resolved === "pl" ? "pl": "en";
+  const language: Language = resolved === "pl" || resolved === "pl-PL" ? "pl" : "en";
 
-  return skills.map((skill, index) => {
-    const category = skill.category[language];
-    const content = skill.content[language];
-    return <AnimatePresence key={index}>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="flex flex-wrap justify-center items-center gap-6 px-2 pt-12 pb-2"
-      >
-        <motion.div whileHover={{ y: -5, boxShadow: "0 0 10px 2px var(--accent-color-1)", backgroundColor: "var(--background-1)", outlineColor: "var(--accent-color-2)" }} className="flex flex-col gap-4 p-6 h-[12em] w-[20em] outline-2 outline-accent-theme-1 bg-bg-content rounded-xl cursor-pointer" key={resolvedTheme}>
-          <h4 className="pt-2 text-accent-theme-1 font-bold text-xl ">{category}</h4>
-          <p>{content}</p>
-        </motion.div>
+  return skills.map((skill, index) => <AnimatePresence key={index}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="flex flex-wrap justify-center items-center gap-6 px-2 pt-12 pb-2"
+    >
+      <motion.div whileHover={{ y: -5, boxShadow: "0 0 10px 2px var(--accent-color-1)", backgroundColor: "var(--background-1)", outlineColor: "var(--accent-color-2)" }} className="flex flex-col gap-4 p-6 h-[12em] w-[20em] outline-2 outline-accent-theme-1 bg-bg-content rounded-xl cursor-pointer" key={resolvedTheme}>
+        <h4 className="pt-2 text-accent-theme-1 font-bold text-xl ">{skill.category[language]}</h4>
+        <p>{skill.content[language]}</p>
       </motion.div>
-    </AnimatePresence>
-  });
+    </motion.div>
+  </AnimatePresence>);
 };
 
 export default SkillsContainer;
