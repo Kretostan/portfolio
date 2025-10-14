@@ -1,17 +1,6 @@
 @import 'tailwindcss';
 @config "../tailwind.config.ts";
 
-@layer components {
-  input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
-  textarea {
-    @apply mt-1 p-2 w-full rounded-lg border focus:border-[var(--accent-color-2)] focus:ring-[var(--accent-color-2)] text-[var(--foreground-1)] bg-[var(--opposite-foreground-2)];
-  }
-  input::placeholder,
-  textarea::placeholder {
-    @apply text-[var(--foreground-2)] opacity-65
-  }
-}
-
 @font-face {
   font-family: 'Fira Code';
   src: url('/fonts/FiraCode-Regular.ttf') format('truetype');
@@ -73,7 +62,7 @@ body {
 
 .orb:nth-child(1) {
   position: absolute;
-  top: 75%;
+  top: 25%;
   left: 5%;
   height: 300px;
   width: 300px;
@@ -85,7 +74,7 @@ body {
 
 .orb:nth-child(2) {
   position: absolute;
-  top: 0;
+  top: -10%;
   left: 60%;
   height: 400px;
   width: 400px;
@@ -97,7 +86,7 @@ body {
 
 .orb:nth-child(3) {
   position: absolute;
-  top: 130%;
+  top: 60%;
   left: 60%;
   height: 350px;
   width: 350px;
