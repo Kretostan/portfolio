@@ -21,7 +21,8 @@
     "subtitle-2": "Mode podejście",
     "text-2": [
       "Skupienie na użytkowniku: każda decyzja projektowa i techniczna podejmowana jest z myślą o końcowym użytkowniku, by zapewnić intuicyjne i przyjemne doświadczenie.", "Jakość przede wszystkim: wierzę w pisanie kodu, który jest łatwy w utrzymaniu, skalowalny i odporny na upływ czasu.", "Nieustanna nauka: technologia zmienia się błyskawicznie — dlatego stale śledzę nowe trendy i najlepsze praktyki w branży."
-    ]
+    ],
+    "swipeHint": "Przesuń, aby zobaczyć więcej"
   },
   "skills": {
     "title": "Umiejętności i Specjalizacje"

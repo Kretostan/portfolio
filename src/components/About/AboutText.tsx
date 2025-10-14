@@ -88,7 +88,7 @@ const AboutText = () => {
         }}
         key={currentText}
       >
-        {t("about.mobileSwipeHint")}
+        {t("about.swipeHint")}
       </motion.p>
     </div>
   );

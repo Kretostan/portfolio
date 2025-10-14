@@ -21,7 +21,8 @@
     "subtitle-2": "My approach",
     "text-2": [
       "User-Focused: Every decision is made with the end user in mind, ensuring intuitive and enjoyable interactions.", "Quality First: I believe in writing maintainable, scalable code that stands the test of time.", "Continuous Learning: Technology evolves rapidly, and I stay updated with the latest trends and best practices."
-    ]
+    ],
+    "swipeHint": "Swipe to see more"
   },
   "skills": {
     "title": "Skills & Expertise"
