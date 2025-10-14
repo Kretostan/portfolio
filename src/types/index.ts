@@ -1,6 +1,3 @@
-export * from "./Project";
-export * from "./Skills";
-
 export interface IProject {
   title: string;
   description: {
