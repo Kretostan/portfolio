@@ -15,7 +15,7 @@ const SkillsContainer = ({ skills }: SkillsProps) => {
   const resolved = i18n.resolvedLanguage?.toLowerCase() ?? "en";
   const language: Language = resolved.startsWith("pl") ? "pl" : "en";
 
-  return skills.map((skill, index) => <AnimatePresence key={index}>
+  return (skills ?? []).map((skill, index) => <AnimatePresence key={index}>
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
