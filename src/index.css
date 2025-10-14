@@ -77,8 +77,9 @@ body {
   left: 5%;
   height: 300px;
   width: 300px;
-  background: radial-gradient(circle, rgba(0, 206, 209, 0.1), transparent);
+  background: radial-gradient(circle, var(--accent-color-1), transparent);
   border-radius: 50%;
+  opacity: 0.15;
   animation: scale 2.3s infinite linear;
 }
 
@@ -88,8 +89,9 @@ body {
   left: 60%;
   height: 400px;
   width: 400px;
-  background: radial-gradient(circle, rgba(0, 206, 209, 0.1), transparent);
+  background: radial-gradient(circle, var(--accent-color-1), transparent);
   border-radius: 50%;
+  opacity: 0.15;
   animation: scale 2.5s infinite linear;
 }
 
@@ -99,8 +101,9 @@ body {
   left: 60%;
   height: 350px;
   width: 350px;
-  background: radial-gradient(circle, rgba(0, 206, 209, 0.1), transparent);
+  background: radial-gradient(circle, var(--accent-color-1), transparent);
   border-radius: 50%;
+  opacity: 0.15;
   animation: scale 2.4s infinite linear;
 }
 

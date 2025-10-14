@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import type { Description } from "../../@types";
+import type { Description } from "../../types";
 
 import Button from "../UI/Button.tsx";
 

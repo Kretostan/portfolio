@@ -13,7 +13,7 @@ const Hero = () => {
     exit={{ opacity: 0, transition: { type: "tween" } }}
   >
     {/* TODO: Zrobić text gradient na tytule */}
-    <h1 className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 lg:gap-6 text-6xl font-black font-header">
+    <h1 className="flex flex-col justify-center items-center gap-2 md:gap-4 lg:gap-6 text-accent-theme-1 text-6xl font-black font-header">
       <div className="flex gap-1">
         {t("home.title-1")}
         <motion.span

@@ -2,69 +2,47 @@
   "nav": {
     "home": "Start",
     "about": "O mnie",
-    "skills": "Technologie",
+    "skills": "Umiejętności",
     "projects": "Projekty",
     "contact": "Kontakt"
   },
   "home": {
     "title-1": "Cześć",
     "title-2": "Nazywam się Jakub Kret",
-    "subtitle": "Full-stack developer tworzący aplikacje ułatwiające życie.",
-    "button": "Start"
+    "subtitle": "Full-stack developer tworzący nowoczesne aplikacje i funkcjonalne doświadczenia cyfrowe, które ułatwiają codzienne życie.",
+    "button": "Moje prace"
   },
   "about": {
     "title": "O mnie",
-    "subtitle": "Poznaj mnie bliżej – kim jestem, co robię i co mnie napędza.",
-    "paragraphs": [
-      "Nazywam się Jakub Kret i jestem początkującym full stack web developerem z pasją do tworzenia nowoczesnych aplikacji internetowych.",
-      "Pracuję z technologiami takimi jak JavaScript, TypeScript, React, Next.js, Node.js i MongoDB.",
-      "Tworzę responsywne i szybkie strony oraz aplikacje webowe, dbając o wydajność, bezpieczeństwo i solidną architekturę.",
-      "Rozwijam projekty typu SPA, integruję REST API i pracuję z bazami NoSQL.",
-      "Chcę rozwijać się jako full stack developer – zarówno w roli freelancera, jak i w zespole tworzącym produkty cyfrowe rozwiązujące realne problemy.",
-      "Nieustannie uczę się nowych narzędzi, frameworków i dobrych praktyk, aby tworzyć profesjonalne i skalowalne rozwiązania.",
-      "Jeśli szukasz ambitnego developera JavaScript i TypeScript do współpracy – zapraszam do kontaktu!"
+    "subtitle-1": "Kim jestem",
+    "text-1": [
+      "Jestem pasjonatem programowania z wyczuciem estetyki i designu. Łączę wiedzę techniczną z kreatywnym myśleniem, tworząc rozwiązania cyfrowe, które naprawdę robią różnicę.", "Uwielbiam rozwijać się w obszarze tworzenia stron internetowych i stale poznawać nowe technologie. Stawiam na czysty, przemyślany kod i wyjątkowe doświadczenia użytkowników.", "Poza programowaniem chętnie odkrywam nowe technologie, współtworzę projekty open source i dzielę się wiedzą z innymi."
     ],
-    "mobileSwipeHint": "Przesuń w bok, aby zobaczyć więcej"
+    "subtitle-2": "Mode podejście",
+    "text-2": [
+      "Skupienie na użytkowniku: każda decyzja projektowa i techniczna podejmowana jest z myślą o końcowym użytkowniku, by zapewnić intuicyjne i przyjemne doświadczenie.", "Jakość przede wszystkim: wierzę w pisanie kodu, który jest łatwy w utrzymaniu, skalowalny i odporny na upływ czasu.", "Nieustanna nauka: technologia zmienia się błyskawicznie — dlatego stale śledzę nowe trendy i najlepsze praktyki w branży."
+    ]
   },
   "skills": {
-    "title": "Moje umiejętności"
+    "title": "Umiejętności i Specjalizacje"
   },
   "projects": {
-    "title": "Moje projekty",
-    "subtitle": "Zobacz moje realizacje – kliknij projekt, aby poznać szczegóły.",
-    "noProjects": "Brak projektów do wyświetlenia w tej chwili.",
-    "projectBtn": "Odkryj",
-    "backBtn": "Wstecz",
-    "sliderBtn": "Dalej",
-    "visitBtn": "Strona",
-    "repoBtn": "GitHub",
-    "buttonsText": "Sprawdź niżej po więcej.",
-    "nextBtn": "Dalej"
+    "title": "Wybrane Projekty",
+    "pageBtn": "Pokaż projekt"
+  },
+  "footer": {
+    "rights": "Wszelkie prawa zastrzeżone."
   },
   "contact": {
     "title": "Skontaktuj się ze mną",
-    "subtitle-1": "Masz pytanie lub pomysł na projekt?",
-    "subtitle-2": "Wypełnij formularz i wyślij wiadomość.",
-    "button": "Wyślij",
+    "subtitle": "Masz projekt w głowie? Pogadajmy o nim!",
+    "button": "Wyślij wiadomość",
     "labelName": "Imię i nazwisko",
     "labelSubject": "Temat",
     "labelMessage": "Wiadomość",
-    "messagePlaceholder": "Wpisz swoją wiadomość",
-    "modalMessage-1": "Wiadomość została wysłana pomyślnie.",
-    "modalMessage-2": "Spróbuję sie skontaktować z Tobą jak najszybciej!"
-  },
-  "login": {
-    "title": "Logowanie",
-    "subtitle": "Zaloguj się, aby kontynuować.",
-    "labelEmail": "E-mail",
-    "labelPassword": "Hasło",
-    "buttonLogin": "Zaloguj się",
-    "buttonLogout": "Wyloguj się",
-    "errorInvalid": "Nieprawidłowy e-mail lub hasło.",
-    "successLogin": "Zalogowano pomyślnie.",
-    "successLogout": "Wylogowano pomyślnie.",
-    "forgotPassword": "Zapomniałeś hasła?",
-    "noAccount": "Nie masz konta?",
-    "registerLink": "Utwórz konto"
+    "messagePlaceholder": "Wpisz swoją wiadomość...",
+    "modalMessage": "Thank you for reaching out. I'll get back to you as soon as possible.",
+    "belowForm-1": "Lokalizacja",
+    "belowForm-2": "Czas odpowiedzi"
   }
 }

@@ -9,62 +9,40 @@
   "home": {
     "title-1": "Hello",
     "title-2": "I’m Jakub Kret",
-    "subtitle": "Full-stack developer passionate about building apps that make life easier.",
+    "subtitle": "Full-stack developer creating modern applications and digital solutions that make everyday life easier.",
     "button": "View My Work"
   },
   "about": {
     "title": "About Me",
-    "subtitle": "Learn more about who I am, what I do, and what drives me.",
-    "paragraphs": [
-      "My name is Jakub Kret, and I am a junior full-stack web developer passionate about creating modern web applications.",
-      "I work with technologies such as JavaScript, TypeScript, React, Next.js, Node.js, and MongoDB.",
-      "I build responsive, fast, and secure websites and web apps with a focus on performance, security, and clean architecture.",
-      "I develop Single Page Applications, integrate REST APIs, and work with NoSQL databases.",
-      "My goal is to grow as a full-stack developer — both as a freelancer and as part of a team creating digital products that solve real-world problems.",
-      "I constantly learn new tools, frameworks, and best practices to deliver professional and scalable solutions.",
-      "If you’re looking for an ambitious JavaScript and TypeScript developer to collaborate with — feel free to get in touch!"
+    "subtitle-1": "Who I Am",
+    "text-1": [
+      "I'm a passionate developer with a keen eye for design. I combine technical expertise with creative thinking to build digital solutions that make an impact.", "I'm enthusiastic about web development and constantly learning new technologies. I'm committed to writing clean code and creating exceptional user experiences.", "When I'm not coding, you'll find me exploring new technologies, contributing to open source, or sharing knowledge with the community."
     ],
-    "mobileSwipeHint": "Swipe sideways to see more"
+    "subtitle-2": "My approach",
+    "text-2": [
+      "User-Focused: Every decision is made with the end user in mind, ensuring intuitive and enjoyable interactions.", "Quality First: I believe in writing maintainable, scalable code that stands the test of time.", "Continuous Learning: Technology evolves rapidly, and I stay updated with the latest trends and best practices."
+    ]
   },
   "skills": {
     "title": "Skills & Expertise"
   },
   "projects": {
-    "title": "My Projects",
-    "subtitle": "Explore my work – click a project to see more details.",
-    "noProjects": "No projects to display at the moment.",
-    "projectBtn": "Explore",
-    "backBtn": "Back",
-    "sliderBtn": "Next",
-    "visitBtn": "View Project",
-    "repoBtn": "GitHub",
-    "buttonsText": "Check below for more.",
-    "nextBtn": "Next"
+    "title": "Featured Projects",
+    "pageBtn": "View Project"
+  },
+  "footer": {
+    "rights": "All rights reserved."
   },
   "contact": {
     "title": "Get In Touch",
-    "subtitle-1": "Have a question or a project in mind?",
-    "subtitle-2": "Fill out the form and send message.",
-    "button": "Send",
+    "subtitle": "Have a a project in mind? Let's talk about it!",
+    "button": "Send Message",
     "labelName": "Full Name",
     "labelSubject": "Subject",
     "labelMessage": "Message",
-    "messagePlaceholder": "Put your message",
-    "modalMessage-1": "The message was sent successfully.",
-    "modalMessage-2": "I will try to contact you as soon as possible!"
-  },
-  "login": {
-    "title": "Login",
-    "subtitle": "Access your account to continue.",
-    "labelEmail": "E-mail",
-    "labelPassword": "Password",
-    "buttonLogin": "Sign In",
-    "buttonLogout": "Log Out",
-    "errorInvalid": "Invalid email or password.",
-    "successLogin": "You have successfully logged in.",
-    "successLogout": "You have successfully logged out.",
-    "forgotPassword": "Forgot your password?",
-    "noAccount": "Don’t have an account?",
-    "registerLink": "Create one"
+    "messagePlaceholder": "Put your message...",
+    "modalMessage": "Dziękuję za wiadomość. Odpowiem tak szybko, jak to możliwe.",
+    "belowForm-1": "Localization",
+    "belowForm-2": "Response Time"
   }
 }

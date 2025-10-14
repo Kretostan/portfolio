@@ -9,9 +9,9 @@ const RootLayout = () => {
   return (
     <ThemeProvider attribute="class" enableSystem defaultTheme={resolvedTheme}>
       <div className="animated-backround">
-        <div className="orb"></div>
-        <div className="orb"></div>
-        <div className="orb"></div>
+        <div className="orb" key={resolvedTheme}></div>
+        <div className="orb" key={resolvedTheme}></div>
+        <div className="orb" key={resolvedTheme}></div>
       </div>
       <Navigation />
       <AnimatePresence mode="wait">

@@ -123,7 +123,7 @@ const ContactPage = () => {
             navigate(".", { replace: true });
           }}
         >
-          Okay
+          Close
         </Button>
       </Modal>
     </>
