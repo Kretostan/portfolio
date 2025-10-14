@@ -1,15 +1,9 @@
 import { useEffect, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Form, useActionData, useNavigate, useNavigation } from "react-router";
 import axios from "axios";
-
-import Title from "../components/UI/Title";
+import { useTranslation } from "react-i18next";
 import Button from "../components/UI/Button";
 import Modal from "../components/UI/Modal.tsx";
-
-import type { RootState } from "../store/store.ts";
-import { closeModal, showModal } from "../store/modalSlice.ts";
-import { useTranslation } from "react-i18next";
 
 export const action = async ({ request }: { request: Request }) => {
   const formData = await request.formData();
@@ -34,21 +28,18 @@ const ContactPage = () => {
   const navigation = useNavigation();
   const navigate = useNavigate();
   const data = useActionData() as { success?: boolean };
-  const isModal = useSelector((state: RootState) => state.modal.isModal);
-  const dispatch = useDispatch();
   const formRef = useRef<HTMLFormElement>(null);
   const { t } = useTranslation();
 
   useEffect(() => {
     if (data?.success === true) {
-      dispatch(showModal());
       formRef.current?.reset();
     }
-  }, [data, dispatch]);
+  }, [data]);
 
   return (
     <>
-      <Title>{t("contact.title")}</Title>
+      <h1 className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 lg:gap-6 text-4xl font-black font-header">{t("contact.title")}</h1>
       <div className="flex flex-col items-center md:text-lg">
         <p>{t("contact.subtitle-1")}</p>
         <p>{t("contact.subtitle-2")}</p>
@@ -109,9 +100,8 @@ const ContactPage = () => {
         </div>
       </Form>
       <Modal
-        open={isModal}
+        open={false}
         onClose={() => {
-          dispatch(closeModal());
           navigate(".", { replace: true });
         }}
       >
@@ -130,7 +120,6 @@ const ContactPage = () => {
         </div>
         <Button
           onClick={() => {
-            dispatch(closeModal());
             navigate(".", { replace: true });
           }}
         >

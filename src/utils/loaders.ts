@@ -1,53 +1,29 @@
 import axios from "axios";
 
 const loadSkills = async () => {
-  const res = await axios.get(import.meta.env.VITE_API_URL + "/skills");
-
-  return res.data;
-};
-
-export const skillsLoader = () => {
-  return {
-    skills: loadSkills(),
-  };
-};
-
-const loadProject = async (slug: string) => {
-  const response = await axios.get(
-    import.meta.env.VITE_API_URL + "/projects/" + slug,
-  );
-
+  const response = await axios.get(import.meta.env.VITE_API_URL + "/skills");
   if (response.status !== 200) {
-    throw new Response("Failed to load project", {
-      status: response.status,
-      statusText: response.statusText,
-    });
+    throw new Error("Failed to load skills");
   }
-
   return response.data;
 };
 
-export const projectLoader = async ({ params }: { params: { projectSlug: string }}) => {
-  const slug = params.projectSlug;
-
+export const skillsLoader = async () => {
   return {
-    project: await loadProject(slug),
+    skills: await loadSkills(),
   };
 };
 
 const loadProjects = async () => {
-  const response: Response = await fetch(
-    import.meta.env.VITE_API_URL + "/projects",
-  );
-  if (!response.ok) {
-    throw new Response("Failed to load projects");
+  const response = await axios.get(import.meta.env.VITE_API_URL + "/projects",);
+  if (response.status !== 200) {
+    throw new Error("Failed to load projects");
   }
-
-  return await response.json();
+  return response.data;
 };
 
-export const projectsLoader = () => {
+export const projectsLoader = async () => {
   return {
-    projects: loadProjects(),
+    projects: await loadProjects(),
   };
 };

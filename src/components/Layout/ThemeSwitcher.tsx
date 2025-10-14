@@ -2,24 +2,21 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 
-import Icon from "./Icon";
+import Icon from "../UI/Icon";
 
-const ThemeSwitch = () => {
+const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState<boolean>(false);
   const { theme, setTheme } = useTheme();
 
   useEffect((): void => {
     setMounted(true);
   }, [setMounted]);
-
   if (!mounted) {
     return null;
   }
-
   const changeThemeHandler = (): void => {
     setTheme((prevTheme): string => (prevTheme === "dark" ? "light" : "dark"));
   };
-
   const themeIcon = {
     icon: theme === "dark" ? "sun" : "moon",
     alt: theme === "dark" ? "Sun icon" : "Moon icon",
@@ -27,13 +24,14 @@ const ThemeSwitch = () => {
 
   return (
     <motion.button
-      className="hidden sm:flex p-2 cursor-pointer select-none"
+      className="hidden sm:flex p-4 bg-bg-theme-2 rounded-[50%] border-2 border-accent-theme-1 cursor-pointer select-none"
       onClick={changeThemeHandler}
-      whileHover={{ scale: 1.15 }}
+      whileHover={{ scale: 1.1, backgroundColor: "var(--accent-color-1)" }}
+      key={theme}
     >
       <Icon icon={themeIcon.icon} alt={themeIcon.alt} height={22} width={22} />
     </motion.button>
   );
 };
 
-export default ThemeSwitch;
+export default ThemeSwitcher;

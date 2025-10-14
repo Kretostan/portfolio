@@ -1,71 +1,53 @@
-import { useDispatch, useSelector } from "react-redux";
-import { motion } from "framer-motion";
-import { useTheme } from "next-themes";
-import axios from "axios";
-import { useTranslation } from "react-i18next";
-
-import type { RootState, AppDispatch } from "../../store/store";
-import { setShowMenu } from "../../store/menuSlice";
+import {useLocation, useNavigate} from "react-router";
+import {motion} from "framer-motion";
+import {useTranslation} from "react-i18next";
+import LanguageSwitcher from "./LanguageSwitcher.tsx";
+import Logo from "./Logo.tsx";
+import ThemeSwitcher from "./ThemeSwitcher.tsx";
 
 const Navigation = () => {
-  const dispatch: AppDispatch = useDispatch();
-  const { resolvedTheme } = useTheme();
-  const showMenu = useSelector((state: RootState) => state.menu.showMenu);
-  const auth = useSelector((state: RootState) => state.auth);
-  const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const { t } = useTranslation();
 
-  const handleLogout = async () => {
-    await axios.post(
-      import.meta.env.VITE_API_URL + "/logout",
-      {},
-      { withCredentials: true },
-    );
-    window.location.reload();
+  const handleNavigation = (path: string) => {
+    if (path === "/") {
+      if (pathname !== "/") {
+        navigate(path);
+      }
+      const element = document.getElementById("hero");
+      element?.scrollIntoView({ behavior: "smooth" });
+    } else if (path.startsWith("#")) {
+      if (pathname !== "/") {
+        navigate(path);
+      }
+      const element = document.querySelector(path);
+      element?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate(path);
+    }
   };
 
   return (
-    <motion.nav className="flex gap-4">
-      {i18n.languages.map((lng) => {
-        const shortLng = lng.split("-")[0];
-        if (shortLng !== i18n.resolvedLanguage) {
-          return (
-            <button
-              className="cursor-pointer"
-              onClick={() => i18n.changeLanguage(lng)}
-              key={lng}
-            >
-              {lng.toUpperCase()}
-            </button>
-          );
-        }
-      })}
-      {auth.isLoggedIn && (
-        <motion.button
-          className="flex justify-center items-center px-3 py-2 text-lg md:text-xl rounded-lg cursor-pointer"
-          onClick={handleLogout}
-          whileHover={{
-            color: "var(--opposite-foreground-1)",
-            backgroundColor: "var(--opposite-background-2)",
-          }}
-          transition={{ type: "tween", duration: 0.4 }}
-          key={resolvedTheme + "logout"}
-        >
-          Logout
-        </motion.button>
-      )}
-      <motion.button
-        className="flex justify-center items-center py-2 sm:text-lg rounded-lg cursor-pointer w-[70px] sm:w-[80px]"
-        onClick={() => dispatch(setShowMenu(!showMenu))}
-        whileHover={{
-          color: "var(--opposite-foreground-1)",
-          backgroundColor: "var(--opposite-background-2)",
-        }}
-        transition={{ type: "tween", duration: 0.4 }}
-        key={resolvedTheme}
-      >
-        {!showMenu ? "Menu" : t("menu.button")}
-      </motion.button>
-    </motion.nav>
+    <nav className="fixed flex justify-center w-full bg-bg-theme-1 border-b-1 border-accent-theme-1 z-2000">
+      <div className="flex justify-between px-6 py-4 w-[1200px]">
+        <div className="flex items-center gap-8">
+          <Logo />
+          <ul className="flex gap-7 h-full items-center">
+            {/* TODO: Pseudo element na najechaniu (animacja) */}
+            <motion.li onClick={() => handleNavigation("/")} whileHover={{ color: "var(--accent-color-1)" }} className="relative flex items-center h-full nav-underline cursor-pointer">{t("nav.home")}</motion.li>
+            <motion.li onClick={() => handleNavigation("#about")} whileHover={{ color: "var(--accent-color-1)" }} className="relative flex items-center h-full nav-underline cursor-pointer">{t("nav.about")}</motion.li>
+            <motion.li onClick={() => handleNavigation("#skills")} whileHover={{ color: "var(--accent-color-1)" }} className="relative flex items-center h-full nav-underline cursor-pointer">{t("nav.skills")}</motion.li>
+            <motion.li onClick={() => handleNavigation("#projects")} whileHover={{ color: "var(--accent-color-1)" }} className="relative flex items-center h-full nav-underline cursor-pointer">{t("nav.projects")}</motion.li>
+            <motion.li onClick={() => handleNavigation("#contact")} whileHover={{ color: "var(--accent-color-1)" }} className="relative flex items-center h-full nav-underline cursor-pointer">{t("nav.contact")}</motion.li>
+          </ul>
+        </div>
+        <div className="flex justify-between items-center gap-4">
+          <LanguageSwitcher />
+          <ThemeSwitcher />
+        </div>
+      </div>
+    </nav>
   );
 };
 

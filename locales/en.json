@@ -1,18 +1,16 @@
 {
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
   "home": {
     "title-1": "Hello",
     "title-2": "I’m Jakub Kret",
     "subtitle": "Full-stack developer passionate about building apps that make life easier.",
-    "buttonDesc": "Learn more about me",
-    "homeButton": "Begin"
-  },
-  "menu": {
-    "first": "Home",
-    "second": "About",
-    "third": "Skills",
-    "fourth": "Projects",
-    "fifth": "Contact",
-    "button": "Close"
+    "button": "View My Work"
   },
   "about": {
     "title": "About Me",
@@ -29,10 +27,7 @@
     "mobileSwipeHint": "Swipe sideways to see more"
   },
   "skills": {
-    "title": "My Skills",
-    "subtitle": "Technologies and tools I use to bring ideas to life.",
-    "subtitle-2": "Use the menu on the left to choose a category or hover over what interests you to learn more.",
-    "category-3": "Other Interests"
+    "title": "Skills & Expertise"
   },
   "projects": {
     "title": "My Projects",
@@ -41,7 +36,7 @@
     "projectBtn": "Explore",
     "backBtn": "Back",
     "sliderBtn": "Next",
-    "visitBtn": "Page",
+    "visitBtn": "View Project",
     "repoBtn": "GitHub",
     "buttonsText": "Check below for more.",
     "nextBtn": "Next"
