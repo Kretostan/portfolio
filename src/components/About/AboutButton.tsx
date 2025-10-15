@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
-
-import Icon from "../UI/Icon";
+import {useTheme} from "next-themes";
+import PreviousButtonDark from "../../assets/about/left-arrow-dark.svg?react";
+import NextButtonDark from "../../assets/about/right-arrow-dark.svg?react";
+import PreviousButtonLight from "../../assets/about/left-arrow-light.svg?react";
+import NextButtonLight from "../../assets/about/right-arrow-light.svg?react";
+import Icon from "../UI/Icon.tsx";
 
 interface ButtonProps {
   next?: boolean;
@@ -9,10 +13,7 @@ interface ButtonProps {
 }
 
 const AboutButton = ({ onPress, next, previous }: ButtonProps) => {
-  const icon = {
-    name: previous ? "about/left-arrow" : "about/right-arrow",
-    alt: previous ? "Previous" : "Next",
-  };
+  const {resolvedTheme} = useTheme();
 
   return (
     <motion.button
@@ -21,7 +22,9 @@ const AboutButton = ({ onPress, next, previous }: ButtonProps) => {
       whileHover={{ x: previous ? -10 : 10 }}
       transition={{ type: "tween" }}
     >
-      <Icon icon={icon.name} alt={icon.alt} width={34} height={34} themed />
+      {resolvedTheme === "dark"
+        ? <Icon Icon={previous ? PreviousButtonDark : NextButtonDark} size={34} />
+        : <Icon Icon={previous ? PreviousButtonLight : NextButtonLight} size={34} />}
     </motion.button>
   );
 };

@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 
-import Icon from "../UI/Icon";
-
 const ThemeSwitcher = () => {
   const [mounted, setMounted] = useState<boolean>(false);
   const { theme, setTheme } = useTheme();
@@ -29,7 +27,7 @@ const ThemeSwitcher = () => {
       whileHover={{ scale: 1.1, backgroundColor: "var(--accent-color-1)" }}
       key={theme}
     >
-      <Icon icon={themeIcon.icon} alt={themeIcon.alt} height={22} width={22} />
+      <img src={`/icons/${theme === "dark" ? "sun" : "moon"}.svg`} alt={themeIcon.alt} height={20} width={20} />
     </motion.button>
   );
 };

@@ -1,39 +1,19 @@
-import { useTheme } from "next-themes";
+import React from "react";
 
 interface IconProps {
-  icon: string;
-  alt: string;
-  height?: number;
-  width?: number;
-  themed?: boolean;
+  Icon: React.FC<React.SVGProps<SVGSVGElement>>
+  className?: string,
+  color?: string,
+  size?: number
 }
 
-const Icon = ({ icon, alt, height, width, themed = false }: IconProps) => {
-  const { resolvedTheme } = useTheme();
-  const iconTheme = resolvedTheme === "dark" ? "-dark" : "-light";
-
-  if (!height && !width) {
-    return (
-      <img
-        src={"/icons/" + icon + (themed ? iconTheme : "") + ".svg"}
-        alt={alt}
-        style={{
-          height: "auto",
-          maxHeight: "32px",
-          width: "auto",
-        }}
-        draggable={false}
-      />
-    );
-  }
-
+const Icon: React.FC<IconProps> = ({ Icon, className = "", color = "", size = 18 }) => {
   return (
-    <img
-      src={"/icons/" + icon + (themed ? iconTheme : "") + ".svg"}
-      alt={alt}
-      height={height}
-      width={height}
-      draggable={false}
+    <Icon
+      className={className}
+      width={size}
+      height={size}
+      fill={color}
     />
   );
 };
