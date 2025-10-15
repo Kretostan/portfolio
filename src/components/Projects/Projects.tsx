@@ -31,21 +31,34 @@ const Projects = ({ data }: ProjectsProps) => {
                 {project.stack.map((tech, index) => <motion.p whileHover={{
                   color: "var(--opposite-foreground-1)",
                   backgroundColor: "var(--accent-color-1)",
-                }} className="px-4 py-1 bg-bg-theme-2 text-accent-theme-1 border-1 border-accent-theme-1 rounded-2xl text-sm" key={index}>{tech}</motion.p>)}
+                }} className="px-4 py-1 bg-bg-theme-2 text-accent-theme-1 border-1 border-accent-theme-1 rounded-2xl text-sm" key={index + " " + resolvedTheme}>{tech}</motion.p>)}
               </div>
               <div className="flex w-full justify-around gap-4 bg-bg-content">
-                <motion.button whileHover={{
-                  y: -3,
-                  boxShadow: "0 0 10px 2px var(--accent-color-2)",
-                }} className="py-2.5 w-1/2 bg-accent-theme-2 text-[var(--opposite-foreground-1)] rounded-lg cursor-pointer">
+                <motion.a
+                  whileHover={{
+                    y: -3,
+                    boxShadow: "0 0 10px 2px var(--accent-color-2)",
+                  }}
+                  href={project.page}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-2.5 w-1/2 bg-accent-theme-2 text-[var(--opposite-foreground-1)] rounded-lg text-center cursor-pointer"
+                >
                   {t("projects.pageBtn")}
-                </motion.button>
-                <motion.button whileHover={{
-                  color: "var(--opposite-foreground-1)",
-                  backgroundColor: "var(--accent-color-1)",
-                }} className="py-2.5 w-1/2 text-accent-theme-1 border-2 border-accent-theme-1 rounded-lg cursor-pointer" key={resolvedTheme}>
+                </motion.a>
+                <motion.a
+                  whileHover={{
+                    color: "var(--opposite-foreground-1)",
+                    backgroundColor: "var(--accent-color-1)",
+                  }}
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-2.5 w-1/2 text-accent-theme-1 border-2 border-accent-theme-1 rounded-lg text-center cursor-pointer"
+                  key={resolvedTheme}
+                >
                   GitHub
-                </motion.button>
+                </motion.a>
               </div>
             </div>
           </motion.div>
