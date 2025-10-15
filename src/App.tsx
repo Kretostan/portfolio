@@ -3,7 +3,8 @@ import "./i18n.ts";
 import RootLayout from "./pages/Root.tsx";
 import ErrorPage from "./pages/Error.tsx";
 import HomePage from "./pages/Home.tsx";
-import ContactPage, { action as contactAction } from "./pages/Contact.tsx";
+import ContactPage from "./pages/Contact.tsx";
+import { contactAction } from "./utils/actions.ts";
 import { skillsLoader, projectsLoader } from "./utils/loaders.ts";
 
 const router = createBrowserRouter([
