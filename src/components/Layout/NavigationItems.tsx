@@ -14,12 +14,7 @@ const NavigationItems = ({ setMenu }: { setMenu?: (open: boolean) => void}) => {
   const handleNavigation = (path: string) => {
     if (path.startsWith("#")) {
       const sectionId = path.replace("#", "");
-      if (pathname === "/") {
-        const element = document.getElementById(sectionId);
-        element?.scrollIntoView({ behavior: "smooth" });
-      } else {
-        navigate("/", { state: { scrollTo: sectionId }});
-      }
+      navigate("/", { state: { scrollTo: sectionId }});
     } else if (path === "/" && pathname === "/") {
       const sectionId = "hero";
       const element = document.getElementById(sectionId);
@@ -31,24 +26,24 @@ const NavigationItems = ({ setMenu }: { setMenu?: (open: boolean) => void}) => {
 
   return <ul className={`flex ${isMobile && "flex-col"} nav items-center gap-7 h-full`}>
     <motion.li onClick={() => {
-      setMenu?.(false);
       handleNavigation("/");
+      setMenu?.(false);
     }} whileHover={{ color: "var(--accent-color-1)" }} className={`relative flex items-center h-full nav-underline cursor-pointer ${isMobile && "text-lg"}`} key={resolvedTheme + " Home"}>{t("nav.home")}</motion.li>
     <motion.li onClick={() => {
-      setMenu?.(false);
       handleNavigation("#about");
+      setMenu?.(false);
     }} whileHover={{ color: "var(--accent-color-1)" }} className={`relative flex items-center h-full nav-underline cursor-pointer ${isMobile && "text-lg"}`} key={resolvedTheme + " About"}>{t("nav.about")}</motion.li>
     <motion.li onClick={() => {
-      setMenu?.(false);
       handleNavigation("#skills");
+      setMenu?.(false);
     }} whileHover={{ color: "var(--accent-color-1)" }} className={`relative flex items-center h-full nav-underline cursor-pointer ${isMobile && "text-lg"}`} key={resolvedTheme + " Skills"}>{t("nav.skills")}</motion.li>
     <motion.li onClick={() => {
-      setMenu?.(false);
       handleNavigation("#projects");
+      setMenu?.(false);
     }} whileHover={{ color: "var(--accent-color-1)" }} className={`relative flex items-center h-full nav-underline cursor-pointer ${isMobile && "text-lg"}`} key={resolvedTheme + " Projects"}>{t("nav.projects")}</motion.li>
     <motion.li onClick={() => {
-      setMenu?.(false);
       handleNavigation("#contact");
+      setMenu?.(false);
     }} whileHover={{ color: "var(--accent-color-1)" }} className={`relative flex items-center h-full nav-underline cursor-pointer ${isMobile && "text-lg"}`} key={resolvedTheme + " Contact"}>{t("nav.contact")}</motion.li>
   </ul>;
 }
