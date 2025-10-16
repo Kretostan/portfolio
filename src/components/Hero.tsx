@@ -6,7 +6,7 @@ const Hero = () => {
 
   return <motion.section
     id="hero"
-    className="flex flex-col justify-center items-center gap-8 px-4 min-h-screen max-w-[900px] text-center"
+    className="flex flex-col justify-center items-center gap-8 px-4 min-h-screen max-w-[900px] w-full text-center"
     key="content"
     initial={{ opacity: 0 }}
     animate={{ opacity: 1, transition: { type: "tween" } }}
