@@ -12,6 +12,7 @@ const HomePage = () => {
   useEffect(() => {
     if (location.state?.scrollTo) {
       const element = document.getElementById(location.state.scrollTo);
+      console.log(element);
       if (element) {
         setTimeout(() => {
           // TODO: Dać Y trochę do góry z powodu nawigacji
@@ -21,9 +22,9 @@ const HomePage = () => {
     }
   }, [location.state]);
 
-  // TODO: Zrobić animacje scrollowania / pojawiania
   // TODO: Nawigacja scrolluje za nisko, dodać height scroll + y
-  // TODO: Ogarnąć nav mobilny
+  // TODO: Zrobić animacje scrollowania / pojawiania
+  // TODO: Zrobić więcej komponentów, uporządkować style, kod i nieużywane pliki
   return <>
     <main className="flex flex-col justify-center items-center py-16 h-full w-full bg-bg-theme-1">
       <Hero />

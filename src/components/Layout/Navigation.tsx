@@ -1,55 +1,49 @@
-import {useLocation, useNavigate} from "react-router";
-import {motion} from "framer-motion";
-import {useTranslation} from "react-i18next";
-import {useTheme} from "next-themes";
 import LanguageSwitcher from "./LanguageSwitcher.tsx";
 import Logo from "./Logo.tsx";
 import ThemeSwitcher from "./ThemeSwitcher.tsx";
+import NavigationItems from "./NavigationItems.tsx";
+import useIsMobile from "../../hooks/useIsMobile.ts";
+import {motion} from "framer-motion";
+import {useEffect, useState} from "react";
 
 const Navigation = () => {
-  const navigate = useNavigate();
-  const { t } = useTranslation();
-  const { resolvedTheme } = useTheme();
-  const { pathname } = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const isMobile = useIsMobile();
 
-  const handleNavigation = (path: string) => {
-    if (path.startsWith("#")) {
-      const sectionId = path.replace("#", "");
-      if (pathname === "/") {
-        const element = document.getElementById(sectionId);
-        element?.scrollIntoView({ behavior: "smooth" });
-      } else {
-        navigate("/", { state: { scrollTo: sectionId }});
-      }
-    } else if (path === "/" && pathname === "/") {
-      const sectionId = "hero";
-      const element = document.getElementById(sectionId);
-      element?.scrollIntoView({ behavior: "smooth" });
+  useEffect(() => {
+    if (isMenuOpen && isMobile) {
+      document.body.style.overflow = "hidden";
     } else {
-      navigate(path);
+      document.body.style.overflow = "auto";
     }
-  };
 
-  return (
-    <nav className="fixed flex justify-center w-full bg-bg-theme-1 border-b-1 border-accent-theme-1 z-2000">
-      <div className="flex justify-between px-6 py-4 w-[1200px]">
-        <div className="flex items-center gap-8">
-          <Logo />
-          <ul className="flex gap-7 h-full items-center">
-            <motion.li onClick={() => handleNavigation("/")} whileHover={{ color: "var(--accent-color-1)" }} className="relative flex items-center h-full nav-underline cursor-pointer" key={resolvedTheme + " Home"}>{t("nav.home")}</motion.li>
-            <motion.li onClick={() => handleNavigation("#about")} whileHover={{ color: "var(--accent-color-1)" }} className="relative flex items-center h-full nav-underline cursor-pointer" key={resolvedTheme + " About"}>{t("nav.about")}</motion.li>
-            <motion.li onClick={() => handleNavigation("#skills")} whileHover={{ color: "var(--accent-color-1)" }} className="relative flex items-center h-full nav-underline cursor-pointer" key={resolvedTheme + " Skills"}>{t("nav.skills")}</motion.li>
-            <motion.li onClick={() => handleNavigation("#projects")} whileHover={{ color: "var(--accent-color-1)" }} className="relative flex items-center h-full nav-underline cursor-pointer" key={resolvedTheme + " Projects"}>{t("nav.projects")}</motion.li>
-            <motion.li onClick={() => handleNavigation("#contact")} whileHover={{ color: "var(--accent-color-1)" }} className="relative flex items-center h-full nav-underline cursor-pointer" key={resolvedTheme + " Contact"}>{t("nav.contact")}</motion.li>
-          </ul>
-        </div>
-        <div className="flex justify-between items-center gap-4">
-          <LanguageSwitcher />
-          <ThemeSwitcher />
-        </div>
+    return () => {
+      document.body.style.overflow = "auto";
+    }
+  })
+
+  return <nav id="nav" className={`fixed flex flex-col justify-center items-center ${isMenuOpen && isMobile && "h-screen"} ${!isMobile && "border-b-1 border-accent-theme-1"} w-full bg-bg-theme-1 z-2000 overflow-hidden`}>
+    <div className={`flex justify-between pl-1 pr-2 sm:px-6 py-4 max-w-[1200px] w-full ${isMobile && "border-b-1 border-accent-theme-1"}`}>
+      <div className="flex items-center gap-8">
+        <Logo />
+        {!isMobile && <NavigationItems />}
       </div>
-    </nav>
-  );
+      <div className="flex justify-between items-center gap-3 sm:gap-4">
+        <LanguageSwitcher />
+        <ThemeSwitcher />
+        {isMobile && <motion.button
+          whileHover={{ scale: 1.1, backgroundColor: "var(--accent-color-1)" }}
+          className={`relative py-2 sm:px-4 sm:py-3 h-[48px] w-[48px] sm:h-[56px] sm:w-[56px] ${isMenuOpen ? "bg-accent-theme-1" : "bg-bg-theme-2"} rounded-[50%] border-2 border-accent-theme-1 font-semibold cursor-pointer menu-button`}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <div className="menu"></div>
+        </motion.button>}
+      </div>
+    </div>
+    {isMenuOpen && isMobile && <div className={`flex justify-center items-center h-full w-full bg-bg-content`}>
+      <NavigationItems setMenu={setIsMenuOpen} />
+    </div>}
+  </nav>
 };
 
 export default Navigation;

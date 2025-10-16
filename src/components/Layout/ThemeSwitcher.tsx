@@ -22,7 +22,7 @@ const ThemeSwitcher = () => {
 
   return (
     <motion.button
-      className="hidden sm:flex p-4 bg-bg-theme-2 rounded-[50%] border-2 border-accent-theme-1 cursor-pointer select-none"
+      className="flex p-3 sm:p-4 bg-bg-theme-2 rounded-[50%] border-2 border-accent-theme-1 cursor-pointer select-none"
       onClick={changeThemeHandler}
       whileHover={{ scale: 1.1, backgroundColor: "var(--accent-color-1)" }}
       key={theme}

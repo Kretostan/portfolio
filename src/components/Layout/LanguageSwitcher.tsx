@@ -6,25 +6,21 @@ const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
   const { theme } = useTheme();
 
-  return (
-    <motion.nav className="flex gap-4">
-      {i18n.languages.map((lng) => {
-        const shortLng = lng.split("-")[0];
-        if (shortLng !== i18n.resolvedLanguage) {
-          return (
-            <motion.button
-              whileHover={{ scale: 1.1, backgroundColor: "var(--accent-color-1)" }}
-              className="px-4 py-3 bg-bg-theme-2 text-lg rounded-[50%] border-2 border-accent-theme-1 font-semibold cursor-pointer"
-              onClick={() => i18n.changeLanguage(lng)}
-              key={lng + " " + theme}
-            >
-              {lng.toUpperCase()}
-            </motion.button>
-          );
-        }
-      })}
-    </motion.nav>
-  );
+  return i18n.languages.map((lng) => {
+    const shortLng = lng.split("-")[0];
+    if (shortLng !== i18n.resolvedLanguage) {
+      return (
+        <motion.button
+          whileHover={{ scale: 1.1, backgroundColor: "var(--accent-color-1)" }}
+          className="px-3 py-2 sm:px-4 sm:py-3 bg-bg-theme-2 text-lg rounded-[50%] border-2 border-accent-theme-1 font-semibold cursor-pointer"
+          onClick={() => i18n.changeLanguage(lng)}
+          key={lng + " " + theme}
+        >
+          {lng.toUpperCase()}
+        </motion.button>
+      );
+    }
+  });
 };
 
 export default LanguageSwitcher;
