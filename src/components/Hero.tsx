@@ -12,18 +12,8 @@ const Hero = () => {
     animate={{ opacity: 1, transition: { type: "tween" } }}
     exit={{ opacity: 0, transition: { type: "tween" } }}
   >
-    {/* TODO: Zrobić text gradient na tytule */}
-    <h1 className="flex flex-col justify-center items-center gap-2 md:gap-4 lg:gap-6 text-accent-theme-1 text-6xl font-black font-header">
-      <div className="flex gap-1">
-        {t("home.title-1")}
-        <motion.span
-          initial={{ rotate: 0 }}
-          animate={{ rotate: [0, -12, 12, 0] }}
-          style={{ transformOrigin: "bottom" }}
-        >
-          👋
-        </motion.span>
-      </div>
+    <h1 className="flex flex-col justify-center items-center gap-2 md:gap-4 lg:gap-6 text-transparent text-2xl md:text-6xl font-black font-header bg-clip-text bg-linear-to-r from-accent-theme-1 to-accent-theme-2">
+      {t("home.title-1")}
       <span>{t("home.title-2")}</span>
     </h1>
     <div className="flex flex-col justify-center items-center gap-10">
