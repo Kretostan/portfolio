@@ -36,7 +36,6 @@ const Navigation = () => {
         <div className="flex items-center gap-8">
           <Logo />
           <ul className="flex gap-7 h-full items-center">
-            {/* TODO: Pseudo element na najechaniu (animacja) */}
             <motion.li onClick={() => handleNavigation("/")} whileHover={{ color: "var(--accent-color-1)" }} className="relative flex items-center h-full nav-underline cursor-pointer" key={resolvedTheme + " Home"}>{t("nav.home")}</motion.li>
             <motion.li onClick={() => handleNavigation("#about")} whileHover={{ color: "var(--accent-color-1)" }} className="relative flex items-center h-full nav-underline cursor-pointer" key={resolvedTheme + " About"}>{t("nav.about")}</motion.li>
             <motion.li onClick={() => handleNavigation("#skills")} whileHover={{ color: "var(--accent-color-1)" }} className="relative flex items-center h-full nav-underline cursor-pointer" key={resolvedTheme + " Skills"}>{t("nav.skills")}</motion.li>
