@@ -21,18 +21,18 @@ const ContactPage = () => {
   }, [data]);
 
   return <div className="flex flex-col justify-center items-center gap-14 pt-36 pb-18 min-h-screen bg-bg-theme-1">
-    <div className="flex flex-col items-center gap-8 md:text-lg">
-      <h1 className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 lg:gap-6 text-5xl text-transparent bg-clip-text bg-linear-to-r from-accent-theme-1 to-accent-theme-2 font-bold font-header">{t("contact.title")}</h1>
-      <p>{t("contact.subtitle")}</p>
+    <div className="flex flex-col items-center gap-8">
+      <h1 className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 lg:gap-6 text-4xl sm:text-5xl text-transparent bg-clip-text bg-linear-to-r from-accent-theme-1 to-accent-theme-2 font-bold font-header">{t("contact.title")}</h1>
+      <p className="text-sm">{t("contact.subtitle")}</p>
     </div>
-    <div className="flex flex-col justify-center items-center gap-16 isolate max-w-[7flex flex-col w-full gap-3">
+    <div className="flex flex-col justify-center items-center gap-16 px-4 md:px-6 isolate max-w-[800px] w-full">
       <Form
         ref={formRef}
         method="post"
-        className="mx-3 sm:mx-0 p-8 max-w-[600px] w-full bg-bg-theme-2 rounded-xl ring-2 ring-accent-theme-1"
+        className="mx-3 md:mx-0 p-8 w-full bg-bg-theme-2 rounded-xl ring-2 ring-accent-theme-1"
         replace
       >
-        <div className="flex sm:flex-row flex-col items-center justify-between md:gap-6">
+        <div className="flex sm:flex-row flex-col items-center justify-between sm:gap-6">
           <div className="flex flex-col gap-3 py-2 w-full md:w-1/2">
             <label id="name" htmlFor="name" className="text-accent-theme-1">
               {t("contact.labelName")}:
@@ -71,29 +71,29 @@ const ContactPage = () => {
             {t("contact.labelMessage")}:
           </label>
           <motion.textarea
-            whileFocus={{ outlineColor: "var(--accent-color-2)", outlineWidth: 2, boxShadow: "0 2px 10px 1px var(--accent-color-2)" }}
+            whileFocus={{ outlineColor: "var(--accent-color-2)", outlineWidth: 2, boxShadow: "0 2px 10px 1px var(--accent-color-1)" }}
             name="message"
             placeholder={t("contact.messagePlaceholder")}
             required
             className="p-3 min-h-[100px] max-h-[200px] bg-bg-content outline-2 outline-accent-theme-1 rounded-lg"
           />
         </div>
-        <Button className="mt-6 w-full">
+        <Button className="mt-6 w-full bg-linear-to-r from-accent-theme-1 to-accent-theme-2">
           {navigation.state === "submitting"
             ? "Sending"
             : t("contact.button")}
         </Button>
       </Form>
-      <div className="flex flex-col md:flex-row justify-around gap-4 mx-3 md:mx-0 max-w-[800px] w-full text-center">
-        <div className="flex flex-col gap-3 border-2 border-accent-theme-1 rounded-xl py-8 md:w-1/3 w-full bg-bg-theme-2">
+      <div className="flex flex-col md:flex-row justify-around items-center gap-6 md:gap-4 mx-3 md:mx-0 w-full text-center">
+        <div className="flex flex-col gap-3 border-2 border-accent-theme-1 rounded-xl py-8 w-full md:w-1/2 lg:w-1/3 bg-bg-theme-2">
           <h4 className="text-accent-theme-1 font-bold text-lg">Email</h4>
           <p>kretostan@portfolio.com</p>
         </div>
-        <div className="flex flex-col gap-3 border-2 border-accent-theme-1 rounded-xl py-8 md:w-1/3 w-full bg-bg-theme-2">
+        <div className="flex flex-col gap-3 border-2 border-accent-theme-1 rounded-xl py-8 w-full md:w-1/2 lg:w-1/3 bg-bg-theme-2">
           <h4 className="text-accent-theme-1 font-bold text-lg">{t("contact.belowForm-1")}</h4>
           <p>{t("contact.belowForm-1-1")}</p>
         </div>
-        <div className="flex flex-col gap-3 border-2 border-accent-theme-1 rounded-xl py-8 md:w-1/3 w-full bg-bg-theme-2">
+        <div className="flex flex-col gap-3 border-2 border-accent-theme-1 rounded-xl py-8 w-full md:w-1/2 lg:w-1/3 bg-bg-theme-2">
           <h4 className="text-accent-theme-1 font-bold text-lg">{t("contact.belowForm-2")}</h4>
           <p>24-48 hours</p>
         </div>
