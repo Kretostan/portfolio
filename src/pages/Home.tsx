@@ -14,12 +14,16 @@ const HomePage = () => {
       const element = document.getElementById(location.state.scrollTo);
       if (element) {
         setTimeout(() => {
+          // TODO: Dać Y trochę do góry z powodu nawigacji
           element.scrollIntoView({behavior: "smooth"});
         }, 200)
       }
     }
   }, [location.state]);
 
+  // TODO: Zrobić animacje scrollowania / pojawiania
+  // TODO: Responsywność całej strony
+  // TODO: Ogarnąć theme gradienty
   return <>
     <main className="flex flex-col justify-center items-center py-16 h-full w-full bg-bg-theme-1">
       <Hero />

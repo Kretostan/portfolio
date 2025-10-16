@@ -22,7 +22,7 @@ const ContactPage = () => {
 
   return <div className="flex flex-col justify-center items-center gap-14 pt-36 pb-18 min-h-screen bg-bg-theme-1">
     <div className="flex flex-col items-center gap-8 md:text-lg">
-      <h1 className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 lg:gap-6 text-5xl text-accent-theme-2 font-bold font-header">{t("contact.title")}</h1>
+      <h1 className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 lg:gap-6 text-5xl text-transparent bg-clip-text bg-linear-to-r from-accent-theme-1 to-accent-theme-2 font-bold font-header">{t("contact.title")}</h1>
       <p>{t("contact.subtitle")}</p>
     </div>
     <div className="flex flex-col justify-center items-center gap-16 isolate max-w-[7flex flex-col w-full gap-3">
