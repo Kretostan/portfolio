@@ -14,11 +14,11 @@ const Projects = ({ data }: ProjectsProps) => {
   const { resolvedTheme } = useTheme();
 
   return (
-    <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 px-6 py-6 sm:py-8 mx-2 rounded-xl">
+    <div className="flex flex-wrap justify-center items-center gap-10 pt-18 rounded-xl">
       {data?.projects.projects.map((project: IProject) => (
           <motion.div
             whileHover={{ y: -5, boxShadow: "0 0 20px 0px var(--accent-color-2)", outlineColor: "var(--accent-color-2)" }}
-            className="flex flex-col w-[25em] border-2 bg-bg-content border-accent-theme-1 rounded-xl overflow-hidden"
+            className="flex flex-col max-w-[25em] border-2 bg-bg-content border-accent-theme-1 rounded-xl overflow-hidden"
             key={project.title}
           >
             <img src={project.image} alt={`${project.title} home page`} />

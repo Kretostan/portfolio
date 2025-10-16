@@ -20,7 +20,7 @@ const SkillsContainer = ({ skills }: SkillsProps) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="flex flex-wrap justify-center items-center gap-6 px-2 pt-12 pb-2"
+      className="flex flex-wrap justify-center items-center gap-6 md:gap-12 px-2 pb-2"
     >
       <motion.div whileHover={{ y: -5, boxShadow: "0 0 10px 2px var(--accent-color-1)", backgroundColor: "var(--background-1)", outlineColor: "var(--accent-color-2)" }} className="flex flex-col gap-4 p-6 h-[12em] w-[20em] outline-2 outline-accent-theme-1 bg-bg-content rounded-xl cursor-pointer" key={resolvedTheme}>
         <h4 className="pt-2 text-accent-theme-1 font-bold text-xl ">

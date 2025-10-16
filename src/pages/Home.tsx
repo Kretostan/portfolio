@@ -22,8 +22,8 @@ const HomePage = () => {
   }, [location.state]);
 
   // TODO: Zrobić animacje scrollowania / pojawiania
-  // TODO: Responsywność całej strony
-  // TODO: Ogarnąć theme gradienty
+  // TODO: Nawigacja scrolluje za nisko, dodać height scroll + y
+  // TODO: Ogarnąć nav mobilny
   return <>
     <main className="flex flex-col justify-center items-center py-16 h-full w-full bg-bg-theme-1">
       <Hero />

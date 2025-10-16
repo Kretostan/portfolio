@@ -17,7 +17,7 @@ const AboutButton = ({ onPress, next, previous }: ButtonProps) => {
 
   return (
     <motion.button
-      className={`p-3 ${next ? "visible" : "invisible"}`}
+      className={`p-3 ${next ? "visible" : "invisible"} cursor-pointer`}
       onClick={onPress}
       whileHover={{ x: previous ? -10 : 10 }}
       transition={{ type: "tween" }}

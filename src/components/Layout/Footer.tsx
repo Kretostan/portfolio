@@ -17,7 +17,7 @@ const Footer = () => {
   const { resolvedTheme } = useTheme();
 
   return (
-    <footer id="contact" className="flex flex-col items-center justify-center gap-6 py-8 w-full text-text-theme-2 bg-bg-theme-2 border-t-2 border-accent-theme-1">
+    <footer id="contact" className="flex flex-col items-center justify-center gap-8 py-8 w-full text-text-theme-2 bg-bg-theme-2 border-t-2 border-accent-theme-1">
       <div className="flex gap-6 font-semibold text-accent-theme-1">
         <motion.a
           whileHover={{ color: "var(--accent-color-2)" }}

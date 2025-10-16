@@ -6,18 +6,18 @@ const Hero = () => {
 
   return <motion.section
     id="hero"
-    className="flex flex-col justify-center items-center gap-8 px-4 min-h-screen max-w-[1200px] text-center"
+    className="flex flex-col justify-center items-center gap-8 px-4 min-h-screen max-w-[900px] text-center"
     key="content"
     initial={{ opacity: 0 }}
     animate={{ opacity: 1, transition: { type: "tween" } }}
     exit={{ opacity: 0, transition: { type: "tween" } }}
   >
-    <h1 className="flex flex-col justify-center items-center gap-2 md:gap-4 lg:gap-6 text-transparent text-2xl md:text-6xl font-black font-header bg-clip-text bg-linear-to-r from-accent-theme-1 to-accent-theme-2">
+    <h1 className="flex flex-col justify-center items-center gap-2 md:gap-4 lg:gap-6 text-transparent text-5xl sm:text-6xl font-black font-header bg-clip-text bg-linear-to-r from-accent-theme-1 to-accent-theme-2">
       {t("home.title-1")}
       <span>{t("home.title-2")}</span>
     </h1>
     <div className="flex flex-col justify-center items-center gap-10">
-      <p className="px-4 text-xl">{t("home.subtitle")}</p>
+      <p className="px-5 text-base sm:text-xl">{t("home.subtitle")}</p>
       <motion.button
         initial={{ boxShadow: "none" }}
         animate={{ boxShadow: "0 5px 15px 0px var(--accent-color-1)" }}
