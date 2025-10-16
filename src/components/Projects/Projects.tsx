@@ -4,14 +4,13 @@ import {useTheme} from "next-themes";
 import type { IProject } from "../../types";
 
 type ProjectsProps = {
-  data: {
-    projects: { projects: IProject[] }
-  };
+  data: { projects: { projects: IProject[] }};
 };
 
 const Projects = ({ data }: ProjectsProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { resolvedTheme } = useTheme();
+  const language = i18n.language as "pl" | "en";
 
   return (
     <div className="flex flex-wrap justify-center items-center gap-10 pt-18 rounded-xl">
@@ -26,7 +25,7 @@ const Projects = ({ data }: ProjectsProps) => {
               <h2 className="text-accent-theme-1 text-xl lg:text-2xl font-semibold">
                 {project.title}
               </h2>
-              <p className="h-[90px] text-sm">{project.description.en}</p>
+              <p className="h-[90px] text-sm">{project.description[language]}</p>
               <div className="flex gap-2">
                 {project.stack.map((tech, index) => <motion.p whileHover={{
                   color: "var(--opposite-foreground-1)",
