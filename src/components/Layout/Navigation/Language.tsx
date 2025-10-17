@@ -15,6 +15,7 @@ const Language = () => {
           className="px-3 py-2 sm:px-4 sm:py-3 bg-bg-theme-2 text-lg rounded-[50%] border-2 border-accent-theme-1 font-semibold cursor-pointer"
           onClick={() => i18n.changeLanguage(lng)}
           key={lng + " " + theme}
+          aria-label="Language Switcher"
         >
           {lng.toUpperCase()}
         </motion.button>

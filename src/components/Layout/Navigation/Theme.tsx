@@ -26,6 +26,7 @@ const Theme = () => {
       onClick={changeThemeHandler}
       whileHover={{ scale: 1.1, backgroundColor: "var(--accent-color-1)" }}
       key={theme}
+      aria-label="Theme Switcher"
     >
       <img src={`/icons/${theme === "dark" ? "sun" : "moon"}.svg`} alt={themeIcon.alt} height={20} width={20} />
     </motion.button>
