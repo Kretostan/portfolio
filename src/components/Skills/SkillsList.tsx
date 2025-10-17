@@ -7,15 +7,13 @@ type SkillsProps = {
   skills: ISkill[] ;
 };
 
-type Language = "en" | "pl";
-
 const SkillsContainer = ({ skills }: SkillsProps) => {
   const { resolvedTheme } = useTheme();
   const { i18n } = useTranslation();
   const resolved = i18n.resolvedLanguage?.toLowerCase() ?? "en";
-  const language: Language = resolved.startsWith("pl") ? "pl" : "en";
+  const language = resolved.startsWith("pl") ? "pl" : "en";
 
-  return (skills ?? []).map((skill, index) => <AnimatePresence key={index}>
+  return skills.map((skill, index) => <AnimatePresence key={index}>
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

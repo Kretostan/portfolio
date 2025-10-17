@@ -11,10 +11,10 @@ import EnvelopeDark from "../../assets/footer/envelope-dark.svg?react";
 import EnvelopeLight from "../../assets/footer/envelope-light.svg?react";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-  const { t } = useTranslation();
   const [isHovered, setHovered] = useState(false);
   const { resolvedTheme } = useTheme();
+  const { t } = useTranslation();
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer id="contact" className="flex flex-col items-center justify-center gap-8 py-8 w-full text-text-theme-2 bg-bg-theme-2 border-t-2 border-accent-theme-1">

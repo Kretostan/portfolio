@@ -2,7 +2,7 @@ import {motion} from "framer-motion";
 import {useLocation, useNavigate} from "react-router";
 import {useTranslation} from "react-i18next";
 import {useTheme} from "next-themes";
-import useIsMobile from "../../hooks/useIsMobile.ts";
+import useIsMobile from "../../../hooks/useIsMobile.ts";
 
 const NavigationItems = ({ setMenu }: { setMenu?: (open: boolean) => void}) => {
   const navigate = useNavigate();
