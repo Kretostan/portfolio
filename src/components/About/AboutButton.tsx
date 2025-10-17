@@ -21,6 +21,7 @@ const AboutButton = ({ onPress, next, previous }: ButtonProps) => {
       onClick={onPress}
       whileHover={{ x: previous ? -10 : 10 }}
       transition={{ type: "tween" }}
+      aria-label={previous ? "Previous about text" : "Next about text"}
     >
       {resolvedTheme === "dark"
         ? <Icon Icon={previous ? PreviousButtonDark : NextButtonDark} size={34} />
