@@ -1,9 +1,10 @@
+import {lazy} from "react";
 import { RouterProvider, createBrowserRouter } from "react-router";
 import "./i18n.ts";
-import RootLayout from "./pages/Root.tsx";
-import ErrorPage from "./pages/Error.tsx";
-import HomePage from "./pages/Home.tsx";
-import ContactPage from "./pages/Contact.tsx";
+const RootLayout = lazy(() => import("./pages/Root.tsx"));
+const ErrorPage = lazy(() => import("./pages/Error.tsx"));
+const HomePage = lazy(() => import("./pages/Home.tsx"));
+const ContactPage = lazy(() => import("./pages/Contact"));
 import { contactAction } from "./utils/actions.ts";
 import { skillsLoader, projectsLoader } from "./utils/loaders.ts";
 
