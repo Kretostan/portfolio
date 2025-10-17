@@ -6,6 +6,7 @@ import Items from "./Items.tsx";
 import Menu from "./Menu.tsx";
 import {useIsMobile} from "../../../hooks";
 import {useLockBodyScroll} from "../../../hooks";
+import "../../../styles/Navigation.css";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);

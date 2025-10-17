@@ -6,12 +6,12 @@ const Hero = () => {
 
   return <motion.section
     id="hero"
-    className="flex flex-col justify-center items-center gap-8 px-4 min-h-screen max-w-[900px] w-full text-center"
+    className="relative flex flex-col justify-center gap-8 px-4 h-screen max-w-[900px] w-full text-center z-1500"
     key="content"
     initial={{ opacity: 0 }}
     animate={{ opacity: 1, transition: { type: "tween" } }}
   >
-    <h1 className="flex flex-col justify-center items-center gap-2 md:gap-4 lg:gap-6 text-transparent text-4xl sm:text-6xl font-black font-header bg-clip-text bg-linear-to-r from-accent-theme-1 to-accent-theme-2">
+    <h1 className="flex flex-col justify-center items-center gap-1 md:gap-4 text-transparent text-4xl sm:text-6xl font-black font-header bg-clip-text bg-linear-to-r from-accent-theme-1 to-accent-theme-2">
       {t("home.title-1")}
       <span>{t("home.title-2")}</span>
     </h1>

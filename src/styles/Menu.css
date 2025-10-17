@@ -1,0 +1,65 @@
+.menu, .menu::before, .menu::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  border-radius: 1px;
+  background-color: var(--foreground-1);
+  transition: background-color, width 0.4s ease;
+}
+
+.menu-button:hover .menu::before, .menu-button:hover .menu::after, .menu-button:hover .menu {
+  background-color: var(--opposite-foreground-1);
+  transition: background-color 0.3s ease;
+}
+
+.menu::before {
+  top: 600%;
+  right: 0;
+}
+
+.menu::after {
+  top: 1200%;
+  right: 0;
+}
+
+@media (max-width: 639px) {
+  .menu {
+    top: 23%;
+    left: 27%;
+    width: 20px;
+  }
+
+  .menu::before {
+    width: 15px;
+  }
+
+  .menu::after {
+    width: 10px;
+  }
+
+  .menu-button:hover .menu::before, .menu-button:hover .menu::after, .menu-button:hover .menu {
+    width: 20px;
+    transition: width 0.4s ease;
+  }
+}
+
+@media (min-width: 640px) {
+  .menu {
+    top: 25%;
+    left: 25%;
+    width: 25px;
+  }
+
+  .menu::before {
+    width: 20px;
+  }
+
+  .menu::after {
+    width: 15px;
+  }
+
+  .menu-button:hover .menu::before, .menu-button:hover .menu::after, .menu-button:hover .menu {
+    width: 25px;
+    transition: width 0.4s ease;
+  }
+}

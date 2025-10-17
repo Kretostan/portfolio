@@ -9,7 +9,7 @@ import EnvelopeLight from "../../../assets/footer/envelope-light.svg?react";
 
 const Footer = () => {
   return (
-    <footer id="contact" className="flex flex-col items-center gap-8 py-8 bg-bg-theme-2 border-t-2 border-accent-theme-1">
+    <footer id="contact" className="relative flex flex-col items-center gap-8 py-8 bg-bg-theme-2 border-t-2 border-accent-theme-1 z-1500">
       <div className="flex gap-6 font-semibold text-accent-theme-1">
         <Item darkIcon={GitHubDark} lightIcon={GitHubLight} name="GitHub" />
         <Item darkIcon={LinkedInDark} lightIcon={LinkedInLight} name="LinkedIn" />

@@ -1,4 +1,5 @@
 import {motion} from "framer-motion";
+import "../../../styles/Menu.css";
 
 type MenuProps = {
   isMenu: boolean;

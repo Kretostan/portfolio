@@ -1,0 +1,90 @@
+.orb {
+  position: absolute;
+  background: radial-gradient(circle, var(--accent-color-1), transparent);
+  border-radius: 50%;
+  opacity: 0.15;
+}
+
+.orb:nth-child(1) {
+  top: 55%;
+  left: 2%;
+  height: 150px;
+  width: 150px;
+  animation: scale 2.3s infinite linear;
+}
+
+.orb:nth-child(2) {
+  top: 10%;
+  left: 40%;
+  height: 200px;
+  width: 200px;
+  animation: scale 2.5s infinite linear;
+}
+
+.orb:nth-child(3) {
+  top: 85%;
+  left: 50%;
+  height: 175px;
+  width: 175px;
+  animation: scale 2.4s infinite linear;
+}
+
+@media (min-width: 768px) {
+  .orb:nth-child(1) {
+    top: 25%;
+    left: 5%;
+    height: 250px;
+    width: 250px;
+    animation: scale 2.3s infinite linear;
+  }
+
+  .orb:nth-child(2) {
+    top: -5%;
+    left: 55%;
+    height: 350px;
+    width: 350px;
+    animation: scale 2.5s infinite linear;
+  }
+
+  .orb:nth-child(3) {
+    top: 70%;
+    left: 50%;
+    height: 300px;
+    width: 300px;
+    animation: scale 2.4s infinite linear;
+  }
+}
+
+@media (min-width: 1024px) {
+  .orb:nth-child(1) {
+    top: 25%;
+    left: 10%;
+    height: 300px;
+    width: 300px;
+    animation: scale 2.3s infinite linear;
+  }
+
+  .orb:nth-child(2) {
+    top: -10%;
+    left: 60%;
+    height: 400px;
+    width: 400px;
+    animation: scale 2.5s infinite linear;
+  }
+
+  .orb:nth-child(3) {
+    top: 70%;
+    left: 50%;
+    height: 350px;
+    width: 350px;
+    animation: scale 2.4s infinite linear;
+  }
+}
+
+@keyframes scale {
+  0%, 100% {
+    transform: scale(1);
+  } 50% {
+      transform: scale(1.05);
+    }
+}

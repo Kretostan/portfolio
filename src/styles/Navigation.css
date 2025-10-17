@@ -1,0 +1,14 @@
+.nav-underline::before {
+  content: '';
+  position: absolute;
+  top: 70%;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--accent-color-1);
+  transition: width 0.4s ease;
+}
+
+.nav-underline:hover::before {
+  width: 100%;
+}
