@@ -1,9 +1,9 @@
-import {lazy, useState} from "react";
+import {useState} from "react";
 import Language from "./Language.tsx";
 import Logo from "./Logo.tsx";
 import Theme from "./Theme.tsx";
 import Items from "./Items.tsx";
-const Menu = lazy(() => import("./Menu.tsx"));
+import Menu from "./Menu.tsx";
 import {useIsMobile} from "../../../hooks";
 import {useLockBodyScroll} from "../../../hooks";
 import "../../../styles/Navigation.css";

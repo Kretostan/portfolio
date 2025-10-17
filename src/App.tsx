@@ -5,8 +5,6 @@ const RootLayout = lazy(() => import("./pages/Root.tsx"));
 const ErrorPage = lazy(() => import("./pages/Error.tsx"));
 const HomePage = lazy(() => import("./pages/Home.tsx"));
 const ContactPage = lazy(() => import("./pages/Contact"));
-import { contactAction } from "./utils/actions.ts";
-import { skillsLoader, projectsLoader } from "./utils/loaders.ts";
 
 const router = createBrowserRouter([
   {
@@ -15,13 +13,17 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <HomePage />, loader: async () => {
+        const { skillsLoader, projectsLoader } = await import("./utils/loaders.ts");
         const [skills, projects] = await Promise.all([
           skillsLoader(),
           projectsLoader(),
         ]);
         return { skills, projects };
       }},
-      { path: "contact", element: <ContactPage />, action: contactAction },
+      { path: "contact", element: <ContactPage />, action: async (args) => {
+          const { contactAction } = await import("./utils/actions.ts");
+          return contactAction(args);
+        }, },
     ],
   },
 ]);

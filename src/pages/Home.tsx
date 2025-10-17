@@ -1,9 +1,9 @@
-import {useLayoutEffect} from "react";
+import {lazy, useLayoutEffect} from "react";
 import {useLocation} from "react-router";
-import About from "../components/About/About.tsx";
-import Skills from "../components/Skills/Skills.tsx";
-import Projects from "../components/Projects/Projects.tsx";
-import Hero from "../components/Hero.tsx";
+const About = lazy(() => import("../components/About/About.tsx"));
+const Skills = lazy(() => import("../components/Skills/Skills.tsx"));
+const Projects = lazy(() => import("../components/Projects/Projects.tsx"));
+import Hero from "../components/Hero/Hero.tsx";
 
 const HomePage = () => {
   const location = useLocation();
