@@ -19,7 +19,7 @@ const loadProjects = async () => {
   if (response.status !== 200) {
     throw new Error("Failed to load projects");
   }
-  return response.data;
+  return response.data.projects;
 };
 
 export const projectsLoader = async () => {

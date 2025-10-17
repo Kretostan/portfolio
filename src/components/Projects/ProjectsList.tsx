@@ -7,7 +7,7 @@ type ProjectsProps = {
   data: { projects: IProject[] };
 };
 
-const Projects = ({ data }: ProjectsProps) => {
+const ProjectsList = ({ data }: ProjectsProps) => {
   const { t, i18n } = useTranslation();
   const { resolvedTheme } = useTheme();
   const language = i18n.language as "pl" | "en";
@@ -60,4 +60,4 @@ const Projects = ({ data }: ProjectsProps) => {
   </motion.div>);
 };
 
-export default Projects;
+export default ProjectsList;

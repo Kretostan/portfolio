@@ -10,7 +10,6 @@ const Hero = () => {
     key="content"
     initial={{ opacity: 0 }}
     animate={{ opacity: 1, transition: { type: "tween" } }}
-    exit={{ opacity: 0, transition: { type: "tween" } }}
   >
     <h1 className="flex flex-col justify-center items-center gap-2 md:gap-4 lg:gap-6 text-transparent text-4xl sm:text-6xl font-black font-header bg-clip-text bg-linear-to-r from-accent-theme-1 to-accent-theme-2">
       {t("home.title-1")}

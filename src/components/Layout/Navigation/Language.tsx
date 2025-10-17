@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import {useTheme} from "next-themes";
 
-const LanguageSwitcher = () => {
+const Language = () => {
   const { i18n } = useTranslation();
   const { theme } = useTheme();
 
@@ -23,4 +23,4 @@ const LanguageSwitcher = () => {
   });
 };
 
-export default LanguageSwitcher;
+export default Language;

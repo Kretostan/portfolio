@@ -7,7 +7,7 @@ type SkillsProps = {
   skills: ISkill[] ;
 };
 
-const SkillsContainer = ({ skills }: SkillsProps) => {
+const SkillsList = ({ skills }: SkillsProps) => {
   const { resolvedTheme } = useTheme();
   const { i18n } = useTranslation();
   const resolved = i18n.resolvedLanguage?.toLowerCase() ?? "en";
@@ -30,4 +30,4 @@ const SkillsContainer = ({ skills }: SkillsProps) => {
   </AnimatePresence>);
 };
 
-export default SkillsContainer;
+export default SkillsList;

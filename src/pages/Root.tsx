@@ -1,22 +1,18 @@
 import { Outlet } from "react-router";
 import { ThemeProvider, useTheme } from "next-themes";
-import { AnimatePresence } from "framer-motion";
-import Navigation from "../components/Layout/Navigation.tsx";
+import Navigation from "../components/Layout/Navigation/Navigation.tsx";
+import AnimatedBackground from "../components/UI/AnimatedBackground.tsx";
+import Footer from "../components/Layout/Footer/Footer.tsx";
 
 const RootLayout = () => {
   const { resolvedTheme } = useTheme();
 
   return (
     <ThemeProvider attribute="class" enableSystem defaultTheme={resolvedTheme}>
-      <div className="animated-backround">
-        <div className="orb" key={resolvedTheme}></div>
-        <div className="orb" key={resolvedTheme}></div>
-        <div className="orb" key={resolvedTheme}></div>
-      </div>
+      <AnimatedBackground />
       <Navigation />
-      <AnimatePresence mode="wait">
-        <Outlet />
-      </AnimatePresence>
+      <Outlet />
+      <Footer />
     </ThemeProvider>
   );
 };

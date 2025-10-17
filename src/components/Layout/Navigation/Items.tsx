@@ -2,9 +2,9 @@ import {motion} from "framer-motion";
 import {useLocation, useNavigate} from "react-router";
 import {useTranslation} from "react-i18next";
 import {useTheme} from "next-themes";
-import useIsMobile from "../../../hooks/useIsMobile.ts";
+import {useIsMobile} from "../../../hooks";
 
-const NavigationItems = ({ setMenu }: { setMenu?: (open: boolean) => void}) => {
+const Items = ({ setMenu }: { setMenu?: (open: boolean) => void}) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const { resolvedTheme } = useTheme();
@@ -24,7 +24,7 @@ const NavigationItems = ({ setMenu }: { setMenu?: (open: boolean) => void}) => {
     }
   };
 
-  return <ul className={`flex ${isMobile && "flex-col"} nav items-center gap-7 h-full`}>
+  return <ul className={`flex ${isMobile && "flex-col"} nav items-center gap-5 h-full`}>
     <motion.li onClick={() => {
       handleNavigation("/");
       setMenu?.(false);
@@ -48,4 +48,4 @@ const NavigationItems = ({ setMenu }: { setMenu?: (open: boolean) => void}) => {
   </ul>;
 }
 
-export default NavigationItems;
+export default Items;

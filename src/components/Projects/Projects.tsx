@@ -1,11 +1,11 @@
 import { Suspense } from "react";
 import { Await, useLoaderData } from "react-router";
 import { useTranslation } from "react-i18next";
-import Projects from "../../components/Projects/Projects";
+import ProjectsList from "./ProjectsList.tsx";
 
 import Spinner from "../../components/UI/Spinner";
 
-const ProjectsLayout = () => {
+const Projects = () => {
   const { projects } = useLoaderData();
   const { t } = useTranslation();
 
@@ -14,11 +14,11 @@ const ProjectsLayout = () => {
     <div className="flex flex-wrap justify-center items-center gap-10 pt-18 rounded-xl">
       <Suspense fallback={<Spinner />}>
         <Await resolve={projects}>
-          {(resolvedProjects) => <Projects data={resolvedProjects} />}
+          {(resolvedProjects) => <ProjectsList data={resolvedProjects} />}
         </Await>
       </Suspense>
     </div>
   </section>;
 };
 
-export default ProjectsLayout;
+export default Projects;

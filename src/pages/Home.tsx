@@ -1,10 +1,9 @@
+import {useLayoutEffect} from "react";
+import {useLocation} from "react-router";
 import About from "../components/About/About.tsx";
 import Skills from "../components/Skills/Skills.tsx";
-import ProjectsLayout from "../components/Projects/ProjectsLayout.tsx";
-import Footer from "../components/Layout/Footer.tsx";
+import Projects from "../components/Projects/Projects.tsx";
 import Hero from "../components/Hero.tsx";
-import {useLocation} from "react-router";
-import {useLayoutEffect} from "react";
 
 const HomePage = () => {
   const location = useLocation();
@@ -26,15 +25,12 @@ const HomePage = () => {
     }
   }, [location.state]);
 
-  return <>
-    <main className="flex flex-col justify-center items-center py-16 h-full w-full bg-bg-theme-1">
-      <Hero />
-      <About />
-      <Skills />
-      <ProjectsLayout />
-    </main>
-    <Footer />
-  </>;
+  return <main className="flex flex-col items-center py-12 bg-bg-theme-1">
+    <Hero />
+    <About />
+    <Skills />
+    <Projects />
+  </main>;
 };
 
 export default HomePage;

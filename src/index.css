@@ -3,16 +3,18 @@
 
 @font-face {
   font-family: 'Fira Code';
-  src: url('/fonts/FiraCode-Regular.ttf') format('truetype');
+  src: url('/fonts/FiraCode-Regular.woff2') format('woff2'), url('/fonts/FiraCode-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Poppins';
-  src: url('/fonts/Poppins-Medium.ttf') format('truetype');
+  src: url('/fonts/Poppins-Medium.woff2') format('woff2'), url('/fonts/Poppins-Medium.woff') format('woff') ;
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 :root {
@@ -27,9 +29,9 @@
   --opposite-background-2: #1e1e1e;
   --opposite-foreground-1: #ffffff;
   --opposite-foreground-2: #e0e0e0;
-  --error-color: #d32f2f; /* główny czerwony dla tekstu i obramowania */
-  --error-background: #ffebee; /* delikatne tło dla komunikatów */
-  --error-label: #b71c1c; /* ciemniejszy dla labela */
+  --error-color: #d32f2f;
+  --error-label: #b71c1c;
+  --error-background: #ffebee;
 }
 
 html.dark {
@@ -45,8 +47,8 @@ html.dark {
   --opposite-foreground-1: #121212;
   --opposite-foreground-2: #424242;
   --error-color: #ef5350;
-  --error-background: #2a0000;
   --error-label: #ff6f6f;
+  --error-background: #2a0000;
 }
 
 body {
@@ -54,120 +56,85 @@ body {
   color: var(--foreground-1);
 }
 
-.animated-background {
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
+.orb {
+  position: absolute;
+  background: radial-gradient(circle, var(--accent-color-1), transparent);
+  border-radius: 50%;
+  opacity: 0.15;
 }
 
 .orb:nth-child(1) {
-  position: absolute;
   top: 55%;
   left: 2%;
   height: 150px;
   width: 150px;
-  background: radial-gradient(circle, var(--accent-color-1), transparent);
-  border-radius: 50%;
-  opacity: 0.15;
   animation: scale 2.3s infinite linear;
 }
 
 .orb:nth-child(2) {
-  position: absolute;
   top: 10%;
   left: 40%;
   height: 200px;
   width: 200px;
-  background: radial-gradient(circle, var(--accent-color-1), transparent);
-  border-radius: 50%;
-  opacity: 0.15;
   animation: scale 2.5s infinite linear;
 }
 
 .orb:nth-child(3) {
-  position: absolute;
   top: 85%;
   left: 50%;
   height: 175px;
   width: 175px;
-  background: radial-gradient(circle, var(--accent-color-1), transparent);
-  border-radius: 50%;
-  opacity: 0.15;
   animation: scale 2.4s infinite linear;
 }
 
 @media (min-width: 768px) {
   .orb:nth-child(1) {
-    position: absolute;
     top: 25%;
     left: 5%;
     height: 250px;
     width: 250px;
-    background: radial-gradient(circle, var(--accent-color-1), transparent);
-    border-radius: 50%;
-    opacity: 0.15;
     animation: scale 2.3s infinite linear;
   }
 
   .orb:nth-child(2) {
-    position: absolute;
     top: -5%;
     left: 55%;
     height: 350px;
     width: 350px;
-    background: radial-gradient(circle, var(--accent-color-1), transparent);
-    border-radius: 50%;
-    opacity: 0.15;
     animation: scale 2.5s infinite linear;
   }
 
   .orb:nth-child(3) {
-    position: absolute;
     top: 70%;
     left: 50%;
     height: 300px;
     width: 300px;
-    background: radial-gradient(circle, var(--accent-color-1), transparent);
-    border-radius: 50%;
-    opacity: 0.15;
     animation: scale 2.4s infinite linear;
   }
 }
 
 @media (min-width: 1024px) {
   .orb:nth-child(1) {
-    position: absolute;
     top: 25%;
     left: 10%;
     height: 300px;
     width: 300px;
-    background: radial-gradient(circle, var(--accent-color-1), transparent);
-    border-radius: 50%;
-    opacity: 0.15;
     animation: scale 2.3s infinite linear;
   }
 
   .orb:nth-child(2) {
-    position: absolute;
     top: -10%;
     left: 60%;
     height: 400px;
     width: 400px;
-    background: radial-gradient(circle, var(--accent-color-1), transparent);
-    border-radius: 50%;
-    opacity: 0.15;
     animation: scale 2.5s infinite linear;
   }
 
   .orb:nth-child(3) {
-    position: absolute;
     top: 70%;
     left: 50%;
     height: 350px;
     width: 350px;
-    background: radial-gradient(circle, var(--accent-color-1), transparent);
-    border-radius: 50%;
-    opacity: 0.15;
     animation: scale 2.4s infinite linear;
   }
 }
