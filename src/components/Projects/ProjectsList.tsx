@@ -19,9 +19,9 @@ const ProjectsList = ({ data }: ProjectsProps) => {
   >
     <img src={project.image} alt={`${project.title} home page`} loading="lazy" />
     <div className="flex flex-col justify-between gap-5 px-6 py-7 h-3/5">
-      <h2 className="text-accent-theme-1 text-xl lg:text-2xl font-semibold">
+      <h3 className="text-accent-theme-1 text-xl lg:text-2xl font-semibold">
         {project.title}
-      </h2>
+      </h3>
       <p className="h-[90px] text-sm">{project.description[language]}</p>
       <div className="flex gap-2">
         {project.stack.map((tech, index) => <motion.p whileHover={{
