@@ -4,12 +4,10 @@ import {useTranslation} from "react-i18next";
 const Hero = () => {
   const { t } = useTranslation();
 
-  return <motion.section
+  return <section
     id="hero"
     className="relative flex flex-col justify-center gap-8 px-4 h-screen max-w-[900px] w-full text-center z-1500"
     key="content"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1, transition: { type: "tween" } }}
   >
     <h1 className="flex flex-col justify-center items-center gap-1 md:gap-4 text-transparent text-4xl sm:text-6xl font-black font-header bg-clip-text bg-linear-to-r from-accent-theme-1 to-accent-theme-2">
       {t("home.title-1")}
@@ -31,7 +29,7 @@ const Hero = () => {
         {t("home.button")}
       </motion.button>
     </div>
-  </motion.section>;
+  </section>;
 };
 
 export default Hero;
