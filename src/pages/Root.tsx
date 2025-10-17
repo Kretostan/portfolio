@@ -1,4 +1,3 @@
-import {lazy} from "react";
 import { Outlet } from "react-router";
 import { ThemeProvider, useTheme } from "next-themes";
 import Navigation from "../components/Layout/Navigation/Navigation.tsx";
