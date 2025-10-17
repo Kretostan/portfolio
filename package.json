@@ -10,12 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.6.1",
     "@tailwindcss/vite": "^4.1.10",
-    "audit": "^0.0.6",
     "axios": "^1.10.0",
     "bcryptjs": "^3.0.2",
-    "fix": "^0.0.3",
     "framer-motion": "^12.5.0",
     "i18next": "^25.3.6",
     "i18next-browser-languagedetector": "^8.2.0",
