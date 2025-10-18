@@ -7,19 +7,20 @@ type ItemProps = {
   darkIcon: React.FC<React.SVGProps<SVGSVGElement>>;
   lightIcon: React.FC<React.SVGProps<SVGSVGElement>>;
   name: string;
+  href: string;
 }
 
-const Item = ({darkIcon, lightIcon, name}: ItemProps) => {
+const Item = ({darkIcon, lightIcon, name, href}: ItemProps) => {
   const { resolvedTheme } = useTheme();
 
   return <motion.a
     whileHover={{ color: "var(--accent-color-2)" }}
     className="flex items-center gap-1.5"
-    href="https://github.com/Kretostan"
+    href={href}
     target="_blank"
     rel="noopener noreferrer"
     key={resolvedTheme + " " + name}
-  ><Icon Icon={resolvedTheme === "dark" ? darkIcon : lightIcon}  size={16} />
+  ><Icon Icon={resolvedTheme === "dark" ? darkIcon : lightIcon} size={16} />
     {name}
   </motion.a>;
 };

@@ -11,9 +11,9 @@ const Footer = () => {
   return (
     <footer id="contact" className="relative flex flex-col items-center gap-8 py-8 bg-bg-theme-2 border-t-2 border-accent-theme-1 z-1500">
       <div className="flex gap-6 font-semibold text-accent-theme-1">
-        <Item darkIcon={GitHubDark} lightIcon={GitHubLight} name="GitHub" />
-        <Item darkIcon={LinkedInDark} lightIcon={LinkedInLight} name="LinkedIn" />
-        <Item darkIcon={EnvelopeDark} lightIcon={EnvelopeLight} name="Contact" />
+        <Item darkIcon={GitHubDark} lightIcon={GitHubLight} name="GitHub" href="https://github.com/Kretostan" />
+        <Item darkIcon={LinkedInDark} lightIcon={LinkedInLight} name="LinkedIn" href="https://www.linkedin.com/in/jakub-kret-925865263/" />
+        <Item darkIcon={EnvelopeDark} lightIcon={EnvelopeLight} name="Contact" href="https://kretostan.com/contact" />
       </div>
       <Rights />
     </footer>
