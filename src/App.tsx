@@ -14,10 +14,8 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage />, loader: async () => {
         const { skillsLoader, projectsLoader } = await import("./utils/loaders.ts");
-        const [skills, projects] = await Promise.all([
-          skillsLoader(),
-          projectsLoader(),
-        ]);
+        const skills = skillsLoader();
+        const projects = projectsLoader();
         return { skills, projects };
       }},
       { path: "contact", element: <ContactPage />, action: async (args) => {
