@@ -17,7 +17,7 @@ const ProjectsList = ({ data }: ProjectsProps) => {
     className="flex flex-col max-w-[25em] border-2 bg-bg-content border-accent-theme-1 rounded-xl overflow-hidden"
     key={project.title}
   >
-    <img src={`/src/assets/projects/${project.image}.webp`} alt={`${project.title} home page`} loading="lazy" height={400} width={400} />
+    <img src={project.image} alt={`${project.title} home page`} loading="lazy" height={400} width={400} />
     <div className="flex flex-col justify-between gap-5 px-6 py-7 h-3/5">
       <h3 className="text-accent-theme-1 text-xl lg:text-2xl font-semibold">
         {project.title}
