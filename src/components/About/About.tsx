@@ -6,7 +6,7 @@ import AboutImage from "../About/AboutImage.tsx";
 const About = () => {
   const { t } = useTranslation();
 
-  return <section id="about" className="relative flex flex-col gap-10 py-12 bg-bg-theme-1">
+  return <section id="about" className="relative flex flex-col gap-10 py-12 max-w-[1200px] bg-bg-theme-1">
     <h2 className="flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 lg:gap-6 text-4xl font-black text-transparent bg-clip-text bg-linear-to-r from-accent-theme-1 to-accent-theme-2 font-header z-1500">
       {t("about.title")}
     </h2>

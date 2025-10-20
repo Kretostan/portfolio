@@ -37,7 +37,7 @@ const AboutText = () => {
   };
 
   return (
-    <div className="flex flex-col justify-between items-center max-w-[700px]">
+    <div className="flex flex-col justify-between items-center">
       <div className="flex items-center justify-center gap-2">
         {!isMobile && (
           <AboutButton

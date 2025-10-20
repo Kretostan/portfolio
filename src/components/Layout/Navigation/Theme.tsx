@@ -28,7 +28,7 @@ const Theme = () => {
       key={theme}
       aria-label="Theme Switcher"
     >
-      <img src={`/icons/${theme === "dark" ? "sun" : "moon"}.svg`} alt={themeIcon.alt} height={20} width={20} />
+      <img src={`/icons/${theme === "dark" ? "sun" : "moon"}.svg`} alt={themeIcon.alt} height={20} width={20} className="h-[20px] w-[20px]" />
     </motion.button>
   );
 };
