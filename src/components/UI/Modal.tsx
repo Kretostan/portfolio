@@ -30,7 +30,7 @@ const Modal = ({ children, open, onClose }: ModalType) => {
           scale: 1,
           opacity: 1,
         }}
-        className="absolute top-1/2 left-1/2 -translate-1/2 flex flex-col items-center justify-center gap-8 py-8 px-12 border-1 border-accent-theme-2 rounded-lg z-50"
+        className="absolute top-1/2 left-1/2 -translate-1/2 flex flex-col items-center justify-center gap-8 py-8 px-12 border-1 border-accent-theme-2 rounded-lg z-50 max-w-[80%] sm:max-w-[390px] w-full sm:w-auto"
       >
         {children}
       </motion.dialog>
