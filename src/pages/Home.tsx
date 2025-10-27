@@ -1,9 +1,9 @@
 import {lazy, useLayoutEffect} from "react";
 import {useLocation} from "react-router";
-const About = lazy(() => import("../components/About/About.tsx"));
-const Skills = lazy(() => import("../components/Skills/Skills.tsx"));
-const Projects = lazy(() => import("../components/Projects/Projects.tsx"));
-import Hero from "../components/Hero/Hero.tsx";
+const About = lazy(() => import("../components/Home/About/About.tsx"));
+const Skills = lazy(() => import("../components/Home/Skills/Skills.tsx"));
+const Projects = lazy(() => import("../components/Home/Projects/Projects.tsx"));
+import Hero from "../components/Home/Hero/Hero.tsx";
 
 const HomePage = () => {
   const location = useLocation();

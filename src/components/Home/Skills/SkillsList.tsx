@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useTheme } from "next-themes";
-import type {ISkill} from "../../types";
+import type {ISkill} from "../../../types";
 import {useTranslation} from "react-i18next";
 
 type SkillsProps = {

@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 
-import AboutText from "../About/AboutText";
-import AboutImage from "../About/AboutImage.tsx";
+import AboutText from "./AboutText.tsx";
+import AboutImage from "./AboutImage.tsx";
 
 const About = () => {
   const { t } = useTranslation();

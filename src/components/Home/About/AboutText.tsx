@@ -2,8 +2,8 @@ import { useState } from "react";
 import { motion, type PanInfo } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
-import {useIsMobile} from "../../hooks";
-import AboutButton from "./AboutButton";
+import {useIsMobile} from "../../../hooks";
+import AboutButton from "./AboutButton.tsx";
 
 const AboutText = () => {
   const isMobile = useIsMobile();

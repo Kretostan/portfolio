@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import {useTheme} from "next-themes";
-import type { IProject } from "../../types";
+import type { IProject } from "../../../types";
 
 type ProjectsProps = {
   data: { projects: IProject[] };

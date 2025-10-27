@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import {useTheme} from "next-themes";
-import PreviousButtonDark from "../../assets/about/left-arrow-dark.svg?react";
-import NextButtonDark from "../../assets/about/right-arrow-dark.svg?react";
-import PreviousButtonLight from "../../assets/about/left-arrow-light.svg?react";
-import NextButtonLight from "../../assets/about/right-arrow-light.svg?react";
-import Icon from "../UI/Icon.tsx";
+import PreviousButtonDark from "../../../assets/about/left-arrow-dark.svg?react";
+import NextButtonDark from "../../../assets/about/right-arrow-dark.svg?react";
+import PreviousButtonLight from "../../../assets/about/left-arrow-light.svg?react";
+import NextButtonLight from "../../../assets/about/right-arrow-light.svg?react";
+import Icon from "../../UI/Icon.tsx";
 
 interface ButtonProps {
   next?: boolean;
