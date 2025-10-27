@@ -1,6 +1,7 @@
 import {lazy} from "react";
 import { RouterProvider, createBrowserRouter } from "react-router";
 import "./i18n.ts";
+import {ThemeProvider, useTheme} from "next-themes";
 const RootLayout = lazy(() => import("./pages/Root.tsx"));
 const ErrorPage = lazy(() => import("./pages/Error.tsx"));
 const HomePage = lazy(() => import("./pages/Home.tsx"));
@@ -27,5 +28,9 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  const { resolvedTheme } = useTheme();
+
+  return <ThemeProvider attribute="class" enableSystem defaultTheme={resolvedTheme}>
+    <RouterProvider router={router} />
+  </ThemeProvider>;
 };
