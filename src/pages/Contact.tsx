@@ -1,17 +1,24 @@
 import {useEffect, useRef, useState} from "react";
-import { Form, useActionData, useNavigate, useNavigation } from "react-router";
+import {Form, useActionData, useNavigate, useNavigation} from "react-router";
 import {motion} from "framer-motion";
-import { useTranslation } from "react-i18next";
+import {useTranslation} from "react-i18next";
 import Button from "../components/UI/Button";
 import Modal from "../components/UI/Modal.tsx";
+import Info from "../components/Contact/Info.tsx";
 
 const ContactPage = () => {
   const navigation = useNavigation();
   const navigate = useNavigate();
   const data = useActionData() as { success?: boolean };
   const formRef = useRef<HTMLFormElement>(null);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    document.title = i18n.language === "pl"
+      ? "Kontakt | Kretostan Portfolio"
+      : "Contact | Kretostan Portfolio";
+  }, [i18n.language]);
 
   useEffect(() => {
     if (data?.success === true) {
@@ -85,18 +92,9 @@ const ContactPage = () => {
         </Button>
       </Form>
       <div className="flex flex-col md:flex-row justify-around items-center gap-6 md:gap-4 mx-3 md:mx-0 w-full text-center">
-        <div className="flex flex-col gap-3 border-2 border-accent-theme-1 rounded-xl py-8 w-full md:w-1/2 lg:w-1/3 bg-bg-theme-2">
-          <h4 className="text-accent-theme-1 font-bold text-lg">Email</h4>
-          <p>kretostan@portfolio.com</p>
-        </div>
-        <div className="flex flex-col gap-3 border-2 border-accent-theme-1 rounded-xl py-8 w-full md:w-1/2 lg:w-1/3 bg-bg-theme-2">
-          <h4 className="text-accent-theme-1 font-bold text-lg">{t("contact.belowForm-1")}</h4>
-          <p>{t("contact.belowForm-1-1")}</p>
-        </div>
-        <div className="flex flex-col gap-3 border-2 border-accent-theme-1 rounded-xl py-8 w-full md:w-1/2 lg:w-1/3 bg-bg-theme-2">
-          <h4 className="text-accent-theme-1 font-bold text-lg">{t("contact.belowForm-2")}</h4>
-          <p>24-48 hours</p>
-        </div>
+        <Info title="Email">kretostan@portfolio.com</Info>
+        <Info title={t("contact.belowForm-1")}>{t("contact.belowForm-1-1")}</Info>
+        <Info title={t("contact.belowForm-2")}>24-48 {t("contact.belowForm-2-2")}</Info>
       </div>
     </div>
     <Modal
