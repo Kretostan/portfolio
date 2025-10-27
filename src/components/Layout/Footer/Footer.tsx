@@ -13,7 +13,7 @@ const Footer = () => {
       <div className="flex gap-6 font-semibold text-accent-theme-1">
         <Item darkIcon={GitHubDark} lightIcon={GitHubLight} name="GitHub" href="https://github.com/Kretostan" />
         <Item darkIcon={LinkedInDark} lightIcon={LinkedInLight} name="LinkedIn" href="https://www.linkedin.com/in/jakub-kret-925865263/" />
-        <Item darkIcon={EnvelopeDark} lightIcon={EnvelopeLight} name="Contact" href="https://kretostan.com/contact" />
+        <Item darkIcon={EnvelopeDark} lightIcon={EnvelopeLight} name="Contact" href="contact" />
       </div>
       <Rights />
     </footer>
