@@ -4,7 +4,7 @@ export const contactAction = async ({ request }: { request: Request }) => {
   const formData = await request.formData();
   const jsonData = Object.fromEntries(formData.entries());
   try {
-    await axios.post(
+    const response = await axios.post(
       import.meta.env.VITE_API_URL + "/send-mail",
       JSON.stringify(jsonData),
       {
@@ -12,7 +12,7 @@ export const contactAction = async ({ request }: { request: Request }) => {
       },
     );
 
-    return { success: true };
+    return response.data;
   } catch (error) {
     console.error("Error sending mail: ", error);
     return null;

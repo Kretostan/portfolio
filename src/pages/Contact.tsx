@@ -9,10 +9,12 @@ import Info from "../components/Contact/Info.tsx";
 const ContactPage = () => {
   const navigation = useNavigation();
   const navigate = useNavigate();
-  const data = useActionData() as { success?: boolean };
+  const data = useActionData() as { success: boolean, message: string, isValid?: boolean[] };
   const formRef = useRef<HTMLFormElement>(null);
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
+  const [error, setError] = useState<string>("");
+  const [invalid, setInvalid] = useState<boolean[] | undefined>(undefined);
 
   useEffect(() => {
     document.title = i18n.language === "pl"
@@ -21,11 +23,20 @@ const ContactPage = () => {
   }, [i18n.language]);
 
   useEffect(() => {
+    if (!data) return;
     if (data?.success === true) {
       formRef.current?.reset();
       setIsOpen(true);
+      setInvalid(undefined);
+      setError("");
+    } else if (data?.success === false && data?.isValid && data.isValid.length > 0) {
+      setInvalid(data.isValid.map(value => !value));
+      setError(data?.message);
+    } else {
+      setInvalid(undefined);
+      setError(data?.message);
     }
-  }, [data]);
+  }, [data, setError, setInvalid]);
 
   return <div className="flex flex-col justify-center items-center gap-14 pt-36 pb-18 min-h-screen bg-bg-theme-1">
     <div className="flex flex-col items-center gap-8">
@@ -41,50 +52,110 @@ const ContactPage = () => {
       >
         <div className="flex sm:flex-row flex-col items-center justify-between sm:gap-6">
           <div className="flex flex-col gap-3 py-2 w-full md:w-1/2">
-            <label id="name" htmlFor="name" className="text-accent-theme-1">
+            <motion.label
+              animate={{
+                color: invalid?.[0] ? "var(--error-label)" : "var(--accent-color-1)"
+              }}
+              id="name"
+              htmlFor="name"
+              className={invalid?.[0] ? "text-error-label-color" : "text-accent-theme-1"}
+            >
               {t("contact.labelName")}:
-            </label>
+            </motion.label>
             <motion.input
-              whileFocus={{ outlineColor: "var(--accent-color-2)", outlineWidth: 2, boxShadow: "0 2px 10px 1px var(--accent-color-2)" }}
+              whileFocus={{
+                boxShadow: `0 2px 10px 1px ${invalid?.[0] ? "var(--error-color)" : "var(--accent-color-1)"}`
+              }}
+              animate={{
+                borderColor: invalid?.[0] ? "var(--error-color)" : "var(--accent-color-1)",
+                backgroundColor: invalid?.[0] ? "var(--error-background)" : "var(--background-content)",
+                boxShadow: "none"
+              }}
               type="text"
               name="name"
               placeholder={t("contact.labelName")}
-              required
-              className="p-3 bg-bg-content outline-2 outline-accent-theme-1 rounded-lg"
+              className="p-3 rounded-lg outline-none border-2"
             />
           </div>
           <div className="flex flex-col gap-3 py-2 w-full md:w-1/2">
-            <label id="email" htmlFor="email" className="text-accent-theme-1">
+            <motion.label
+              animate={{
+                color: invalid?.[1] ? "var(--error-label)" : "var(--accent-color-1)"
+              }}
+              id="email"
+              htmlFor="email"
+              className={invalid?.[1] ? "text-error-label-color" : "text-accent-theme-1"}
+            >
               E-mail:
-            </label>
-            <motion.input whileFocus={{ outlineColor: "var(--accent-color-2)", outlineWidth: 2, boxShadow: "0 2px 10px 1px var(--accent-color-2)" }} type="email" name="email" placeholder="E-mail" required className="p-3 bg-bg-content outline-2 outline-accent-theme-1 rounded-lg" />
+            </motion.label>
+            <motion.input
+              whileFocus={{
+                boxShadow: `0 2px 10px 1px ${invalid?.[2] ? "var(--error-color)" : "var(--accent-color-1)"}`
+              }}
+              animate={{
+                borderColor: invalid?.[1] ? "var(--error-color)" : "var(--accent-color-1)",
+                backgroundColor: invalid?.[1] ? "var(--error-background)" : "var(--background-content)",
+                boxShadow: "none"
+              }}
+              type="email"
+              name="email"
+              placeholder="E-mail"
+              className="p-3 rounded-lg outline-none border-2"
+            />
           </div>
         </div>
-        <div className="flex flex-col gap-3 py-2">
-          <label id="subject" htmlFor="subject" className="text-accent-theme-1">
+        <div className="flex flex-col gap-3 py-2 isolate">
+          <motion.label
+            animate={{
+              color: invalid?.[2] ? "var(--error-label)" : "var(--accent-color-1)"
+            }}
+            id="subject"
+            htmlFor="subject"
+            className={invalid?.[2] ? "text-error-label-color" : "text-accent-theme-1"}
+          >
             {t("contact.labelSubject")}:
-          </label>
+          </motion.label>
           <motion.input
-            whileFocus={{ outlineColor: "var(--accent-color-2)", outlineWidth: 2, boxShadow: "0 2px 10px 1px var(--accent-color-2)" }}
+            whileFocus={{
+              boxShadow: `0 2px 10px 1px ${invalid?.[3] ? "var(--error-color)" : "var(--accent-color-1)"}`
+            }}
+            animate={{
+              borderColor: invalid?.[2] ? "var(--error-color)" : "var(--accent-color-1)",
+              backgroundColor: invalid?.[2] ? "var(--error-background)" : "var(--background-content)",
+              boxShadow: "none"
+            }}
             type="text"
             name="subject"
             placeholder={t("contact.labelSubject")}
-            required
-            className="p-3 bg-bg-content outline-2 outline-accent-theme-1 rounded-lg"
+            className="p-3 rounded-lg outline-none border-2"
           />
         </div>
-        <div className="flex flex-col gap-3 py-2">
-          <label id="message" htmlFor="message" className="text-accent-theme-1">
+        <div className="flex flex-col gap-3 py-2 isolate">
+          <motion.label
+            animate={{
+              color: invalid?.[3] ? "var(--error-label)" : "var(--accent-color-1)"
+            }}
+            id="message"
+            htmlFor="message"
+            className={invalid?.[3] ? "text-error-label-color" : "text-accent-theme-1"}
+          >
             {t("contact.labelMessage")}:
-          </label>
+          </motion.label>
           <motion.textarea
-            whileFocus={{ outlineColor: "var(--accent-color-2)", outlineWidth: 2, boxShadow: "0 2px 10px 1px var(--accent-color-1)" }}
+            whileFocus={{
+              boxShadow: `0 2px 10px 1px ${invalid?.[3] ? "var(--error-color)" : "var(--accent-color-1)"}`
+            }}
+            animate={{
+              borderColor: invalid?.[3] ? "var(--error-color)" : "var(--accent-color-1)",
+              backgroundColor: invalid?.[3] ? "var(--error-background)" : "var(--background-content)",
+              boxShadow: "none"
+            }}
             name="message"
             placeholder={t("contact.messagePlaceholder")}
-            required
-            className="p-3 min-h-[100px] max-h-[200px] bg-bg-content outline-2 outline-accent-theme-1 rounded-lg"
+            className="p-3 rounded-lg outline-none border-2"
           />
         </div>
+        <p className="text-error-color">{error}</p>
         <Button className="mt-6 w-full bg-linear-to-r from-accent-theme-1 to-accent-theme-2">
           {navigation.state === "submitting"
             ? "Sending"
