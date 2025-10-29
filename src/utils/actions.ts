@@ -9,6 +9,7 @@ export const contactAction = async ({ request }: { request: Request }) => {
       JSON.stringify(jsonData),
       {
         headers: { "Content-Type": "application/json" },
+        validateStatus: () => true,
       },
     );
 
